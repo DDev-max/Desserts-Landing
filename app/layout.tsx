@@ -2,6 +2,7 @@ import { indieFlower } from "@/app/data/fonts"
 import Link from "next/link"
 import styles from "./layout.module.css"
 import { MenuSVG } from "./SVG/MenuSVG"
+import Image from "next/image"
 
 export const metadata = {
   title: 'Next.js',
@@ -9,6 +10,7 @@ export const metadata = {
 }
 
 export default function RootLayout({children}: { children: React.ReactNode}) {
+
   return (
 
     <html lang="en">
@@ -17,7 +19,7 @@ export default function RootLayout({children}: { children: React.ReactNode}) {
         <header className={`${styles.header}`}>
 
           <Link className={`${styles.header_logo_link}`} href={"/"}>
-            <img className={`${styles.header_logo}`} src="pageLogo.png" alt="Sweet Bliss Bakery Logo" />
+            <Image priority width={90} height={65} className={`${styles.header_logo}`} src="/pageLogo.png" alt="Sweet Bliss Bakery Logo"/>
           </Link>
 
           <MenuSVG className={`${styles.header_menuSVG}`}/>

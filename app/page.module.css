@@ -1,0 +1,44 @@
+
+.welcomeCont{
+    background-color:#fef1de; /*fef1de*/
+    display: flex;
+    height: 19rem;
+
+
+    --mask:
+    radial-gradient(56.6px at 50% calc(100% - 78px),#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
+    radial-gradient(56.6px at 50% calc(100% + 48px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+
+.welcomeCont_img{
+    width: clamp(9rem, 27vw, 37rem);
+    object-fit: cover;
+    object-position: -31px;
+    height: clamp(25rem, 22vw, 42rem);
+    margin-left: auto;
+}
+
+
+.welcomeCont_txt{
+    text-align: center;
+    width: clamp(15rem, 67vw, 31rem);
+    font-size:  clamp(3rem, 12vw, 5.1rem);
+    font-weight: bold;
+    color: #4d1b12;
+    line-height: 5rem;
+    /* position: absolute;
+    top: 20%; */
+}
+
+
+@media (width > 1050px) {
+    .welcomeCont_img{
+        object-position: 0;
+    }
+
+    .welcomeCont_txt{
+        margin-left: clamp(1rem,7vw,6rem);
+    }
+}
