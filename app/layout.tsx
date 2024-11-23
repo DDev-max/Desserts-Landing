@@ -1,6 +1,7 @@
 import { indieFlower } from "@/app/data/fonts"
 import Link from "next/link"
 import styles from "./layout.module.css"
+import { MenuSVG } from "./SVG/MenuSVG"
 
 export const metadata = {
   title: 'Next.js',
@@ -19,43 +20,43 @@ export default function RootLayout({children}: { children: React.ReactNode}) {
             <img className={`${styles.header_logo}`} src="pageLogo.png" alt="Sweet Bliss Bakery Logo" />
           </Link>
 
+          <MenuSVG className={`${styles.header_menuSVG}`}/>
 
-          <nav className={`${styles.header_nav}`}
-          >
+          <nav className={`${styles.header_nav}`}>
             
             <ul className={`${styles.header_nav_menu}`} >
 
               <li className={`${styles.header_nav_menu_item}`}>
-                <a href="">Popular</a>
+                <Link href="">Popular</Link>
               </li>
 
               <li className={`${styles.header_nav_menu_item}`} >
-                <a href="">New</a>
+                <Link href="">New</Link>
               </li>
 
               <li className={`${styles.header_nav_menu_item}`} >
-                <a href="">About Us</a>
+                <Link href="">About Us</Link>
               </li>
 
               <li className={`${styles.header_nav_menu_item}`} >
-                <a href="">Types ▼</a>
+                <Link href="">Types ▼</Link>
 
                 <ul className={`${styles.header_nav_menu_item_subMenu}`}>
 
                   <li>
-                    <a href="">Cookies</a>
+                    <Link href="">Cookies</Link>
                   </li>
 
                   <li>
-                    <a href="">Ice Creams</a>
+                    <Link href="">Ice Creams</Link>
                   </li>
 
                   <li>
-                    <a href="">Fried</a>
+                    <Link href="">Fried</Link>
                   </li>
 
                   <li>
-                    <a href="">Fruits</a>
+                    <Link href="">Fruits</Link>
                   </li>
 
                 </ul>
