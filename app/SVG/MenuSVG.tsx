@@ -1,6 +1,4 @@
-export interface SVGProps{
-    className?: string
-}
+import { SVGProps } from "../data/types";
 
 export function MenuSVG({className}: SVGProps) {
 

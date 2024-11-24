@@ -1,10 +1,13 @@
-/* :root{
-    --headerElmntBg: #ffe5fc;
-} */
+:root{
+    --globalLightPink: #e583b4;
+    --globalDarkPink: #dd74a8;
+    --globalDarkestPink: #d0458a;
+
+}
 
 body{
-    background-color: rgb(109, 109, 109);
-    overflow-x: hidden;
+    background-color: #fae0f7; /*fae0f7*/
+    /* overflow-x: hidden; */
 }
 
 *{
