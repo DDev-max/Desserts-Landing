@@ -1,7 +1,7 @@
 import Image from "next/image";
 import "./globals.css";
 import styles from "./page.module.css"
-import { Categories } from "./(categories)/categories";
+import { Categories } from "./categories/categories";
 import { SingleProduct } from "./singleProduct/singleProduct";
 import { MultipleProducts } from "./multipleProducts/multipleProducts";
 
