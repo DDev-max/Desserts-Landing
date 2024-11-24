@@ -3,6 +3,10 @@
     --globalDarkPink: #dd74a8;
     --globalDarkestPink: #d0458a;
 
+    --h2FontSize: 2.2rem;
+    --subTitlesFntSize: 2rem; /*recetas*/
+    --txtContentFntSize: 1.2rem
+
 }
 
 body{

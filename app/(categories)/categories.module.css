@@ -1,11 +1,12 @@
 .categoriesSctn{
     text-align: center;
-    font-size: 1.5rem;
+
 }
 
 .categoriesSctn>h2{
     margin: 1rem;
     margin-bottom: 1.5rem;
+    font-size: var(--h2FontSize);
 }
 
 .categoriesSctn_categoriesCont{
@@ -65,13 +66,13 @@
 
 .categoriesSctn_recipesCont_recipe_info{
     text-align: left;
-    font-size: 1.2rem;
+    font-size: var(--txtContentFntSize);
     padding: 1rem 3rem;
 }
 
 .categoriesSctn_recipesCont_recipe_info h4{
     text-align: center;
-    font-size: 2rem;
+    font-size:  var(--subTitlesFntSize);
 }
 
 

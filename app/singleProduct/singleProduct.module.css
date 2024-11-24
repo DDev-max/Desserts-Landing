@@ -1,0 +1,35 @@
+.section{
+    padding: 1rem;
+}
+
+.section>h2{
+    text-align: center;
+    margin: 1rem;
+    font-size: var(--h2FontSize);
+}
+
+.section_recipe{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--globalDarkPink);
+}
+
+.section_recipe_img{
+    width: 100%;
+}
+
+.section_recipe_info{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    font-size: var(--txtContentFntSize);
+}
+
+.section_recipe_info_title{
+    font-size: var(--subTitlesFntSize);
+    color: white;
+    margin: .5rem auto;
+    background-color: var(--globalDarkestPink);
+    padding: .8rem 2rem;
+    border-radius: 1.5rem;
+}

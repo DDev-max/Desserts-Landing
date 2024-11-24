@@ -2,6 +2,7 @@ import Image from "next/image";
 import "./globals.css";
 import styles from "./page.module.css"
 import { Categories } from "./(categories)/categories";
+import { SingleProduct } from "./singleProduct/singleProduct";
 
 export default function Page() {
 
@@ -19,6 +20,8 @@ export default function Page() {
             </div>
 
             <Categories/>
+
+            <SingleProduct/>
             
         </main>
     )

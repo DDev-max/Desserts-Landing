@@ -18,7 +18,7 @@ export async function Categories() {
 
     return (
         <section className={`${styles.categoriesSctn}`}>
-            <h2>Choose your sweet destiny</h2>
+            <h2>Choose your sweet destiny!</h2>
 
             <div  className={`${styles.categoriesSctn_categoriesCont}`}>
 
