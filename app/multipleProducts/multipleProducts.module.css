@@ -1,0 +1,49 @@
+.section_h2{
+    font-size: var(--h2FontSize);
+    text-align: center;
+}
+
+.section_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    color: white;
+}
+
+.section_grid_elmnt{
+    background-color: var(--globalLightPink);
+}
+
+.section_grid_elmnt_img{
+    width: 100%;
+    height: 11rem;
+    object-fit: cover;
+}
+.section_grid_elmnt_recipeCont{
+    font-size: var(--txtContentFntSize);
+    position: relative;
+}
+
+.section_grid_elmnt_recipeCont_title{
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: var(--globalDarkPink);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 2rem;
+}
+
+.section_grid_elmnt_recipeCont_bg{
+    display: none;/*  <=== cambiar a ese*/
+    background: var(--globalLightPink);
+    position: absolute;
+    z-index: 1;
+    padding: 1rem;
+}
+
+.section_grid_elmnt_recipeCont_bg_ol{
+    background: var(--globalDarkPink);
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+
+}

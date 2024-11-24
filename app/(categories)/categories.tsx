@@ -3,13 +3,14 @@ import styles from "./categories.module.css"
 import { RecipesAPI, RecipesCategoriesAPI } from "../data/types";
 import { StarsSVG } from "../SVG/StarsSVG";
 import { ClockSVG } from "../SVG/ClockSVG";
+import { RecipeSteps } from "../recipeSteps";
 
 export async function Categories() {
 
-    const categoriesAPI= await fetch("http://localhost:4000/categories")
+    const categoriesAPI= await fetch("http://localhost:3001/categories")
     const categoriesJson: RecipesCategoriesAPI[]= await categoriesAPI.json()
 
-    const reciepesAPI= await fetch("http://localhost:4000/recipes")
+    const reciepesAPI= await fetch("http://localhost:3001/recipes")
     const recipesJson: RecipesAPI = await reciepesAPI.json()
 
 
@@ -25,7 +26,8 @@ export async function Categories() {
                 {categoriesJson.map(elmnt=>(
                     <div className={`${styles.categoriesSctn_categoriesCont_category}`} key={elmnt.id}>
 
-                        <Image className={`${styles.categoriesSctn_categoriesCont_img}`} width={200} height={200} src={elmnt.imgLink} alt={`${elmnt.name} category`}/>
+                        <Image className={`${styles.categoriesSctn_categoriesCont_img}`} 
+                        width={200} height={200} src={elmnt.imgLink} alt={`${elmnt.name} category`}/>
                         
                         <h3 className={`${styles.categoriesSctn_categoriesCont_category_title}`}>{elmnt.name}</h3>
 
@@ -37,8 +39,6 @@ export async function Categories() {
             
             <div className={`${styles.categoriesSctn_recipesCont}`}>
                 {recipesJson.AllCategories.cookies.map(elmnt=>{
-                    const steps = elmnt.recipe.match(/[^.]+[.]/g)
-                    
 
                     return(
                         <article className={`${styles.categoriesSctn_recipesCont_recipe}`} key={elmnt.id}>
@@ -58,14 +58,10 @@ export async function Categories() {
                             </div>
 
                             <div className={`${styles.categoriesSctn_recipesCont_recipe_info}`}>
+
                                 <h4>{elmnt.dish}</h4>
-                                <ol>
-                                    {steps?.map((step, idx)=>(
-                                        <li key={idx}>
-                                            {step}
-                                        </li>
-                                    ))}
-                                </ol>
+                                <RecipeSteps recipeParagraph={elmnt.recipe}/>
+                                
                             </div>
 
 

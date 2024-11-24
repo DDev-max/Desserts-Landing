@@ -3,6 +3,7 @@ import "./globals.css";
 import styles from "./page.module.css"
 import { Categories } from "./(categories)/categories";
 import { SingleProduct } from "./singleProduct/singleProduct";
+import { MultipleProducts } from "./multipleProducts/multipleProducts";
 
 export default function Page() {
 
@@ -12,7 +13,7 @@ export default function Page() {
             <div className={`${styles.welcomeCont}`}>
                 <h1 className={`${styles.welcomeCont_txt}`}>Welcome to your happy place!</h1>
 
-                <Image unoptimized className={`${styles.welcomeCont_img}`} width={450} height={350} 
+                <Image className={`${styles.welcomeCont_img}`} width={450} height={350} 
                 src={"/welcomeImg.png"}
                     alt="Decorative image of desserts."
                 />
@@ -22,6 +23,9 @@ export default function Page() {
             <Categories/>
 
             <SingleProduct/>
+
+            <MultipleProducts/>
+
             
         </main>
     )

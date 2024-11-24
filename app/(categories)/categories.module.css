@@ -57,9 +57,12 @@
 
 }
 
+
+/*  ERRORR  */
 .categoriesSctn_recipesCont_recipe_img{
     border-radius: 50%;
-    width: 13rem;
+    /* width: 13rem;
+    height: 13rem; */
     object-fit: cover;
 }
 

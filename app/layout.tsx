@@ -19,7 +19,7 @@ export default function RootLayout({children}: { children: React.ReactNode}) {
         <header className={`${styles.header}`}>
 
           <Link className={`${styles.header_logo_link}`} href={"/"}>
-            <Image priority width={90} height={65} className={`${styles.header_logo}`} src="/pageLogo.png" alt=""/>
+            <Image width={90} height={65} src="/pageLogo.png" alt=""/>
           </Link>
 
           <MenuSVG className={`${styles.header_menuSVG}`}/>

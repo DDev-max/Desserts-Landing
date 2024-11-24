@@ -11,7 +11,7 @@ export function SingleProduct() {
                 <Image  className={`${styles.section_recipe_img}`} src={"/magdalenas.png"} width={450} height={300} alt="Vanilla cupcakes with colorful sprinkles."/>
 
                 <div className={`${styles.section_recipe_info}`}>
-                    <h3 className={`${styles.section_recipe_info_title}`}>Vanlla Cupcakes</h3>
+                    <h3 className={`${styles.section_recipe_info_title}`}>Vanilla Cupcakes</h3>
 
                     <ol>
 
