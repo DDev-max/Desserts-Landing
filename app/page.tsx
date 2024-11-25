@@ -1,9 +1,10 @@
 import Image from "next/image";
 import "./globals.css";
 import styles from "./page.module.css"
-import { Categories } from "./categories/categories";
-import { SingleProduct } from "./singleProduct/singleProduct";
-import { MultipleProducts } from "./multipleProducts/multipleProducts";
+import { Categories } from "./Components/categories/categories";
+import { SingleProduct } from "./Components/singleProduct/singleProduct";
+import { MultipleProducts } from "./Components/multipleProducts/multipleProducts";
+import { FullRecipe } from "./Components/fullRecipe/fullRecipe";
 
 export default function Page() {
 
@@ -21,6 +22,7 @@ export default function Page() {
             </div>
 
             <Categories/>
+            <FullRecipe/>
 
             <SingleProduct/>
 

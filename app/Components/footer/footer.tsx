@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "./footer.module.css"
-import { EmailSVG } from "../SVG/email";
-import { PhoneSVG } from "../SVG/Phone";
-import { LocationSVG } from "../SVG/Location";
-import { InstaSVG } from "../SVG/instaSVG";
-import { Twitter } from "../SVG/Twitter";
+import { EmailSVG } from "../../SVG/email";
+import { PhoneSVG } from "../../SVG/Phone";
+import { LocationSVG } from "../../SVG/Location";
+import { InstaSVG } from "../../SVG/instaSVG";
+import { Twitter } from "../../SVG/Twitter";
 
 export function Footer() {
 

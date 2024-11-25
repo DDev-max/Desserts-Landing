@@ -1,6 +1,6 @@
 import { indieFlower } from "@/app/data/fonts"
-import { Header } from "./header/header"
-import { Footer } from "./footer/footer"
+import { Header } from "./Components/header/header"
+import { Footer } from "./Components/footer/footer"
 
 export const metadata = {
   title: 'Next.js',

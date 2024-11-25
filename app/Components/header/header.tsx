@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MenuSVG } from "../SVG/MenuSVG";
+import { MenuSVG } from "../../SVG/MenuSVG";
 import styles from "./header.module.css"
 
 export function Header() {

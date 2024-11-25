@@ -1,7 +1,7 @@
 import Image from "next/image"
-import { RecipesAPI } from "../data/types"
+import { RecipesAPI } from "@/app/data/types"
 import styles from "./multipleProducts.module.css"
-import { RecipeSteps } from "../recipeSteps"
+import { RecipeSteps } from "@/app/Components/recipeSteps/recipeSteps"
 
 export async function MultipleProducts() {
 
@@ -9,7 +9,6 @@ export async function MultipleProducts() {
     const recipesJson: RecipesAPI = await reciepesAPI.json()  /* EL FETCH YA SE HIZO EN 'CATEGORIES' */
 
 
-/* VER CONSOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
 
     return (
         <section >
@@ -20,7 +19,6 @@ export async function MultipleProducts() {
                         <Image  className={`${styles.section_grid_elmnt_img}`} src={elmnt.image} alt={elmnt.dish} width={250} height={170}/>
 
                         <div  className={`${styles.section_grid_elmnt_recipeCont}`}>
-{/* PONERLE POSITION RELATIVA */}
                             <div>
                                 <h3  className={`${styles.section_grid_elmnt_recipeCont_title}`}>{`${elmnt.dish}▼`}</h3>
 
