@@ -1,9 +1,21 @@
+"use client" // PASARLO A LMENUSVG
+
 import Image from "next/image";
 import Link from "next/link";
 import { MenuSVG } from "../../SVG/MenuSVG";
 import styles from "./header.module.css"
+import { useRef } from "react";
 
 export function Header() {
+
+  const menuRef = useRef<HTMLElement>(null)
+
+  function showMenu() {
+
+    
+    menuRef.current?.classList.add(`${styles.menuVisible}`)
+
+  }
 
 
     return (
@@ -13,9 +25,9 @@ export function Header() {
             <Image width={90} height={65} src="/pageLogo.png" alt=""/>
           </Link>
 
-          <MenuSVG className={`${styles.header_menuSVG}`}/>
+          <MenuSVG onClick={showMenu} className={`${styles.header_menuSVG}`}/>
 
-          <nav className={`${styles.header_nav}`}>
+          <nav ref={menuRef} className={`${styles.header_nav}`}>
             
             <ul className={`${styles.header_nav_menu}`} >
 

@@ -4,15 +4,16 @@ import styles from "./fullRecipe.module.css"
 import { RecipesAPI } from "../../data/types"
 import { ClockSVG } from "../../SVG/ClockSVG"
 import { RecipeSteps } from "../recipeSteps/recipeSteps"
+import { fetchData } from "@/app/utils/fetchData/fetchData"
+import { recipesUrl } from "@/app/data/consts"
 
 export async function FullRecipe() {
-
-    const reciepesAPI= await fetch("http://localhost:3001/recipes")
-    const recipesJson: RecipesAPI = await reciepesAPI.json()
+    
+    const recipes = await fetchData<RecipesAPI>(recipesUrl)
 
     return (
         <div className={`${styles.recipesCont}`}>
-        {recipesJson.AllCategories.cookies.map(elmnt=>{
+        {recipes?.AllCategories.cookies.map(elmnt=>{
 
             return(
                 <article className={`${styles.recipesCont_recipe}`} key={elmnt.id}>

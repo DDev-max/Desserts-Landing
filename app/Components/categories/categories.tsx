@@ -1,13 +1,13 @@
 import Image from "next/image";
 import styles from "./categories.module.css"
 import { RecipesCategoriesAPI } from "../../data/types";
+import { fetchData } from "@/app/utils/fetchData/fetchData";
+import { categoriesUrl } from "@/app/data/consts";
 
 
 export async function Categories() {
 
-    const categoriesAPI= await fetch("http://localhost:3001/categories")
-    const categoriesJson: RecipesCategoriesAPI[]= await categoriesAPI.json()
-
+    const categories = await fetchData<RecipesCategoriesAPI[]>(categoriesUrl)
     
 
     return (
@@ -16,7 +16,7 @@ export async function Categories() {
 
             <div  className={`${styles.categoriesSctn_categoriesCont}`}>
 
-                {categoriesJson.map(elmnt=>(
+                {categories?.map(elmnt=>(
                     <div className={`${styles.categoriesSctn_categoriesCont_category}`} key={elmnt.id}>
 
                         <Image className={`${styles.categoriesSctn_categoriesCont_img}`} 
