@@ -58,3 +58,23 @@
 .recipesCont_recipe_aditionalInfo_starsCont_star{
     width: 2rem;
 }
+
+.recipesCont_btnsCont{
+    display: flex;
+    justify-content: center;
+    gap: .2rem;
+}
+
+.recipesCont_btnsCont_btn{
+    padding: .5rem 1rem;
+    color: currentColor;
+    text-decoration: none;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    border: .15rem solid;
+}
+
+.recipesCont_btnsCont_btn--selected{
+    background-color: white;
+    color: var(--globalDarkestPink) ;
+}

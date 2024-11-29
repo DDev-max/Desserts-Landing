@@ -1,8 +1,3 @@
-// export interface RecipesAPI {
-//     AllCategories: AllCategories;
-//     popular:       Popular[];
-// }
-
 export interface AllCategories {
     cookies:   RecipeElmnt[];
     iceCreams: RecipeElmnt[];
@@ -10,15 +5,14 @@ export interface AllCategories {
     fruits:    RecipeElmnt[];
 }
 
+
+
 export interface FullRecipeProps{
-    recipes: PageCatgry | undefined
-    setRecipes:  Dispatch<SetStateAction<PageCatgry | undefined>>
+    category: string
+    page: string
 }
 
-export interface CategoriesProps{
-    setSelectedCatgry: Dispatch<SetStateAction<keyof AllCategories>>
-    selectedCatgry: string
-}
+
 
 
 export interface RecipeElmnt {
@@ -69,4 +63,14 @@ export interface SVGProps{
     className?: string
     onClick?: ()=> void
     ref?: RefObject<HTMLElement>
+}
+
+
+export interface PaginationBtnsProps{
+    buttonsQtty: number
+    currentPage: number
+    classNameBtn?: string
+    classNameCont?: string
+    selectedBtnClassName: string
+
 }

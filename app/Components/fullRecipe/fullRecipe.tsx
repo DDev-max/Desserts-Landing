@@ -5,41 +5,17 @@ import { FullRecipeProps, PageCatgry } from "../../data/types"
 import { ClockSVG } from "../../SVG/ClockSVG"
 import { RecipeSteps } from "../recipeSteps/recipeSteps"
 import { fetchData } from "@/app/utils/fetchData/fetchData"
-import { useEffect } from "react"
-import { usePathname, useSearchParams } from "next/navigation"
-import Link from "next/link"
-import { createUrl } from "@/app/utils/createUrl/createUrl"
-
-export function FullRecipe({ recipes, setRecipes }: FullRecipeProps) {
-
-    const searchParams = useSearchParams()
-    const finalCategory = searchParams.get("category") || "cookies"
-    const page = Number(searchParams.get("page")) || 1
-    const pathName = usePathname()
+import { PaginationBtns } from "../paginationBtns/paginationBtns"
 
 
+export async function FullRecipe({category,page}: FullRecipeProps) {
 
-
-    useEffect(() => {
-        async function recipesFetch() {
-            const fetchedRecipes = await fetchData<PageCatgry>(`http://localhost:3001/${finalCategory}?_page=${page}&_per_page=2`);
-
-            console.log(fetchedRecipes);
-
-
-
-            setRecipes(fetchedRecipes)
-
-        }
-
-        recipesFetch()
-
-    }, [finalCategory, page, setRecipes]);
-
+    const recipes = await fetchData<PageCatgry>(`http://localhost:3001/${category}?_page=${page}&_per_page=2`);
 
 
     return (
         <div className={`${styles.recipesCont}`}>
+
             {recipes?.data.map(elmnt => {
 
                 return (
@@ -72,15 +48,7 @@ export function FullRecipe({ recipes, setRecipes }: FullRecipeProps) {
             })}
 
 
-
-            {
-                Array(recipes?.pages).fill("_").map((_, idx) => (
-                    <Link key={idx} href={createUrl({paramsAndValueObj: {page: idx + 1}, pathName,searchParams, })}>
-                        {idx + 1}
-                    </Link>
-                ))
-
-            }
+            <PaginationBtns currentPage={Number(page)} selectedBtnClassName={`${styles["recipesCont_btnsCont_btn--selected"]}`} classNameCont={`${styles.recipesCont_btnsCont}`} classNameBtn={`${styles.recipesCont_btnsCont_btn}`} buttonsQtty={recipes?.pages || 0}/>
 
 
         </div>

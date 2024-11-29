@@ -2,21 +2,23 @@
 
 import Image from "next/image";
 import styles from "./categories.module.css"
-import { CategoriesProps, RecipesCategoriesAPI } from "../../data/types";
+import {  RecipesCategoriesAPI } from "../../data/types";
 import { fetchData } from "@/app/utils/fetchData/fetchData";
 import { categoriesUrl } from "@/app/data/consts";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { createUrl } from "@/app/utils/createUrl/createUrl";
 
 
-export function Categories({ setSelectedCatgry, selectedCatgry }: CategoriesProps) {
+export function Categories() {
 
     const searchParams= useSearchParams()
     const {replace}= useRouter()
     const pathName = usePathname()
+
+    const currentCategory = searchParams.get("category")
 
     const [categories, setCategories] = useState<RecipesCategoriesAPI[]>()
 
@@ -37,14 +39,6 @@ export function Categories({ setSelectedCatgry, selectedCatgry }: CategoriesProp
     }, [])
 
 
-    function changeCategory(e: ChangeEvent<HTMLInputElement>) {        
-        setSelectedCatgry(e.target.value)
-
-        createUrl({paramsAndValueObj:{category: e.target.value, page: 1} , pathName, replace,searchParams})
-    }
-
-
-
 
     return (
         <section className={`${styles.categoriesSctn}`}>
@@ -55,7 +49,7 @@ export function Categories({ setSelectedCatgry, selectedCatgry }: CategoriesProp
 
                 {categories?.map(elmnt => (
                     <div className={
-                        selectedCatgry == elmnt.id
+                        currentCategory == elmnt.id
                           ? styles["categoriesSctn_categoriesCont_category--selected"]
                           : styles.categoriesSctn_categoriesCont_category
                       }
@@ -73,7 +67,7 @@ export function Categories({ setSelectedCatgry, selectedCatgry }: CategoriesProp
                             {elmnt.name}
 
                             <input 
-                            checked={elmnt.id == selectedCatgry} value={`${elmnt.id}`} onChange={changeCategory} type="radio" name="categories" />
+                            checked={elmnt.id == currentCategory} value={`${elmnt.id}`} onChange={(e)=> createUrl({paramsAndValueObj:{category: e.target.value, page: 1} , pathName, replace,searchParams})} type="radio" name="categories" />
 
                         </label>
 
