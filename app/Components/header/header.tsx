@@ -4,19 +4,36 @@ import Image from "next/image";
 import Link from "next/link";
 import { MenuSVG } from "../../SVG/MenuSVG";
 import styles from "./header.module.css"
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export function Header() {
 
   const menuRef = useRef<HTMLElement>(null)
+  const menuIcon =  useRef<HTMLElement>(null)
 
-  function showMenu() {
+  useEffect(()=>{
 
-    
-    menuRef.current?.classList.add(`${styles.menuVisible}`)
+    function toggleMenu(e: MouseEvent) {
+      
+      
 
-  }
+      if (menuIcon.current?.contains(e.target as Node)) {
+        menuRef.current?.classList.add(`${styles.menuVisible}`)
+        console.log("clase añadida");
+        
+       } else{
+         menuRef.current?.classList.remove(`${styles.menuVisible}`)
+         console.log("clase quitada");
+   
+       }
+       
+    }
 
+    document.addEventListener("click",toggleMenu)
+
+    return ()=> {document.removeEventListener("click",toggleMenu)}
+
+  },[])
 
     return (
         <header className={`${styles.header}`}>
@@ -25,22 +42,22 @@ export function Header() {
             <Image width={90} height={65} src="/pageLogo.png" alt=""/>
           </Link>
 
-          <MenuSVG onClick={showMenu} className={`${styles.header_menuSVG}`}/>
+          <MenuSVG ref={menuIcon} className={`${styles.header_menuSVG}`}/>
 
           <nav ref={menuRef} className={`${styles.header_nav}`}>
             
             <ul className={`${styles.header_nav_menu}`} >
 
               <li className={`${styles.header_nav_menu_item}`}>
-                <Link href="">Popular</Link>
+                <Link href="#popular">Popular</Link>
               </li>
 
               <li className={`${styles.header_nav_menu_item}`} >
-                <Link href="">New</Link>
+                <Link href="#new">New</Link>
               </li>
 
               <li className={`${styles.header_nav_menu_item}`} >
-                <Link href="">About Us</Link>
+                <Link href="#aboutUs">About Us</Link>
               </li>
 
               <li className={`${styles.header_nav_menu_item}`} >
@@ -49,19 +66,19 @@ export function Header() {
                 <ul className={`${styles.header_nav_menu_item_subMenu}`}>
 
                   <li>
-                    <Link href="">Cookies</Link>
+                    <Link href="#cookies">Cookies</Link>
                   </li>
 
                   <li>
-                    <Link href="">Ice Creams</Link>
+                    <Link href="#iceCreams">Ice Creams</Link>
                   </li>
 
                   <li>
-                    <Link href="">Fried</Link>
+                    <Link href="#fried">Fried</Link>
                   </li>
 
                   <li>
-                    <Link href="">Fruits</Link>
+                    <Link href="#fruits">Fruits</Link>
                   </li>
 
                 </ul>

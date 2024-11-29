@@ -1,7 +1,7 @@
-export interface RecipesAPI {
-    AllCategories: AllCategories;
-    popular:       Popular[];
-}
+// export interface RecipesAPI {
+//     AllCategories: AllCategories;
+//     popular:       Popular[];
+// }
 
 export interface AllCategories {
     cookies:   RecipeElmnt[];
@@ -9,6 +9,17 @@ export interface AllCategories {
     fried:     RecipeElmnt[];
     fruits:    RecipeElmnt[];
 }
+
+export interface FullRecipeProps{
+    recipes: PageCatgry | undefined
+    setRecipes:  Dispatch<SetStateAction<PageCatgry | undefined>>
+}
+
+export interface CategoriesProps{
+    setSelectedCatgry: Dispatch<SetStateAction<keyof AllCategories>>
+    selectedCatgry: string
+}
+
 
 export interface RecipeElmnt {
     id:                   string;
@@ -19,6 +30,16 @@ export interface RecipeElmnt {
     image:                string;
     category:             Categories;
 }
+
+export interface PageCatgry {
+    first: number
+    prev: null | number
+    next: number
+    last: number
+    pages: number
+    items: number
+    data: RecipeElmnt[]
+  }
 
 export enum Categories {
     Cookies = "Cookies",
@@ -47,4 +68,5 @@ export interface RecipesCategoriesAPI {
 export interface SVGProps{
     className?: string
     onClick?: ()=> void
+    ref?: RefObject<HTMLElement>
 }

@@ -12,6 +12,10 @@ export async function fetchData<T>(URL: string){
 
           const format: T = await response.json()
           
+
+        //   console.log("fetch realizado correctamente:",URL);
+          
+          
         return format
         
     

@@ -66,6 +66,7 @@
     display: none;/**/
     position: absolute;/**/
     width: 100%;
+    z-index: 1;
 }
 
 .header_nav_menu_item_subMenu li{
@@ -108,7 +109,7 @@
 
     .header_nav{
         overflow: hidden;
-        position: absolute;
+        position: fixed;
         z-index: 1;
         right: -100%;
         background-color: inherit;

@@ -4,7 +4,7 @@ export function SingleProduct() {
 
 
     return (
-        <section className={`${styles.section}`}>
+        <section id="new" className={`${styles.section}`}>
             <h2>Fresh and New!</h2>
 
             <div className={`${styles.section_recipe}`}>

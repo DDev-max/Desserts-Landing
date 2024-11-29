@@ -10,7 +10,7 @@ export function Footer() {
 
 
     return (
-        <footer className={`${styles.footer}`}>
+        <footer id="aboutUs" className={`${styles.footer}`}>
 
             <div className={`${styles.footer_infoCont}`}>
 
