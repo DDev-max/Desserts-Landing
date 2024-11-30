@@ -1,48 +1,33 @@
 "use client"
 
 import { useRef, useState } from "react";
-import { StarsSVGProps } from "../data/types"
+import { StarsSVGProps } from "../../data/types"
+import { colorStar } from "./colorStar";
+import { defaultColor } from "./defaultColor";
+import { overwriteColor } from "./overwriteColor";
+import { resetColors } from "./resetColors";
+import { emptyStarColorCode } from "@/app/data/consts";
 
 export function StarsSVG({ className, qtty }: StarsSVGProps) {
 
-  const emptyStarsArray =Array(5).fill("")
+  const emptyStarsArray: string[] =Array(5).fill("")
 
   const [color, setColor] = useState(emptyStarsArray)
 
   const isRated = useRef(false)
 
 
-  function colorStar(idx: number) {
-    if (!isRated.current) {
-      const newColors = color.map((_, i) => (i <= idx ? "#fe9900" : "#000000"));
-      setColor(newColors);
-    }
-  }
 
-
-  function colorSobreEscrito(idx: number) {
-    return color[idx] ? color[idx] : ""
-  }
-
-  function colorDeAPI(idx: number) {
-    return Math.round(qtty) >= idx ? "#fe9900" : "#000000"
-  }
-
-
-  function resetColors() {
-    if (!isRated.current) {
-      setColor(emptyStarsArray)
-    }
-  }
 
 
   return (
-    <div onMouseLeave={resetColors}>
+
+    <div style={{ display: "flex", gap: ".5rem"}} onMouseLeave={()=>{resetColors({isRated,setColor})}}>
 
       {emptyStarsArray.map((_, idx) => (
         <svg key={idx}
         onClick={()=>{isRated.current =  !isRated.current}}
-          onMouseEnter={() => { colorStar(idx) }}
+          onMouseEnter={() => { colorStar({color, idx,isRated,setColor}) }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512.003 512.003"
           xmlSpace="preserve"
@@ -50,18 +35,18 @@ export function StarsSVG({ className, qtty }: StarsSVGProps) {
         >
 
           <path
-            fill={colorDeAPI(idx)}
+            fill={defaultColor({idx,qtty})}
             style={{
-              fill: colorSobreEscrito(idx),
+              fill: overwriteColor({color,idx}),
             }}
             d="M480.619 245.91c12.54-12.212 16.963-30.148 11.548-46.799-5.319-16.391-19.782-28.59-36.852-31.075l-103.122-14.979a2.84 2.84 0 0 1-2.138-1.551l-46.116-93.453c-7.751-15.697-23.431-25.448-40.924-25.448-17.507 0-33.197 9.751-40.944 25.449l-46.12 93.453a2.83 2.83 0 0 1-2.137 1.551l-103.13 14.979c-17.064 2.485-31.526 14.679-36.839 31.059-5.334 16.4-.803 34.775 11.542 46.813l74.608 72.731c.672.656.979 1.599.823 2.52l-17.61 102.704c-2.967 17.244 3.991 34.354 18.163 44.655 7.857 5.708 17.136 8.726 26.837 8.726a45.8 45.8 0 0 0 21.241-5.252l92.242-48.494a2.9 2.9 0 0 1 2.647-.001l92.222 48.496a45.84 45.84 0 0 0 21.236 5.242c9.714 0 18.996-3.015 26.839-8.714 14.175-10.292 21.136-27.402 18.167-44.646l-17.609-102.718a2.84 2.84 0 0 1 .817-2.513z"
           />
           <path
-            fill="#000000"
+            fill={emptyStarColorCode}
             d="M175.7 467c-9.7 0-18.98-3.018-26.837-8.726-14.171-10.302-21.13-27.411-18.163-44.655l17.61-102.704a2.86 2.86 0 0 0-.823-2.52l-74.608-72.731c-12.345-12.038-16.875-30.413-11.542-46.813 2.814-8.677 8.212-16.157 15.188-21.665l-5.843.849c-17.064 2.485-31.526 14.679-36.839 31.059-5.334 16.4-.803 34.775 11.542 46.813l74.608 72.731c.672.656.979 1.599.823 2.52l-17.61 102.704c-2.967 17.244 3.991 34.354 18.163 44.655 7.857 5.708 17.136 8.726 26.837 8.726a45.8 45.8 0 0 0 21.241-5.252l9.791-5.147a45 45 0 0 1-3.538.156"
           />
           <path
-            fill="#000000"
+            fill={emptyStarColorCode}
             d="M507.821 194.023c-7.346-22.646-26.554-38.843-50.137-42.276l-96.04-13.95-42.945-87.027c-10.54-21.356-31.878-34.624-55.684-34.624-23.821 0-45.165 13.268-55.702 34.624l-42.952 87.027-96.043 13.95c-23.576 3.433-42.786 19.63-50.128 42.267-7.364 22.646-1.346 47.047 15.705 63.68l69.489 67.739-16.401 95.645c-4.031 23.465 5.434 46.742 24.707 60.752 10.684 7.767 23.31 11.873 36.517 11.873a62.3 62.3 0 0 0 28.907-7.143l85.902-45.162 85.887 45.164a62.4 62.4 0 0 0 28.894 7.132c13.216 0 25.849-4.102 36.519-11.859 19.279-14.001 28.748-37.282 24.714-60.749l-16.402-95.654 69.482-67.736c17.059-16.614 23.079-41.019 15.711-63.673m-34.725 44.163-34.93 34.053-18.488 18.024-21.196 20.662a13.62 13.62 0 0 0-3.916 12.056l17.609 102.717c2.268 13.173-3.047 26.238-13.875 34.099-5.991 4.355-13.081 6.658-20.505 6.658a35 35 0 0 1-16.221-4.005l-92.219-48.494a13.62 13.62 0 0 0-12.679-.001L164.43 462.45a35 35 0 0 1-16.224 4.014c-7.412 0-14.498-2.307-20.498-6.666-10.824-7.868-16.141-20.934-13.875-34.106l17.611-102.71a13.63 13.63 0 0 0-3.919-12.058L52.913 238.19c-9.427-9.194-12.889-23.228-8.815-35.758 4.06-12.514 15.105-21.825 28.14-23.724l103.124-14.979a13.63 13.63 0 0 0 10.258-7.45l46.118-93.452c5.916-11.989 17.902-19.438 31.275-19.438 13.362 0 25.337 7.449 31.256 19.438l46.116 93.452a13.62 13.62 0 0 0 10.256 7.45l103.122 14.979c13.037 1.899 24.084 11.211 28.146 23.733 4.14 12.72.765 26.417-8.813 35.745"
           />
           <path
@@ -72,11 +57,6 @@ export function StarsSVG({ className, qtty }: StarsSVGProps) {
       ))}
     </div>
 
-
   )
-
-  return
-
-
 
 }

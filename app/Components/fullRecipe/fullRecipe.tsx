@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { StarsSVG } from "../../SVG/StarsSVG"
+import { StarsSVG } from "../../SVG/Stars/StarsSVG"
 import styles from "./fullRecipe.module.css"
 import { FullRecipeProps, PageCatgry } from "../../data/types"
 import { ClockSVG } from "../../SVG/ClockSVG"
@@ -25,10 +25,8 @@ export async function FullRecipe({category,page}: FullRecipeProps) {
 
 
                         <div className={`${styles.recipesCont_recipe_aditionalInfo}`}>
-                            <div
-                                className={`${styles.recipesCont_recipe_aditionalInfo_starsCont}`}>
-                                <StarsSVG className={`${styles.recipesCont_recipe_aditionalInfo_starsCont_star}`} qtty={elmnt.stars} />
-                            </div>
+                            
+                            <StarsSVG className={`${styles.recipesCont_recipe_aditionalInfo_starsCont_star}`} qtty={elmnt.stars} />
 
                             <ClockSVG className={`${styles.recipesCont_recipe_aditionalInfo_clock}`} />
                             <p>{`${elmnt.minutesOfPreparation} min`}</p>

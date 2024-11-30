@@ -93,3 +93,26 @@ export interface StarsSVGProps {
     qtty: number
     className?: string
 }
+
+
+export interface DefaultColorProps{
+    idx: number
+    qtty: number
+}
+
+export interface ResetColorsProps{
+    setColor:  Dispatch<SetStateAction<any[]>>
+    isRated: MutableRefObject<boolean>
+}
+
+export interface OverwriteColorProps{
+    idx: number
+    color: string[]
+}
+
+export interface ColorStarProps{
+    idx: number
+    setColor:  Dispatch<SetStateAction<any[]>>
+    isRated: MutableRefObject<boolean>
+    color: string[]
+}
