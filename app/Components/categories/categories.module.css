@@ -16,14 +16,25 @@
     color: white;
 }
 
+.categoriesSctn_categoriesCont_img{
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+}
+
+
+
 .categoriesSctn_categoriesCont_category{
     padding: .7rem;
     border-radius: 5rem 5rem 0 0;
+    position: relative;
 }
 
 .categoriesSctn_categoriesCont_category--selected{
     background-color: var(--globalDarkPink);
     padding: .7rem;
+    position: relative;
     border-radius: 5rem 5rem 0 0;
 }
 
@@ -33,10 +44,14 @@
     padding: .5rem;
 }
 
-.categoriesSctn_categoriesCont_img{
-    border-radius: 50%;
-    width: 6rem;
-    height: 6rem;
-    object-fit: cover;
+.categoriesSctn_categoriesCont_category_title_input{
+    position: absolute;
+    width: 7rem;
+    height: 9rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    cursor: pointer;
 }
 

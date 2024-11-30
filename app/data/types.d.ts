@@ -74,3 +74,22 @@ export interface PaginationBtnsProps{
     selectedBtnClassName: string
 
 }
+
+export interface ToggleMenuProps{
+    e: MouseEvent
+    menuIcon: RefObject<HTMLElement>
+}
+
+
+export interface CreateUrlProps{
+    paramsAndValueObj: Record<string, string | number>
+    searchParams: ReadonlyURLSearchParams
+    pathName: string
+    replace?: (href: string, options?: NavigateOptions) => void
+    hash?: string
+}
+
+export interface StarsSVGProps {
+    qtty: number
+    className?: string
+}
