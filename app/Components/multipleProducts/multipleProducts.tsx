@@ -4,10 +4,12 @@ import { RecipeSteps } from "@/app/Components/recipeSteps/recipeSteps"
 import { fetchData } from "@/app/utils/fetchData/fetchData"
 import { popularCatgrsURL } from "@/app/data/consts"
 import { RecipeElmnt } from "@/app/data/types"
+import { useState } from "react"
 
 export async function MultipleProducts() {
 
     const recipes = await fetchData<RecipeElmnt[]>(popularCatgrsURL)
+    // const [showMenu, setShowMenu] = useState(false)
 
 
     return (

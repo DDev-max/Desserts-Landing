@@ -4,28 +4,31 @@ import Image from "next/image";
 import Link from "next/link";
 import { MenuSVG } from "../../SVG/MenuSVG";
 import styles from "./header.module.css"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { createUrl } from "@/app/utils/createUrl/createUrl";
 
+
 export function Header() {
 
-  const menuIcon =  useRef<HTMLElement>(null)
+  const menuIconRef =  useRef<HTMLElement>(null)
   const pathName = usePathname()
   const searchParams =  useSearchParams()
 
+  const [menuVisible, setMenuVisible] = useState(false)
 
-  //CAMBIARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+ 
+  
   useEffect(()=>{
 
     function toggleMenu(e: MouseEvent) {
 
-      if (menuIcon.current?.contains(e.target as Node)) {
-        menuIcon.current.nextElementSibling?.classList.add(`${styles.menuVisible}`)
+      if (menuIconRef.current?.contains(e.target as Node)) {
+        setMenuVisible(true)
         
        } else{
-        menuIcon.current?.nextElementSibling?.classList.remove(`${styles.menuVisible}`)
-   
+        setMenuVisible(false)
+
        }
        
     }
@@ -35,6 +38,7 @@ export function Header() {
     return ()=> {document.removeEventListener("click",toggleMenu)}
 
   },[])
+  
 
     return (
         <header className={`${styles.header}`}>
@@ -43,9 +47,11 @@ export function Header() {
             <Image width={90} height={65} src="/pageLogo.png" alt=""/>
           </Link>
 
-          <MenuSVG ref={menuIcon} className={`${styles.header_menuSVG}`}/>
 
-          <nav  className={`${styles.header_nav}`}>
+          
+          <MenuSVG ref={menuIconRef} className={`${styles.header_menuSVG}`}/>
+
+          <nav className={`${styles.header_nav} ${menuVisible ? styles["header_nav--visible"] : ""}`}>
             
             <ul className={`${styles.header_nav_menu}`} >
 
