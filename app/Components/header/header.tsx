@@ -11,6 +11,7 @@ import { createUrl } from "@/app/utils/createUrl/createUrl";
 
 export function Header() {
 
+  //CAMBIAR LINK DE 'Types' (es un link vacio y no deberia, ver ul li)
   const menuIconRef =  useRef<HTMLElement>(null)
   const pathName = usePathname()
   const searchParams =  useSearchParams()

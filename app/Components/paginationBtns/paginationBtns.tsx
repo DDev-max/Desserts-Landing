@@ -17,8 +17,14 @@ export function PaginationBtns({buttonsQtty,classNameBtn,classNameCont,currentPa
     return (
         <div className={classNameCont}>
             {emptyArray.map((elmnt, idx) => (
-                <Link className={`${classNameBtn} ${currentPage== elmnt ? selectedBtnClassName : ""}`} key={idx} href={createUrl({paramsAndValueObj: {page: idx + 1}, pathName,searchParams })}>
+                <Link 
+                className={`${classNameBtn} ${currentPage== elmnt ? selectedBtnClassName : ""}`} 
+                key={idx} 
+                href={createUrl({paramsAndValueObj: {page: idx + 1}, pathName,searchParams })}
+                >
+
                     {elmnt}
+
                 </Link>
             ))}
 

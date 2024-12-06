@@ -41,6 +41,13 @@
     padding: 1rem;
 }
 
+.section_grid_elmnt_recipeCont_bg--visible{
+    display: block;
+    background: var(--globalLightPink);
+    position: absolute;
+    z-index: 1;
+    padding: 1rem;
+}
 
 .section_grid_elmnt_recipeCont_bg_ol{
     background: var(--globalDarkPink);

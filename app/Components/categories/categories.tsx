@@ -6,18 +6,20 @@ import {  RecipesCategoriesAPI } from "../../data/types";
 import { fetchData } from "@/app/utils/fetchData/fetchData";
 import { categoriesUrl } from "@/app/data/consts";
 import { useEffect, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { createUrl } from "@/app/utils/createUrl/createUrl";
+// import { noentiendoniverga } from "./noentiendoniverga";
 
 
 export function Categories() {
 
     const searchParams= useSearchParams()
-    const {replace}= useRouter()
+    const router = useRouter()
     const pathName = usePathname()
 
     const currentCategory = searchParams.get("category") || "cookies"
+
+
 
     const [categories, setCategories] = useState<RecipesCategoriesAPI[]>()
 
@@ -30,6 +32,9 @@ export function Categories() {
             const data =  await fetchData<RecipesCategoriesAPI[]>(categoriesUrl)
 
             setCategories(data)
+
+            console.log(data);
+            
         }
 
 
@@ -68,7 +73,16 @@ export function Categories() {
 
                             <input 
                             className={`${styles.categoriesSctn_categoriesCont_category_title_input}`}
-                            checked={elmnt.id == currentCategory} value={`${elmnt.id}`} onChange={(e)=> createUrl({paramsAndValueObj:{category: e.target.value, page: 1} , pathName, replace,searchParams})} type="radio" name="categories" />
+
+                            checked={elmnt.id == currentCategory} 
+                            
+                            value={`${elmnt.id}`} 
+
+                            onChange={(e)=> createUrl({paramsAndValueObj:{category: e.target.value, page: 1} , pathName,router,searchParams})} 
+                            
+                            type="radio" 
+                            
+                            name="categories" />
 
                         </label>
 
@@ -83,7 +97,6 @@ export function Categories() {
 
     )
 }
-
 
 
 

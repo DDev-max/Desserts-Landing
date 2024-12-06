@@ -1,3 +1,5 @@
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+
 export interface AllCategories {
     cookies:   RecipeElmnt[];
     iceCreams: RecipeElmnt[];
@@ -35,12 +37,12 @@ export interface PageCatgry {
     data: RecipeElmnt[]
   }
 
-export enum Categories {
-    Cookies = "Cookies",
-    Fried = "fried",
-    Fruits = "fruits",
-    IceCreams = "Ice Creams",
-}
+// export enum Categories {
+//     Cookies = "Cookies",
+//     Fried = "fried",
+//     Fruits = "fruits",
+//     IceCreams = "Ice Creams",
+// }
 
 export interface Popular {
     id:                   number;
@@ -85,7 +87,7 @@ export interface CreateUrlProps{
     paramsAndValueObj: Record<string, string | number>
     searchParams: ReadonlyURLSearchParams
     pathName: string
-    replace?: (href: string, options?: NavigateOptions) => void
+    router?: AppRouterInstance
     hash?: string
 }
 

@@ -1,6 +1,6 @@
 import { render, screen,  } from '@testing-library/react'
-import { RecipeSteps } from './recipeSteps'
 import '@testing-library/jest-dom'
+import { RecipeSteps } from './recipeSteps'
 
 
 it('renders list items from a string', () => {
