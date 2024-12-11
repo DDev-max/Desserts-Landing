@@ -63,30 +63,3 @@ it("should change url when category input changes", async () => {
 
 })
 
-// it("should change the current input checked if the url changes",async ()=>{
-//   const categoriesMock = [
-//     {
-//       name: "Cookies",
-//       id: "cookies",
-//       imgLink: "https://plus.unsplash.com/premium_photo-1670895802184-176bbb53a2f7?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-//     },
-//     {
-//       name: "Ice Creams",
-//       id: "iceCreams",
-//       imgLink: "https://images.unsplash.com/photo-1597249536924-b226b1a1259d?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-//     },
-//   ];
-
-//   (fetchData as jest.Mock).mockReturnValueOnce(categoriesMock)
-
-//   render(<Categories/>)
-//   window.history.pushState({},"", "/?category=iceCreams")
-
-//   const input = await screen.findByDisplayValue("iceCreams")
-
-//   console.log("pathName es: ",window.location.pathname);
-  
-//   expect(input).toBeChecked()
-
-// })
-
