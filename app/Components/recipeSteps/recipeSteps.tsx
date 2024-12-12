@@ -5,6 +5,7 @@ export interface RecipeStepsProps{
 }
 
 export function RecipeSteps({recipeParagraph,liClassName,olClassName}: RecipeStepsProps) {
+    
     const steps = recipeParagraph.match(/[^.]+[.]/g)
 
 

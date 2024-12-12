@@ -17,9 +17,12 @@ export function MultipleProducts() {
 
     useEffect( ()=>  {
 
+
+        // SE PUEDE HACER MAS DIRECTA O SEPARAR? LA ESTOY USANDO EN DISTINTAS PARTES
         async function getFetchData() {
             const multipleRecipes = await fetchData<RecipeElmnt[]>(popularCatgrsURL)
 
+            
             setRecipes(multipleRecipes)
         }
 
@@ -30,11 +33,27 @@ export function MultipleProducts() {
 
 
     function toggleShowMenu(idx: number) {
-        const copy = [...showMenu]
-        copy[idx] = !copy[idx]
+
+        if (showMenu[idx]) {
+            const hayLago= [...showMenu]
+
+            hayLago[idx] = !hayLago[idx]
+
+            setShowMenu(hayLago)
+            console.log(hayLago);
+            
+            return
+        }
+
+        const copy: boolean[] = []
+
+        copy[idx] = true
+
+        console.log(copy);
 
         setShowMenu(copy)
     }
+
 
 
     return (
@@ -42,17 +61,29 @@ export function MultipleProducts() {
             <h2 className={`${styles.section_h2}`}>The favorites you can&apos;t miss!</h2>
             <div className={`${styles.section_grid}`} >
                 {recipes?.map((elmnt, idx)=>(
-                    <article className={`${styles.section_grid_elmnt}`} key={elmnt.id}>
+
+                    <article 
+                    style={
+                        showMenu[idx] || !showMenu.some(elmnt=> elmnt == true)
+                        ? {opacity: 1}
+                        : {opacity: .5}
+
+
+                    }
+
+                    className={`${styles.section_grid_elmnt}`} key={elmnt.id}>
+
                         <Image  className={`${styles.section_grid_elmnt_img}`} src={elmnt.image} alt={elmnt.dish} width={250} height={170}/>
 
                         <div  className={`${styles.section_grid_elmnt_recipeCont}`}>
-                            <div onClick={()=>{toggleShowMenu(idx)}}>
-                                <h3  className={`${styles.section_grid_elmnt_recipeCont_title}`}>
+                            <div>
+
+                                <button aria-controls={`recipe${idx}`} aria-expanded={showMenu[idx] || false} onClick={()=>{toggleShowMenu(idx)}}  className={`${styles.section_grid_elmnt_recipeCont_title}`}>
                                     {`${elmnt.dish}${showMenu[idx]? "▲": "▼" }`}
 
-                                </h3>
+                                </button>
 
-                                <div className={`${showMenu[idx] ? styles["section_grid_elmnt_recipeCont_bg--visible"] : styles.section_grid_elmnt_recipeCont_bg}`}>
+                                <div id={`recipe${idx}`}  className={`${showMenu[idx] ? styles["section_grid_elmnt_recipeCont_bg--visible"] : styles.section_grid_elmnt_recipeCont_bg}`}>
 
                                     <RecipeSteps 
                                     olClassName={`${styles.section_grid_elmnt_recipeCont_bg_ol}`}
@@ -63,8 +94,11 @@ export function MultipleProducts() {
                             </div>
 
                         </div>
+                        
                     </article>
                 ))}
+
+
             </div>
         </section>
     )

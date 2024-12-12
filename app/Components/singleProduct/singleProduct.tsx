@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./singleProduct.module.css";
-export function SingleProduct() {
 
+export function SingleProduct() {
 
     return (
         <section id="new" className={`${styles.section}`}>
@@ -23,7 +23,8 @@ export function SingleProduct() {
                         
                         <li>Mix in dry ingredients and milk alternately.</li>
                         
-                        <li>Fill liners ⅔ full; bake 18–22 minutes.</li>
+                        <li>Fill liners ⅔ full; bake 18 &ndash;
+                        22 minutes.</li>
                         
                         <li>Cool, then enjoy!</li>
 

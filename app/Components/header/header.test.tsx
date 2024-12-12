@@ -16,3 +16,4 @@ it("shows navigation menu when icon is clicked", async () => {
 
     expect(menuIcon).toHaveAttribute("aria-expanded", "true")
 })
+

@@ -33,7 +33,7 @@ export function Header() {
       <button aria-label="Navigation menu" aria-expanded={menuVisible} aria-controls="navMenu" onClick={()=> setMenuVisible(!menuVisible)}>
 
         {menuVisible
-          ? <span className={`${styles.closedMenu}`}></span>
+          ? <span className={`${styles.header_closedMenu}`}></span>
 
           : <MenuSVG ref={menuIconRef} className={`${styles.header_menuSVG}`} />
         }

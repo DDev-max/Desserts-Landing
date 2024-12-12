@@ -14,8 +14,8 @@ export function createUrl({paramsAndValueObj,pathName,router,searchParams,hash}:
 
    if (hash) {
     return `${pathName}?${params.toString()}#${hash}`
-   }
-
+   }c
+   
     return `${pathName}?${params.toString()}`
 }
 

@@ -5,7 +5,6 @@ import Link from "next/link"
 import { usePathname, useSearchParams } from "next/navigation"
 
 
-
 export function PaginationBtns({buttonsQtty,classNameBtn,classNameCont,currentPage,selectedBtnClassName}: PaginationBtnsProps) {
 
     const pathName = usePathname()

@@ -12,6 +12,12 @@
 
 .section_grid_elmnt{
     background-color: var(--globalLightPink);
+    opacity: 1;
+}
+
+.section_grid_elmnt--unselect{
+    background-color: var(--globalLightPink);
+    opacity: .5;
 }
 
 .section_grid_elmnt_img{
@@ -27,26 +33,35 @@
 .section_grid_elmnt_recipeCont_title{
     text-align: center;
     font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: bold;
     background-color: var(--globalDarkPink);
-    padding: 1rem;
-    margin: 1rem;
+    color: white;
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
     border-radius: 2rem;
+    display: block;
+    cursor: pointer;
 }
 
-.section_grid_elmnt_recipeCont_bg{
-    display: none;/*  <=== cambiar a ese*/
+
+.section_grid_elmnt_recipeCont_bg,
+.section_grid_elmnt_recipeCont_bg--visible{
     background: var(--globalLightPink);
     position: absolute;
     z-index: 1;
     padding: 1rem;
+/* 
+    box-shadow: 1rem 3rem 2rem 2rem rgba(43, 5, 51, 0.411); */
+}
+
+.section_grid_elmnt_recipeCont_bg{
+    display: none;
 }
 
 .section_grid_elmnt_recipeCont_bg--visible{
     display: block;
-    background: var(--globalLightPink);
-    position: absolute;
-    z-index: 1;
-    padding: 1rem;
+
 }
 
 .section_grid_elmnt_recipeCont_bg_ol{

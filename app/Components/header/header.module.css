@@ -110,7 +110,7 @@
 }
 
 
-.closedMenu {
+.header_closedMenu{
     width: 3rem;
     height: 3rem;
     display: block;
@@ -119,21 +119,21 @@
     margin-right: .4rem;
 }
 
-.closedMenu::after, 
-.closedMenu::before{
+.header_closedMenu::after, 
+.header_closedMenu::before{
     content: '';
     position: absolute;
     background-color: var(--darkPink3);
 }
 
-.closedMenu::after {
+.header_closedMenu::after {
     left: 50%;
     width: 13%;
     height: 100%;
     transform: translateX(-50%);
 }
 
-.closedMenu::before {
+.header_closedMenu::before {
     top: 50%;
     transform: translate(-50%, -50%);
     height: 13%;

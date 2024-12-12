@@ -6,7 +6,10 @@ import { fetchData } from "../../utils/fetchData/fetchData";
 import { createUrl } from "../../utils/createUrl/createUrl";
 
 
+//LIMPIAR LOS MOCKKKKKKKKKKKKKKKKKKKKSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
 
+
+//HACER GLOBALES
 jest.mock('next/navigation', () => {
   return {
     __esModule: true,
