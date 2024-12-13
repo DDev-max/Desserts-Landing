@@ -6,26 +6,7 @@ import { fetchData } from "../../utils/fetchData/fetchData";
 import { createUrl } from "../../utils/createUrl/createUrl";
 
 
-//LIMPIAR LOS MOCKKKKKKKKKKKKKKKKKKKKSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-
-
-//HACER GLOBALES
-jest.mock('next/navigation', () => {
-  return {
-    __esModule: true,
-    usePathname: () => ({
-      pathname: '',
-    }),
-    useRouter: () => ({
-      push: jest.fn(),
-      replace: jest.fn()
-    }),
-    useSearchParams: () => ({
-      get: () => { },
-      set: () => { }
-    })
-  }
-})
+//TESTEAR QUE CAMBIA EL CURRENT INPUT ACCESIBLE
 
 jest.mock("../../utils/fetchData/fetchData")
 
@@ -56,6 +37,8 @@ it("should change url when category input changes", async () => {
   const input = await screen.findByText("Ice Creams")
 
   await user.click(input)
+
+  expect(fetchData).toHaveBeenCalledTimes(1)
 
   expect(createUrl).toHaveBeenCalledWith(expect.objectContaining({
     paramsAndValueObj: expect.objectContaining({

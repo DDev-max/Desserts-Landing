@@ -6,7 +6,7 @@ import { fetchData } from '../../utils/fetchData/fetchData'
 
 jest.mock('../../utils/fetchData/fetchData')
 
-it("shows recipe when clicking on the title", async ()=>{
+it("shows recipe when clicking on title", async ()=>{
     const recipeMock = [
         {
         "id": "2",
@@ -30,6 +30,7 @@ it("shows recipe when clicking on the title", async ()=>{
     await user.click(recipeTitle)
 
     expect(recipeTitle).toHaveAttribute("aria-expanded", "true")
+    expect(fetchData).toHaveBeenCalledTimes(1)
 
 
 })

@@ -5,13 +5,12 @@ export async function fetchData<T>(URL: string){
 
     try {
         const response = await fetch(URL)
-    
+
         if (!response.ok) {        
             throw new Error(`Fetch error: ${response.status}, ${response.statusText}`);
           }
 
           const format: T = await response.json()
-          
           
           
         return format
@@ -24,10 +23,12 @@ export async function fetchData<T>(URL: string){
                 throw new ServerNotLaunched("Json server is not launched")
             } else{
                 console.error(`Fetch error: ${error.name}`)
+                throw error;
             }
             
         } else{
-            console.error("Unexpected error")
+             console.error("Unexpected error")
+             throw error;
         }
 
         

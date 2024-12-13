@@ -33,7 +33,6 @@ export function Categories() {
 
             setCategories(data)
 
-            console.log(data);
             
         }
 

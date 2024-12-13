@@ -13,6 +13,7 @@ export function Header() {
 
   //CAMBIAR LINK DE 'Types' (es un link vacio y no deberia, ver ul li)
   //HACER QUE NO SE PUEDA HACER SCCROLL CON MENU ACTIVO 
+  //OCULTAR DESPUES DE HACER CLICK EN LOS LINK DEL HAMBURGUER MENU
   const menuIconRef = useRef<HTMLElement>(null)
   const pathName = usePathname()
   const searchParams = useSearchParams()
