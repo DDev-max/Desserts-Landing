@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MenuSVG } from "../../SVG/MenuSVG";
 import styles from "./header.module.css"
-import { useRef, useState } from "react";
+import {useEffect, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { createUrl } from "@/app/utils/createUrl/createUrl";
 
@@ -12,39 +12,58 @@ import { createUrl } from "@/app/utils/createUrl/createUrl";
 export function Header() {
 
   //CAMBIAR LINK DE 'Types' (es un link vacio y no deberia, ver ul li)
-  //HACER QUE NO SE PUEDA HACER SCCROLL CON MENU ACTIVO 
-  //OCULTAR DESPUES DE HACER CLICK EN LOS LINK DEL HAMBURGUER MENU
-  const menuIconRef = useRef<HTMLElement>(null)
+
+  //PONER EL SKELETON Y LAS WEBADAS DE NEXT JS PARA QUE CARGUE BIEN
+
   const pathName = usePathname()
   const searchParams = useSearchParams()
 
+  const headerRef = useRef<HTMLElement>(null)
+  const btnMenuRef = useRef<HTMLButtonElement>(null)
   const [menuVisible, setMenuVisible] = useState(false)
 
 
+  useEffect(()=>{
 
+    function hideMenu(e:KeyboardEvent) {
+      if (e.key === "Escape" && !menuVisible) {
+        setMenuVisible(false)
+      }
+    }
+
+    document.addEventListener("keyup", hideMenu)
+
+
+    //VER SI ESTA BIEN
+    return ()=>{
+      document.removeEventListener("keyup", hideMenu)
+
+    }
+  }, [menuVisible])
+
+  
   return (
-    <header className={`${styles.header}`}>
+    <header ref={headerRef} className={`${styles.header} ${menuVisible? styles["header--fixed"]: ""}`}>
 
       <Link className={`${styles.header_logo_link}`} href={"/"}>
         <Image width={90} height={65} src="/pageLogo.png" alt="" />
       </Link>
 
 
+      <button className={`${styles.header_btn}`} ref={btnMenuRef} aria-label="Navigation menu" aria-expanded={menuVisible} aria-controls="navMenu"  onClick={()=>{setMenuVisible(!menuVisible)} }>
 
-      <button aria-label="Navigation menu" aria-expanded={menuVisible} aria-controls="navMenu" onClick={()=> setMenuVisible(!menuVisible)}>
-
-        {menuVisible
+        {
+        menuVisible
           ? <span className={`${styles.header_closedMenu}`}></span>
 
-          : <MenuSVG ref={menuIconRef} className={`${styles.header_menuSVG}`} />
+          : <MenuSVG className={`${styles.header_menuSVG}`} />
         }
 
       </button>
 
-
       <nav id="navMenu" className={`${styles.header_nav} ${menuVisible ? styles["header_nav--visible"] : ""}`}>
 
-        <ul className={`${styles.header_nav_menu}`} >
+        <ul onClick={()=>setMenuVisible(false)} className={`${styles.header_nav_menu}`} >
 
           <li className={`${styles.header_nav_menu_item}`}>
             <Link href="#popular">Popular</Link>

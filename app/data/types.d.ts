@@ -63,8 +63,7 @@ export interface RecipesCategoriesAPI {
 
 export interface SVGProps{
     className?: string
-    onClick?: ()=> void
-    ref?: RefObject<HTMLElement>
+    // onClick?: ()=> void
 }
 
 

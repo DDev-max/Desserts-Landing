@@ -9,7 +9,7 @@ afterEach(() => {
 
 
 
-describe("returns a url",()=>{
+describe("returns url",()=>{
 
     test("returns link with hash",()=>{
         const paramsAndValueObj = {
@@ -25,6 +25,7 @@ describe("returns a url",()=>{
         expect(newUrl).toBe("/?category=iceCreams&page=1#aboutUs")
 
     })
+
 
     test("returns full link", ()=>{
       const paramsAndValueObj = {
@@ -59,6 +60,7 @@ describe("url changes", ()=>{
     expect(router.push).toHaveBeenCalledWith("/?category=iceCreams&page=1",{scroll: false})
   })
 
+
   test("should not call router.push if router is not provided", ()=>{
     const paramsAndValueObj = {
       category: "iceCreams",
@@ -73,5 +75,6 @@ describe("url changes", ()=>{
 
     expect(router.push).not.toHaveBeenCalled()
   })
+  
   
 })
