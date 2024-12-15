@@ -1,3 +1,4 @@
+export const baseUrl = "http://localhost:3000"
 export const categoriesUrl= "http://localhost:3001/categories"
 export const popularCatgrsURL = "http://localhost:3001/popular"
 

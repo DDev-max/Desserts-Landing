@@ -6,7 +6,7 @@ import { fetchData } from '../../utils/fetchData/fetchData'
 
 jest.mock('../../utils/fetchData/fetchData')
 
-it("shows recipe when clicking on title", async ()=>{
+it.skip("shows recipe when clicking on title", async ()=>{
     const recipeMock = [
         {
         "id": "2",

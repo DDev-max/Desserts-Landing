@@ -6,35 +6,41 @@ import { MultipleProducts } from "./Components/multipleProducts/multipleProducts
 import { Categories } from "./Components/categories/categories";
 import { FullRecipe } from "./Components/fullRecipe/fullRecipe";
 import { PageProps } from "@/.next/types/app/layout";
+import { generateJsonLd } from "./utils/generaJsonLd/generateJsonLd";
 
 export default async function Page(props: PageProps) {
-
 
     const searchParams = await props.searchParams;
     const category = searchParams?.category || 'cookies';
     const currentPage = searchParams?.page || "1";
 
+    const jsonSeo =  await generateJsonLd({category,page: currentPage})
+
     return (
-        <main>
-            <div className={`${styles.welcomeCont}`}>
-                <h1 className={`${styles.welcomeCont_txt}`}>Welcome to your happy place!</h1>
 
-                <Image className={`${styles.welcomeCont_img}`} width={450} height={350}
-                    src={"/welcomeImg.png"}
-                    alt="Decorative image of desserts."
-                />
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{__html: jsonSeo}}/>
 
-            </div>
+            <main>
+                <div className={`${styles.welcomeCont}`}>
+                    <h1 className={`${styles.welcomeCont_txt}`}>Welcome to your happy place!</h1>
 
-            <Categories />
+                    <Image className={`${styles.welcomeCont_img}`} width={450} height={350}
+                        src={"/welcomeImg.png"}
+                        alt="Decorative image of desserts."
+                    />
+                </div>
 
-            <FullRecipe category={category} page={currentPage} />
+                <Categories />
 
-            <SingleProduct />
+                <FullRecipe category={category} page={currentPage} />
 
-            <MultipleProducts />
+                <SingleProduct />
+
+                <MultipleProducts />
 
 
-        </main>
+            </main>
+        </>
     )
 }

@@ -19,7 +19,7 @@ export async function FullRecipe({category,page}: FullRecipeProps) {
             {recipes?.data.map(elmnt => {
 
                 return (
-                    <article className={`${styles.recipesCont_recipe}`} key={elmnt.id}>
+                    <article className={`${styles.recipesCont_recipe}`} id={elmnt.id} key={elmnt.id}>
 
                         <Image className={`${styles.recipesCont_recipe_img}`} alt={elmnt.dish} src={elmnt.image} width={200} height={200} />
 

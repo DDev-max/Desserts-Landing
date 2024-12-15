@@ -20,9 +20,14 @@ export interface FullRecipeProps{
 export interface RecipeElmnt {
     id:                   string;
     dish:                 string;
+    description:          string;
     recipe:               string;
     minutesOfPreparation: number;
+    cookingTimeMinutes:   number;
     stars:                number;
+    recipeYield:          string;
+    keywords:              string;
+    reviewCount:           number;
     image:                string;
     category:             Categories;
 }

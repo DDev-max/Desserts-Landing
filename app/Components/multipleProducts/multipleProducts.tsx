@@ -13,6 +13,7 @@ import Link from "next/link"
 export function MultipleProducts() {
 
     //HACER DE PRODUCTOS PATROCINADOS Y AL HACERLO, PONER EN EL LINK rel="sponsored"
+    //HACER FAQQQ
 
     const [recipes, setRecipes] = useState<RecipeElmnt[]>()
     // const [showMenu, setShowMenu] = useState<boolean[]>([])
