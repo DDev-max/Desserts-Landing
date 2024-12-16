@@ -4,8 +4,8 @@ import Image from "next/image"
 import styles from "./multipleProducts.module.css"
 // import { RecipeSteps } from "@/app/Components/recipeSteps/recipeSteps"
 import { fetchData } from "@/app/utils/fetchData/fetchData"
-import { popularCatgrsURL } from "@/app/data/consts"
-import { RecipeElmnt } from "@/app/data/types"
+import { sponsorsUrl } from "@/app/data/consts"
+import { SponsorApi } from "@/app/data/types"
 import { useEffect, useState } from "react"
 import { LinkSVG } from "@/app/SVG/LinkSVG"
 import Link from "next/link"
@@ -15,7 +15,7 @@ export function MultipleProducts() {
     //HACER DE PRODUCTOS PATROCINADOS Y AL HACERLO, PONER EN EL LINK rel="sponsored"
     //HACER FAQQQ
 
-    const [recipes, setRecipes] = useState<RecipeElmnt[]>()
+    const [recipes, setRecipes] = useState<SponsorApi[]>()
     // const [showMenu, setShowMenu] = useState<boolean[]>([])
 
 
@@ -25,7 +25,7 @@ export function MultipleProducts() {
 
         // SE PUEDE HACER MAS DIRECTA O SEPARAR? LA ESTOY USANDO EN DISTINTAS PARTES
         async function getFetchData() {
-            const multipleRecipes = await fetchData<RecipeElmnt[]>(popularCatgrsURL)
+            const multipleRecipes = await fetchData<SponsorApi[]>(sponsorsUrl)
 
 
             setRecipes(multipleRecipes)
@@ -67,7 +67,7 @@ export function MultipleProducts() {
             <div className={`${styles.section_grid}`} >
                 {recipes?.map((elmnt) => (
 
-                    <Link href={"/"}
+                    <Link rel="sponsored" href={elmnt.url}
 
                         className={`${styles.section_grid_elmnt}`} key={elmnt.id}>
 

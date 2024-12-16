@@ -9,6 +9,7 @@
 }
 
 .section_recipe{
+    color: white;
     display: flex;
     flex-wrap: wrap;
     background-color: var(--globalDarkPink);

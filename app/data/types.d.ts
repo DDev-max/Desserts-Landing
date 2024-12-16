@@ -30,6 +30,16 @@ export interface RecipeElmnt {
     reviewCount:           number;
     image:                string;
     category:             Categories;
+    calories:              string;
+    cuisine:                string;
+    ingredients:             string[];
+}
+
+export interface SponsorApi{
+    id:    number;
+    dish:  string;
+    image: string;
+    url:   string;
 }
 
 export interface PageCatgry {
@@ -65,6 +75,14 @@ export interface RecipesCategoriesAPI {
     id: string
     imgLink: string;
 }
+
+
+export interface FaqAPI {
+    id: string;
+    question: string;
+    answer:   string;
+}
+
 
 export interface SVGProps{
     className?: string
@@ -122,3 +140,7 @@ export interface ColorStarProps{
     isRated: MutableRefObject<boolean>
     color: string[]
 }
+
+
+//MIRAR EL EXPORT DE CALORIES
+o
