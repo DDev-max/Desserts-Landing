@@ -1,4 +1,3 @@
-
 .welcomeCont{
     background-color:#fef1de; /*fef1de*/
     display: flex;
@@ -30,15 +29,49 @@
     line-height: 5rem;
     /* position: absolute;
     top: 20%; */
+    
 }
 
 
-@media (width > 1050px) {
+.fullCateogriesCont{
+    margin: 0 auto;
+    /* width: clamp(20rem, 100% ,76rem); */
+}
+
+
+
+/* @media (width > 1050px) {
     .welcomeCont_img{
         object-position: 0;
     }
 
     .welcomeCont_txt{
         margin-left: clamp(1rem,7vw,6rem);
+    }
+} */
+
+.mainPadding{
+    width: clamp(15rem,100%,88rem); /*82 REM*/
+    margin: 0 auto;
+}
+
+@media (width >= 1000px) {
+    .mainPadding{
+        box-sizing: border-box;
+        padding: 0 2rem;
+    }
+
+    .welcomeCont_img{
+        object-position: 0;
+    }
+
+    .welcomeCont_txt{
+        margin-left: clamp(1rem,7vw,6rem);
+    }
+}
+
+@media (width <550px) {
+    .welcomeCont_txt{
+        line-height: 4rem;
     }
 }

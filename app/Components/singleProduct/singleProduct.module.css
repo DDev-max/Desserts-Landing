@@ -1,18 +1,20 @@
 .section{
-    padding: 1rem;
+    margin: 5rem 0;
 }
 
-.section>h2{
+
+.section_h2{
     text-align: center;
     margin: 1rem;
     font-size: var(--h2FontSize);
 }
 
 .section_recipe{
-    color: white;
+    color: var(--lightTxtColor);
     display: flex;
     flex-wrap: wrap;
     background-color: var(--globalDarkPink);
+    position: relative;
 }
 
 .section_recipe_img{
@@ -23,15 +25,68 @@
 .section_recipe_info{
     display: flex;
     flex-direction: column;
-    padding: 1rem 2rem;
+    padding: 1rem;
     font-size: var(--txtContentFntSize);
+    background-color: var(--globalDarkPink);
 }
 
 .section_recipe_info_title{
     font-size: var(--subTitlesFntSize);
-    color: white;
+    color: var(--lightTxtColor);
     margin: .5rem auto;
     background-color: var(--globalDarkestPink);
     padding: .8rem 2rem;
     border-radius: 1.5rem;
 }
+
+.section_recipe_info_steps{
+    background-color: var(--globalLightPink);
+    color: var(--darkTxtColor);
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+@media (width >= 700px) {
+    .section_recipe_img{
+        width: 40vw;
+        object-fit: cover;
+    }
+
+
+    .section_recipe{
+        background: transparent;
+        flex-wrap: nowrap;
+    }
+}
+
+
+
+@media (width >= 1140px) {
+    .section_recipe_info{
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 1rem;
+    }
+
+    .section_recipe_img{
+        width: clamp(25rem, 50vw,45rem); 
+    }
+
+    .section_recipe{
+        background-color: transparent;
+        padding: 0 2rem;
+    }
+
+    .section_recipe_info_title{
+        margin: 0 auto 1rem auto;
+    }
+
+    .section_h2{
+        margin: 2.5rem 1rem 2rem 1rem;
+    }
+
+}
+
+

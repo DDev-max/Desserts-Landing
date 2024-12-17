@@ -1,13 +1,14 @@
 .section_h2{
     font-size: var(--h2FontSize);
     text-align: center;
+    margin: 2rem;
 }
 
 .section_grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-    color: white;
+    color: var(--lightTxtColor);
 }
 
 .section_grid_elmnt{
@@ -33,7 +34,7 @@
     font-family: inherit;
     font-weight: bold;
     background-color: var(--globalDarkPink);
-    color: white;
+    color: var(--lightTxtColor);
     padding: 1rem 0;
     margin: 1rem auto;
     border-radius: 2rem;

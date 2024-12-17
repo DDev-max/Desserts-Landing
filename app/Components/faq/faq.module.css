@@ -6,11 +6,11 @@
 .faqSctn_h2{
     font-size: var(--h2FontSize);
     text-align: center;
-    margin: 1.5rem;
+    margin: 2rem;
 }
 
 .faqSctn_questionCont{
-    color: black;
+    color: var(--darkTxtColor);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -38,5 +38,5 @@
     /* background-color: var(--globalDarkPink); */
     border-radius: 2rem;
     padding: 1rem;
-    color: black;
+    color: var(--darkTxtColor);
 }

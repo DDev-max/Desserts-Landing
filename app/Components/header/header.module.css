@@ -11,21 +11,20 @@
 
     display: flex;
     justify-content: space-between;
-    height: 11.5vh;
+    height: 4.5rem;
 
     position: absolute;/*relative*/
     top: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 1;
+    box-sizing: border-box;
+    padding: 0 1rem;
 }
 
 .header--fixed{
     position: fixed;/*relative*/
 }
 
-.header_btn{
-    margin-right: 1rem;
-}
 
 .header_logo_link {
     display: inline-block;
@@ -34,23 +33,39 @@
 .header_menuSVG {
     display: none;
     width: 3rem;
-    margin-right: .5rem;
     color: var(--darkPink3);
 }
 
 .header_nav * {
     list-style: none;
     text-decoration: none;
-    color: black;
+    color: var(--darkTxtColor);
     text-align: center;
 }
 
 .header_nav{
+    display: none;
+
     display: flex;
     align-items: center;
     margin-right: 1rem;
 
     top: 12.1%;
+}
+
+.header_navBg{
+    position: fixed;
+    background-color:#180044a1;
+    top: 12%;
+    bottom: 0;
+    right: 0;
+    left: 100%;
+    pointer-events: none;
+    transition: all .5s ;
+}
+
+.header_navBg--visible{
+    left: 0;
 }
 
 .header_nav_menu {
@@ -60,13 +75,11 @@
 
 .header_nav_menu a {
     display: block;
-    /**/
 }
 
 .header_nav_menu_item {
     position: relative;
     float: left;
-    /**/
 }
 
 .header_nav_menu_item>a {
@@ -124,7 +137,6 @@
     display: block;
     position: relative;
     rotate: 45deg;
-    margin-right: .4rem;
 }
 
 .header_closedMenu::after, 
@@ -161,10 +173,6 @@
         margin: 0;
         height: 100vh;
         width: 45vw;
-
-        --shadowClr: #180044a1;
-        box-shadow: -16.1rem 0 var(--shadowClr), 
-                    -2.05rem 0 var(--shadowClr);
         transition: all .5s;
     }
 
@@ -185,11 +193,8 @@
         border-bottom: .1rem solid;
     }
 
-    .header_nav_menu_item_subMenu li:last-of-type a {
-        border-radius: 0;
-    }
 
-    .header_nav_menu_item:last-of-type:hover>a:first-of-type {
+    .header_nav_menu_item_subMenu li:last-of-type a {
         border-radius: 0;
     }
 
@@ -202,11 +207,7 @@
 
     }
 
-    /* .menuVisible {
-        right: 0;
-    }
- */
-
+    
 
 
 }

@@ -50,7 +50,7 @@ export function Header() {
       </Link>
 
 
-      <button className={`${styles.header_btn}`} ref={btnMenuRef} aria-label="Navigation menu" aria-expanded={menuVisible} aria-controls="navMenu"  onClick={()=>{setMenuVisible(!menuVisible)} }>
+      <button  ref={btnMenuRef} aria-label="Navigation menu" aria-expanded={menuVisible} aria-controls="navMenu"  onClick={()=>{setMenuVisible(!menuVisible)} }>
 
         {
         menuVisible
@@ -60,6 +60,8 @@ export function Header() {
         }
 
       </button>
+
+      <span  className={`${styles.header_navBg} ${menuVisible ? styles["header_navBg--visible"]: ""}`}></span>
 
       <nav id="navMenu" className={`${styles.header_nav} ${menuVisible ? styles["header_nav--visible"] : ""}`}>
 
@@ -78,7 +80,7 @@ export function Header() {
           </li>
 
           <li className={`${styles.header_nav_menu_item}`} >
-            <Link href="">Types ▼</Link>
+            <Link href={""}>Types ▼</Link>
 
             <ul className={`${styles.header_nav_menu_item_subMenu}`}>
 

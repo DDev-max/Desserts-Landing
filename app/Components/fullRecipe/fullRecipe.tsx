@@ -14,7 +14,15 @@ export async function FullRecipe({category,page}: FullRecipeProps) {
 
 
     return (
-        <div className={`${styles.recipesCont}`}>
+        <div 
+        tabIndex={0} 
+        aria-labelledby={`${category}ID`} 
+        id={`${category}Tab`} 
+        className={
+            `${styles.recipesCont} 
+            ${category=="cookies" ? styles["recipesCont--rightBrdr"] : ""}
+            ${category=="fruits" ? styles["recipesCont--leftBrdr"] : ""}`
+        }>
 
             {recipes?.data.map(elmnt => {
 

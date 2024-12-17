@@ -19,6 +19,7 @@ export default async function Page(props: PageProps) {
     const recipesJsonLd =  await generateJsonLd({url:`http://localhost:3001/${category}?_page=${currentPage}&_per_page=2`, type: "recipeList"})
     const faqJsonLd =  await generateJsonLd({url: faqUrl, type: "faq"})
 
+    
     return (
 
         <>
@@ -35,15 +36,24 @@ export default async function Page(props: PageProps) {
                     />
                 </div>
 
-                <Categories />
+                <div className={`${styles.mainPadding}`}>
 
-                <FullRecipe category={category} page={currentPage} />
+                    <div className={`${styles.fullCateogriesCont}`}>
 
-                <SingleProduct />
+                        <Categories />
 
-                <MultipleProducts />
+                        <FullRecipe category={category} page={currentPage} />
 
-                <Faq/>
+                    </div>
+
+                    <SingleProduct />
+
+                    <MultipleProducts />
+
+                    <Faq/>
+
+                </div>
+                
 
             </main>
         </>

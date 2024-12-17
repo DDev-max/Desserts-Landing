@@ -5,7 +5,7 @@ export function SingleProduct() {
 
     return (
         <section id="new" className={`${styles.section}`}>
-            <h2>Fresh and New!</h2>
+            <h2 className={`${styles.section_h2}`}>Fresh and New!</h2>
 
             <div className={`${styles.section_recipe}`}>
                 <Image  className={`${styles.section_recipe_img}`} src={"/magdalenas.png"} width={450} height={300} alt="Vanilla cupcakes with colorful sprinkles."/>
@@ -13,7 +13,7 @@ export function SingleProduct() {
                 <div className={`${styles.section_recipe_info}`}>
                     <h3 className={`${styles.section_recipe_info_title}`}>Vanilla Cupcakes</h3>
 
-                    <ol>
+                    <ol  className={`${styles.section_recipe_info_steps}`}>
 
                         <li>Preheat oven to 350°F (175°C); line a cupcake tray with 12 liners.</li>
                         
