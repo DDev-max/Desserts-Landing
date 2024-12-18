@@ -30,7 +30,7 @@
     display: inline-block;
 }
 
-.header_menuBtn{
+.header_menuBtn {
     display: none;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .header_nav a {
-    background:var(--lightPink);
+    background: var(--lightPink);
     width: 100%;
     display: block;
     box-sizing: border-box;
@@ -71,15 +71,15 @@
 
 .header_nav_menu_item:hover a,
 .header_nav_menu_item--extended a,
-.header_nav_menu_item a:focus{
+.header_nav_menu_item a:focus {
     background-color: var(--darkPink1);
 }
 
-.header_nav_menu_item{
+.header_nav_menu_item {
     position: relative;
 }
 
-.header_nav_menu_item--extended a{
+.header_nav_menu_item--extended a {
     border-radius: 2rem;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -87,30 +87,30 @@
 }
 
 
-.header_nav_menu_item_subMenu{
+.header_nav_menu_item_subMenu {
     position: absolute;
     display: none;
 }
 
-.header_nav_menu_item_subMenu a{
+.header_nav_menu_item_subMenu a {
     font-size: 85%;
     padding: .5rem .7rem;
 }
 
 .header_nav_menu_item_subMenu--visible>li:hover a,
-.header_nav_menu_item_subMenu--visible a:focus{
+.header_nav_menu_item_subMenu--visible a:focus {
     background-color: var(--darkPink2);
 }
 
-.header_nav_menu_item_subMenu--visible{
+.header_nav_menu_item_subMenu--visible {
     display: block;
 }
 
-.header_nav_menu_item_subMenu--visible a{
+.header_nav_menu_item_subMenu--visible a {
     border-radius: 0;
 }
 
-.header_nav_menu_item_subMenu--visible>li:last-of-type a{
+.header_nav_menu_item_subMenu--visible>li:last-of-type a {
     border-bottom-right-radius: 2rem;
     border-bottom-left-radius: 2rem;
 }
@@ -168,6 +168,7 @@
 @media (width < 600px) {
 
     .header_nav {
+        visibility: hidden;
         overflow: hidden;
         position: fixed;
         z-index: 1;
@@ -181,35 +182,36 @@
 
 
     .header_nav--visible {
+        visibility: visible;
         right: 0;
     }
 
 
     .header_menuSVG,
-    .header_menuBtn{
+    .header_menuBtn {
         display: block;
 
     }
 
-    .header_nav_menu{
+    .header_nav_menu {
         flex-direction: column;
         width: 100%;
         gap: 0;
         margin-bottom: auto;
     }
 
-    .header_nav_menu a{
+    .header_nav_menu a {
         border-radius: 0;
         background: transparent;
         border-bottom: .1rem solid;
     }
 
 
-    .header_nav_menu_item_subMenu{
+    .header_nav_menu_item_subMenu {
         width: 100%;
     }
 
-    .header_nav_menu_item_subMenu>li:last-of-type a{
+    .header_nav_menu_item_subMenu>li:last-of-type a {
         border-radius: 0;
     }
 
