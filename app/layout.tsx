@@ -1,6 +1,7 @@
 import { indieFlower } from "@/app/data/fonts"
 import { Header } from "./Components/header/header"
 import { Footer } from "./Components/footer/footer"
+import Link from "next/link"
 
 export const metadata = {
   title: 'Sweet Bliss',
@@ -13,6 +14,7 @@ export default function RootLayout({children}: { children: React.ReactNode}) {
 
     <html lang="en">
       <body className={`${indieFlower.className}`}>
+        <Link href="#mainContent">Skip to main content</Link>
 
         <Header/>
 

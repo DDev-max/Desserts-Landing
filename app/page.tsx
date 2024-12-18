@@ -26,13 +26,13 @@ export default async function Page(props: PageProps) {
             <script type="application/ld+json" dangerouslySetInnerHTML={{__html: recipesJsonLd}}/>
             <script type="application/ld+json" dangerouslySetInnerHTML={{__html: faqJsonLd}}/>
 
-            <main>
+            <main id="mainContent">
                 <div className={`${styles.welcomeCont}`}>
                     <h1 className={`${styles.welcomeCont_txt}`}>Welcome to your happy place!</h1>
 
                     <Image className={`${styles.welcomeCont_img}`} width={450} height={350}
                         src={"/welcomeImg.png"}
-                        alt="Decorative image of desserts."
+                        alt=""
                     />
                 </div>
 

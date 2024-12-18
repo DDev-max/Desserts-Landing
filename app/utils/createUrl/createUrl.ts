@@ -2,8 +2,7 @@ import { CreateUrlProps } from "@/app/data/types"
 
 export function createUrl({paramsAndValueObj,pathName,router,searchParams,hash}: CreateUrlProps){
 
-    console.log("llamada");
-    
+
 
     const params = new URLSearchParams(searchParams)
 
@@ -18,9 +17,7 @@ export function createUrl({paramsAndValueObj,pathName,router,searchParams,hash}:
    if (hash) {
     return `${pathName}?${params.toString()}#${hash}`
    }
-   
 
-   console.log( `${pathName}?${params.toString()}`);
    
     return `${pathName}?${params.toString()}`
 }

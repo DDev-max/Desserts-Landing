@@ -83,7 +83,7 @@ export async function generateJsonLd({ type, url }: GenerateJsonLdProps) {
             itemListElement: itemsList
         }
 
-        console.log(fullJson);
+
         
 
         return JSON.stringify(fullJson)
@@ -120,7 +120,7 @@ export async function generateJsonLd({ type, url }: GenerateJsonLdProps) {
         }
         
 
-        console.log(faqJsonLd);
+
 
         return JSON.stringify(faqJsonLd)
 

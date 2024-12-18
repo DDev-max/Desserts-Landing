@@ -19,6 +19,18 @@ body{
     color: var(--darkTxtColor);
 }
 
+body>a{
+    color: black;
+    z-index: 1;
+    position: absolute;
+    left: -100%;
+}
+
+body>a:focus{
+    background-color: red;
+    left: 0;
+}
+
 main{
     margin-top: 4.6rem;
 }
