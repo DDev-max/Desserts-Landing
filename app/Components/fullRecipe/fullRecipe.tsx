@@ -37,6 +37,7 @@ export async function FullRecipe({category,page}: FullRecipeProps) {
                             <StarsSVG className={`${styles.recipesCont_recipe_aditionalInfo_starsCont_star}`} qtty={elmnt.stars} />
 
                             <ClockSVG className={`${styles.recipesCont_recipe_aditionalInfo_clock}`} />
+                            
                             <p>{`${elmnt.minutesOfPreparation} min`}</p>
 
                         </div>
@@ -54,7 +55,13 @@ export async function FullRecipe({category,page}: FullRecipeProps) {
             })}
 
 
-            <PaginationBtns currentPage={Number(page)} selectedBtnClassName={`${styles["recipesCont_btnsCont_btn--selected"]}`} classNameCont={`${styles.recipesCont_btnsCont}`} classNameBtn={`${styles.recipesCont_btnsCont_btn}`} buttonsQtty={recipes?.pages || 0}/>
+            <PaginationBtns 
+            currentPage={Number(page)} 
+            selectedBtnClassName={`${styles["recipesCont_btnsCont_btn--selected"]}`} 
+            classNameCont={`${styles.recipesCont_btnsCont}`} 
+            classNameBtn={`${styles.recipesCont_btnsCont_btn}`} 
+            buttonsQtty={recipes?.pages || 0}
+            />
 
 
         </div>

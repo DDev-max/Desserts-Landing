@@ -18,7 +18,11 @@ export function PaginationBtns({buttonsQtty,classNameBtn,classNameCont,currentPa
             {emptyArray.map((elmnt, idx) => (
                 <Link 
                 className={`${classNameBtn} ${currentPage== elmnt ? selectedBtnClassName : ""}`} 
+                aria-current={currentPage === elmnt}
                 key={idx} 
+                title={`Go to page ${elmnt}`}
+                aria-label={`Go to page ${elmnt}`}
+
                 href={createUrl({paramsAndValueObj: {page: idx + 1}, pathName,searchParams })}
                 >
 

@@ -56,7 +56,7 @@ export function Header() {
 
   return (
     <header 
-    ref={headerRef} className={`${styles.header} ${menuVisible[0] ? styles["header--fixed"] : ""}`}>
+    ref={headerRef} className={`${styles.header} ${menuVisible.some((el)=>el===true) ? styles["header--fixed"] : ""}`}>
 
       <Link title="Go to main page" className={`${styles.header_logo_link}`} href={"/"}>
         <Image width={90} height={65} src="/pageLogo.png" alt="" />
@@ -109,36 +109,37 @@ export function Header() {
 
             }}
             
-            onClick={(e)=> {
-              console.log("click");
+            // onClick={(e)=> {
+            //   console.log("click");
               
-              const copy = [...menuVisible]
-              copy[1] = !copy[1]
-              setMenuVisible(copy)
-              // e.preventDefault()
+            //   const copy = [...menuVisible]
+            //   copy[1] = !copy[1]
+            //   setMenuVisible(copy)
+            //   e.preventDefault()
 
-            }
-            }
+            // }
+            // }
             
+            // onKeyDown={(e) => { if (e.key === "Enter"){
+            //   hideMenu(1); console.log("enterado")
+            //   //to prevent conflicts between 'onClick' and 'onKeyDown' when using screen readers
+            // } else{
+            // console.log("no fue enter")
+            // }
+            
+            //  }} 
 
             className={`${styles.header_nav_menu_item} ${menuVisible[1] ? styles["header_nav_menu_item--extended"] : ""}`}
-
-
-            onKeyDown={(e) => { if (e.key === "Enter"){
-              hideMenu(1); console.log("enterado")
-              //to prevent conflicts between 'onClick' and 'onKeyDown' when using screen readers
-              e.preventDefault()
-            } else{
-            console.log("no fue enter")
-            }
-            
-             }} >
+            >
 
             <Link 
+            onClick={()=>hideMenu(1)
+            }
             aria-controls="subMenu1" aria-expanded={menuVisible[1]}
               href={"#categories"}>Types ▼</Link>
 
-            <ul id="subMenu1"
+            <ul             onClick={()=>hideMenu(1)
+            } id="subMenu1"
               className={`${styles.header_nav_menu_item_subMenu} ${menuVisible[1] ? styles["header_nav_menu_item_subMenu--visible"] : ""}`} >
 
               <li>

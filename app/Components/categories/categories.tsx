@@ -20,7 +20,7 @@ export function Categories() {
     const currentCategory = searchParams.get("category") || "cookies"
 
     const tabsBtnsRef = useRef<HTMLButtonElement[]>([])
-    const [selectedBtn, setSelectedBtn] = useState(0)
+    const [, setSelectedBtn] = useState(0)
 
 
     const [categories, setCategories] = useState<RecipesCategoriesAPI[]>()

@@ -26,6 +26,7 @@ export function StarsSVG({ className, qtty }: StarsSVGProps) {
 
       {emptyStarsArray.map((_, idx) => (
         <svg key={idx}
+        aria-hidden
         onClick={()=>{isRated.current =  !isRated.current}}
           onMouseEnter={() => { colorStar({color, idx,isRated,setColor}) }}
           xmlns="http://www.w3.org/2000/svg"
