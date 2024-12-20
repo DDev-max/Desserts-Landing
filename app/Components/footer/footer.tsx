@@ -75,7 +75,6 @@ export function Footer() {
 
             </div>
 
-            <p  className={`${styles.footer_companyName}`}>Sweet Bliss Bakery</p>
 
         </footer>
     )

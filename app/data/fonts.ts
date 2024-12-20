@@ -1,3 +1,3 @@
-import {Indie_Flower} from "next/font/google"
+import {Sour_Gummy} from "next/font/google"
 
-export const indieFlower = Indie_Flower({weight:["400"], subsets:["latin"]})
+export const fontFamilyTxt = Sour_Gummy({weight:["300"], subsets:["latin"]})

@@ -22,10 +22,29 @@
     border-top-right-radius: 6rem;
     font-family: inherit;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .categoriesSctn_btn--selected{
     background-color: var(--globalDarkPink);
+}
+
+.categoriesSctn_btn--selected--skeleton{
+    background-color: var(--globalDarkPink);
+    height: clamp(7.5rem,20vw,10rem);
+    width: clamp(7.5rem,20vw,12rem);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    composes: skeletonAnimation from global;
+}
+
+
+.categoriesSctn_btn_img--skeleton{
+    background-color: var(--globalDarkPink);
+    height: clamp(7.5rem,20vw,10rem);
+    width: clamp(7.5rem,20vw,10rem);
+    border-radius: 50%;
+    composes: skeletonAnimation from global;
 }
 
 .categoriesSctn_btn_img{
@@ -41,6 +60,6 @@
     border-radius: 1rem;
     padding: .5rem;
     color: var(--lightTxtColor);
-
 }
+
 

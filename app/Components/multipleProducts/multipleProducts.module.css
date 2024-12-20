@@ -1,39 +1,56 @@
-.section_h2{
+.section_h2 {
     font-size: var(--h2FontSize);
     text-align: center;
     margin: 2rem;
 }
 
-.section_grid{
+.section_grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     color: var(--lightTxtColor);
 }
 
-.section_grid_elmnt{
-    background-color: var(--globalLightPink);
+.section_grid_elmnt {
+    background-color: var(--globalDarkPink);
     opacity: 1;
     text-decoration: none;
 }
 
+.section_h2--skeleton {
+    background-color: var(--globalLightPink);
+    border-radius: 2rem;
+    height: 5rem;
+    width: min(100%, 30rem);
+    margin: 2.5rem auto;
+    composes: skeletonAnimation from global;
 
-.section_grid_elmnt_img{
+}
+
+.section_grid_elmnt--skeleton {
+    height: 15.5rem;
+    background-color: var(--globalLightPink);
+    composes: skeletonAnimation from global;
+}
+
+
+.section_grid_elmnt_img {
     width: 100%;
     height: 11rem;
     object-fit: cover;
 }
-.section_grid_elmnt_recipeCont{
+
+.section_grid_elmnt_recipeCont {
     font-size: var(--txtContentFntSize);
     position: relative;
 }
 
-.section_grid_elmnt_recipeCont_title{
+.section_grid_elmnt_recipeCont_title {
     text-align: center;
     font-size: 1.5rem;
     font-family: inherit;
     font-weight: bold;
-    background-color: var(--globalDarkPink);
+    background-color: var(--globalDarkestPink);
     color: var(--lightTxtColor);
     padding: 1rem 0;
     margin: 1rem auto;
@@ -42,31 +59,31 @@
     justify-content: center;
 }
 
-.section_grid_elmnt_recipeCont_title_linkSVG{
+.section_grid_elmnt_recipeCont_title_linkSVG {
     width: 2rem;
     margin-left: 1rem;
 }
 
 .section_grid_elmnt_recipeCont_bg,
-.section_grid_elmnt_recipeCont_bg--visible{
+.section_grid_elmnt_recipeCont_bg--visible {
     background: var(--globalLightPink);
     position: absolute;
     z-index: 1;
     padding: 1rem;
-/* 
+    /* 
     box-shadow: 1rem 3rem 2rem 2rem rgba(43, 5, 51, 0.411); */
 }
 
-.section_grid_elmnt_recipeCont_bg{
+.section_grid_elmnt_recipeCont_bg {
     display: none;
 }
 
-.section_grid_elmnt_recipeCont_bg--visible{
+.section_grid_elmnt_recipeCont_bg--visible {
     display: block;
 
 }
 
-.section_grid_elmnt_recipeCont_bg_ol{
+.section_grid_elmnt_recipeCont_bg_ol {
     background: var(--globalDarkPink);
     border-radius: 2rem;
     padding: 1rem 2rem;

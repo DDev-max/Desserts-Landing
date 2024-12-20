@@ -9,6 +9,15 @@
     margin: 2rem;
 }
 
+.faqSctn_h2--skeleton{
+    width: min(85vw, 52rem);
+    height: 4rem;
+    border-radius: 3rem;
+    background-color: var(--globalLightPink);
+    margin: 2rem auto;
+    composes: skeletonAnimation from global;
+}
+
 .faqSctn_questionCont{
     color: var(--darkTxtColor);
     display: flex;
@@ -24,6 +33,15 @@
     border-radius: 2rem;
     /* width: min(100%, 70rem); */
     width: 100%;
+}
+
+.faqSctn_questionCont_details--skeleton{
+    width: min(100%, 80rem);
+    height: 6.5rem;
+    margin: 1rem auto;
+    border-radius: 3rem;
+    background-color: var(--globalLightPink);
+    composes: skeletonAnimation from global;
 }
 
 

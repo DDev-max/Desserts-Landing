@@ -1,4 +1,4 @@
-import { indieFlower } from "@/app/data/fonts"
+import { fontFamilyTxt } from "@/app/data/fonts"
 import { Header } from "./Components/header/header"
 import { Footer } from "./Components/footer/footer"
 import Link from "next/link"
@@ -13,7 +13,7 @@ export default function RootLayout({children}: { children: React.ReactNode}) {
   return (
 
     <html lang="en">
-      <body className={`${indieFlower.className}`}>
+      <body className={`${fontFamilyTxt.className}`}>
         <Link href="#mainContent">Skip to main content</Link>
 
         <Header/>

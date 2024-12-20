@@ -5,15 +5,15 @@ import { FaqAPI, PageCatgry } from "@/app/data/types";
 
 
 interface GenerateJsonLdProps {
-    url: string
+    from: string
     type: "faq" | "recipeList"
 }
 
-export async function generateJsonLd({ type, url }: GenerateJsonLdProps) {
+export async function generateJsonLd({ type, from }: GenerateJsonLdProps) {
 
     if (type === "recipeList") {
 
-        const recipesCatgry = await fetchData<PageCatgry>(url);
+        const recipesCatgry = await fetchData<PageCatgry>({URL: from});
 
         const recipes: Recipe[] = []
         recipesCatgry.data.forEach((elmnt) => {
@@ -92,7 +92,7 @@ export async function generateJsonLd({ type, url }: GenerateJsonLdProps) {
 
 
     if (type === "faq") {
-        const faqData = await fetchData<FaqAPI[]>(url);
+        const faqData = await fetchData<FaqAPI[]>({URL:from});
 
         const questionAnswer: Question[] = []
 

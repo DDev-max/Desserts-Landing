@@ -1,8 +1,8 @@
 import { CreateUrlProps } from "@/app/data/types"
 
+
+//CREO QUE YA NO ES NECESARIO
 export function createUrl({paramsAndValueObj,pathName,router,searchParams,hash}: CreateUrlProps){
-
-
 
     const params = new URLSearchParams(searchParams)
 

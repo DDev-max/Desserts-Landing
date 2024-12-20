@@ -1,15 +1,21 @@
 :root{
     --globalLightPink: #e583b4;
     --globalDarkPink: #dd74a8;
-    --globalDarkestPink: #d0458a;
+    --globalDarkestPink: rgb(194, 65, 129);
 
     --lightTxtColor: #ffffff;
     --darkTxtColor: #000000;
 
+    --layoutDarkPink1: #d9a0e5;
+    --layoutDarkPink2: #c785d4;
+    --layoutDarkPink3: #5c2468;
+    --layoutLightPink: #ffe5fc;
+    --layoutBgColor: #f5c9ef;
+
     --h2FontSize: 2.2rem;
     --subTitlesFntSize: 2rem; /*recetas*/
     --longerSubttlesFntSize: 1.5rem;
-    --txtContentFntSize: 1.2rem
+    --txtContentFntSize: 1.3rem
 
 }
 
@@ -43,4 +49,17 @@ main{
 button{
     border: none;
     background-color: transparent;
+}
+
+.skeletonAnimation {
+    animation: skeletonFlick 1.5s infinite linear;
+}
+
+@keyframes skeletonFlick {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
 }

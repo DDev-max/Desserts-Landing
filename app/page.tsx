@@ -9,6 +9,10 @@ import { PageProps } from "@/.next/types/app/layout";
 import { generateJsonLd } from "./utils/generaJsonLd/generateJsonLd";
 import { Faq } from "./Components/faq/faq";
 import { faqUrl } from "./data/consts";
+import { Suspense } from "react";
+import { FaqSkeleton } from "./Components/faq/faqSkeleton";
+import { FullRecipeSkeleton } from "./Components/fullRecipe/fullRecipeSkeleton";
+import { MultipleProductsSkeleton } from "./Components/multipleProducts/multipleProductsSkeleton";
 
 export default async function Page(props: PageProps) {
 
@@ -16,15 +20,18 @@ export default async function Page(props: PageProps) {
     const category = searchParams?.category || 'cookies';
     const currentPage = searchParams?.page || "1";
 
-    const recipesJsonLd =  await generateJsonLd({url:`http://localhost:3001/${category}?_page=${currentPage}&_per_page=2`, type: "recipeList"})
-    const faqJsonLd =  await generateJsonLd({url: faqUrl, type: "faq"})
 
-    
+
+    const recipesJsonLd = await generateJsonLd({ from: `http://localhost:3001/${category}?_page=${currentPage}&_per_page=2`, type: "recipeList" })
+
+    const faqJsonLd = await generateJsonLd({ from: faqUrl, type: "faq" })
+
+
     return (
 
         <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{__html: recipesJsonLd}}/>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{__html: faqJsonLd}}/>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: recipesJsonLd }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
 
             <main id="mainContent">
                 <div className={`${styles.welcomeCont}`}>
@@ -40,20 +47,30 @@ export default async function Page(props: PageProps) {
 
                     <div className={`${styles.fullCateogriesCont}`}>
 
-                        <Categories />
+                        <Categories currentCategory={category} />
 
-                        <FullRecipe category={category} page={currentPage} />
+                        <Suspense fallback={<FullRecipeSkeleton />}>
+                            <FullRecipe category={category} page={currentPage} />
+                        </Suspense>
+
 
                     </div>
 
                     <SingleProduct />
 
-                    <MultipleProducts />
 
-                    <Faq/>
+                    <Suspense fallback={<MultipleProductsSkeleton />}>
+                        <MultipleProducts />
+                    </Suspense>
+
+                    <Suspense fallback={<FaqSkeleton />}>
+                        <Faq />
+                    </Suspense>
+
+
 
                 </div>
-                
+
 
             </main>
         </>

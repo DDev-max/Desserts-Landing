@@ -1,11 +1,13 @@
 .footer{
-    background-color: var(--globalDarkPink);
+    border-top: .3rem solid var(--layoutDarkPink1);
+    background-color: var(--layoutBgColor);
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
     font-size: var(--txtContentFntSize);
     color: var(--lightTxtColor);
     padding: 1rem 0 0 0;
+    color: var(--darkTxtColor);
 }
 
 .footer svg{
@@ -29,6 +31,10 @@
 .footer_infoCont_sectn h2{
     font-size: var(--subTitlesFntSize);
     text-align: center;
+    background-color: var(--layoutLightPink);
+    padding: .5rem;
+    border-radius: 2rem;
+    margin: 1rem 0 1.5rem 0;
 }
 
 
@@ -42,13 +48,6 @@
 .footer_infoCont_sectn_division a{
     display: flex;
     word-break: break-word;
-    margin: 0 2rem;
+    margin: 2rem;
 }
 
-
-.footer_companyName{
-    padding: 1rem 0;
-    text-align: center;
-    background-color: var(--globalLightPink);
-    font-weight: bold;
-}

@@ -1,7 +1,13 @@
 //MAPEAR FETCH?
+import { Dispatch, SetStateAction } from "react";
 import { ServerNotLaunched } from "./ErrorServerNotLaunched";
 
-export async function fetchData<T>(URL: string){
+export interface FetchDataProps{
+    URL: string
+    setIsLoading?: Dispatch<SetStateAction<boolean>>
+}
+
+export async function fetchData<T>({URL,setIsLoading}:FetchDataProps){
 
     try {
         const response = await fetch(URL)
@@ -12,7 +18,10 @@ export async function fetchData<T>(URL: string){
 
           const format: T = await response.json()
           
-          
+
+
+        if(setIsLoading) setIsLoading(false)
+
         return format
         
     

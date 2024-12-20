@@ -6,36 +6,35 @@ import { RecipesCategoriesAPI } from "../../data/types";
 import { fetchData } from "@/app/utils/fetchData/fetchData";
 import { categoriesUrl } from "@/app/data/consts";
 import { useEffect, useRef, useState } from "react";
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { createUrl } from "@/app/utils/createUrl/createUrl";
-// import { noentiendoniverga } from "./noentiendoniverga";
+import { focusTab } from "./focustab";
+import Link from "next/link";
+import { CategoriesSkeleton } from "./categoriesSkeleton";
 
+export interface CategoriesProps{
+    currentCategory: string
+}
 
-export function Categories() {
+export function Categories({currentCategory}:CategoriesProps) {
 
     const searchParams = useSearchParams()
-    const router = useRouter()
     const pathName = usePathname()
 
-    const currentCategory = searchParams.get("category") || "cookies"
 
-    const tabsBtnsRef = useRef<HTMLButtonElement[]>([])
+    const tabsBtnsRef = useRef<HTMLAnchorElement[]>([])
+
     const [, setSelectedBtn] = useState(0)
-
-
     const [categories, setCategories] = useState<RecipesCategoriesAPI[]>()
+    const [isLoading, setIsLoading] = useState(true)
 
 
-
-    // NECESARIO POR QUE LA DATA INTERACTIVA SE CONSULTA POR MEDIO DE UN FETCH
+    // NECESARIO POR QUE LA DATA ES INTERACTIVA Y SE CONSULTA POR MEDIO DE UN FETCH
     useEffect(() => {
 
         async function getFetchData() {
-            const data = await fetchData<RecipesCategoriesAPI[]>(categoriesUrl)
-
+            const data = await fetchData<RecipesCategoriesAPI[]>({URL: categoriesUrl,setIsLoading})
             setCategories(data)
-
-
         }
 
 
@@ -44,47 +43,25 @@ export function Categories() {
     }, [])
 
 
-    function focusTab(e:  React.KeyboardEvent<HTMLDivElement>) {
-        
-        setSelectedBtn((prev)=>{
-            let selectionIdx = prev
-
-            if (e.key === "ArrowRight") {
-                selectionIdx += 1
-                if(selectionIdx >= tabsBtnsRef.current.length){
-                    selectionIdx = 0
-                }
-
-            }else if(e.key === "ArrowLeft"){
-                selectionIdx -= 1
-                if (selectionIdx <0) {
-                    selectionIdx = tabsBtnsRef.current.length -1
-                }
-            }
-
-            tabsBtnsRef.current[selectionIdx].focus()
-
-            return selectionIdx
-        })
-
-
-
-
-
-    }
 
     return (
         <section className={`${styles.categoriesSctn}`}>
             <h2>Choose your sweet destiny!</h2>
 
+
+            {isLoading && <CategoriesSkeleton/>}
+
+            {!isLoading &&
+
             <div
-                onKeyDown={focusTab}
+                onKeyDown={(e)=>{focusTab({e,setSelectedBtn,tabsBtnsRef})}}
                 role="tablist"
                 id="categories"
                 className={`${styles.categoriesSctn_categoriesCont}`}>
 
                 {categories?.map((elmnt, idx) => (
-                    <button 
+                    <Link 
+                    scroll={false}
                     ref={(el)=> {if(el) tabsBtnsRef.current[idx] = el}}
                     tabIndex={currentCategory === elmnt.id ? 0 : -1}
                     role="tab"
@@ -97,18 +74,18 @@ export function Categories() {
                         : styles.categoriesSctn_btn
                     }
                     key={elmnt.id}
-                    onClick={() => createUrl({ paramsAndValueObj: { category: elmnt.id, page: 1 }, pathName, router, searchParams })}
+                    href={ createUrl({ paramsAndValueObj: { category: elmnt.id, page: 1 }, pathName, searchParams })}
                     >
 
                         <Image className={styles.categoriesSctn_btn_img} width={200} height={200} src={elmnt.imgLink} alt={`${elmnt.name} category`}/>
 
                         <p className={styles.categoriesSctn_btn_title}>{elmnt.name}</p>
 
-                    </button>
+                    </Link>
                 ))}
 
             </div>
-
+            }
 
         </section>
 

@@ -1,12 +1,6 @@
 .header {
-    --darkPink1: #d9a0e5;
-    --darkPink2: #c785d4;
-    --darkPink3: #5c2468;
-
-    --lightPink: #ffe5fc;
-
-    background-color: #f5c9ef;
-    border-bottom: .3rem solid var(--darkPink1);
+    background-color: var(--layoutBgColor);
+    border-bottom: .3rem solid var(--layoutDarkPink1);
     font-size: 1.6rem;
 
     display: flex;
@@ -37,7 +31,7 @@
 .header_menuSVG {
     display: none;
     width: 3rem;
-    color: var(--darkPink3);
+    color: var(--layoutDarkPink3);
 }
 
 .header_nav * {
@@ -61,7 +55,7 @@
 }
 
 .header_nav a {
-    background: var(--lightPink);
+    background: var(--layoutLightPink);
     width: 100%;
     display: block;
     box-sizing: border-box;
@@ -72,7 +66,7 @@
 .header_nav_menu_item:hover a,
 .header_nav_menu_item--extended a,
 .header_nav_menu_item a:focus {
-    background-color: var(--darkPink1);
+    background-color: var(--layoutDarkPink1);
 }
 
 .header_nav_menu_item {
@@ -99,7 +93,7 @@
 
 .header_nav_menu_item_subMenu--visible>li:hover a,
 .header_nav_menu_item_subMenu--visible a:focus {
-    background-color: var(--darkPink2);
+    background-color: var(--layoutDarkPink2);
 }
 
 .header_nav_menu_item_subMenu--visible {
@@ -146,7 +140,7 @@
 .header_closedMenu::before {
     content: '';
     position: absolute;
-    background-color: var(--darkPink3);
+    background-color: var(--layoutDarkPink3);
 }
 
 .header_closedMenu::after {

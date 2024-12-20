@@ -7,7 +7,7 @@ export async function Faq() {
 
 
     //NO AÑADIR ESTADOS PARA VER COMO CHUCHA LE HAGO UN TESTEO SIMPLE
-    const data = await fetchData<FaqAPI[]>(faqUrl)
+    const data = await fetchData<FaqAPI[]>(({URL: faqUrl}))
 
     return (
         <section className={styles.faqSctn}>

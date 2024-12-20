@@ -10,7 +10,7 @@ import { PaginationBtns } from "../paginationBtns/paginationBtns"
 
 export async function FullRecipe({category,page}: FullRecipeProps) {
 
-    const recipes = await fetchData<PageCatgry>(`http://localhost:3001/${category}?_page=${page}&_per_page=2`);
+    const recipes = await fetchData<PageCatgry>({URL:`http://localhost:3001/${category}?_page=${page}&_per_page=2`});
 
 
     return (
@@ -37,14 +37,14 @@ export async function FullRecipe({category,page}: FullRecipeProps) {
                             <StarsSVG className={`${styles.recipesCont_recipe_aditionalInfo_starsCont_star}`} qtty={elmnt.stars} />
 
                             <ClockSVG className={`${styles.recipesCont_recipe_aditionalInfo_clock}`} />
-                            
+
                             <p>{`${elmnt.minutesOfPreparation} min`}</p>
 
                         </div>
 
                         <div className={`${styles.recipesCont_recipe_info}`}>
 
-                            <h4>{elmnt.dish}</h4>
+                            <h3>{elmnt.dish}</h3>
                             <RecipeSteps recipeParagraph={elmnt.recipe} />
 
                         </div>
