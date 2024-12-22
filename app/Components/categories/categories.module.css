@@ -14,7 +14,6 @@
     color: var(--lightTxtColor);
 }
 
-.categoriesSctn_btn--selected,
 .categoriesSctn_btn{
     font-size: var(--txtContentFntSize);
     padding: clamp(.1rem,1.5vw,1.5rem);
@@ -29,21 +28,20 @@
     background-color: var(--globalDarkPink);
 }
 
-.categoriesSctn_btn--selected--skeleton{
-    background-color: var(--globalDarkPink);
-    height: clamp(7.5rem,20vw,10rem);
-    width: clamp(7.5rem,20vw,12rem);
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    composes: skeletonAnimation from global;
-}
-
-
 .categoriesSctn_btn_img--skeleton{
     background-color: var(--globalDarkPink);
     height: clamp(7.5rem,20vw,10rem);
     width: clamp(7.5rem,20vw,10rem);
     border-radius: 50%;
+    composes: skeletonAnimation from global;
+}
+
+.categoriesSctn_btn_title--skeleton{
+    width: 100%;
+    border-radius: 2rem;
+    height: 3rem;
+    margin: 1rem 0;
+    background-color: var(--globalDarkPink);
     composes: skeletonAnimation from global;
 }
 

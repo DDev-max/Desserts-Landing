@@ -1,28 +1,24 @@
 import Image from "next/image"
 import { StarsSVG } from "../../SVG/Stars/StarsSVG"
 import styles from "./fullRecipe.module.css"
-import { FullRecipeProps, PageCatgry } from "../../data/types"
+import { FullRecipeProps } from "../../data/types"
 import { ClockSVG } from "../../SVG/ClockSVG"
 import { RecipeSteps } from "../recipeSteps/recipeSteps"
-import { fetchData } from "@/app/utils/fetchData/fetchData"
 import { PaginationBtns } from "../paginationBtns/paginationBtns"
 
-
-export async function FullRecipe({category,page}: FullRecipeProps) {
-
-    const recipes = await fetchData<PageCatgry>({URL:`http://localhost:3001/${category}?_page=${page}&_per_page=2`});
+export async function FullRecipe({ category, page,recipes }: FullRecipeProps) {
 
 
     return (
-        <div 
-        tabIndex={0} 
-        aria-labelledby={`${category}ID`} 
-        id={`${category}Tab`} 
-        className={
-            `${styles.recipesCont} 
-            ${category=="cookies" ? styles["recipesCont--rightBrdr"] : ""}
-            ${category=="fruits" ? styles["recipesCont--leftBrdr"] : ""}`
-        }>
+        <div
+            tabIndex={0}
+            aria-labelledby={`${category}ID`}
+            id={`${category}Tab`}
+            className={
+                `${styles.recipesCont} 
+            ${category == "cookies" ? styles["recipesCont--rightBrdr"] : ""}
+            ${category == "fruits" ? styles["recipesCont--leftBrdr"] : ""}`
+            }>
 
             {recipes?.data.map(elmnt => {
 
@@ -33,7 +29,7 @@ export async function FullRecipe({category,page}: FullRecipeProps) {
 
 
                         <div className={`${styles.recipesCont_recipe_aditionalInfo}`}>
-                            
+
                             <StarsSVG className={`${styles.recipesCont_recipe_aditionalInfo_starsCont_star}`} qtty={elmnt.stars} />
 
                             <ClockSVG className={`${styles.recipesCont_recipe_aditionalInfo_clock}`} />
@@ -55,12 +51,12 @@ export async function FullRecipe({category,page}: FullRecipeProps) {
             })}
 
 
-            <PaginationBtns 
-            currentPage={Number(page)} 
-            selectedBtnClassName={`${styles["recipesCont_btnsCont_btn--selected"]}`} 
-            classNameCont={`${styles.recipesCont_btnsCont}`} 
-            classNameBtn={`${styles.recipesCont_btnsCont_btn}`} 
-            buttonsQtty={recipes?.pages || 0}
+            <PaginationBtns
+                currentPage={Number(page)}
+                selectedBtnClassName={`${styles["recipesCont_btnsCont_btn--selected"]}`}
+                classNameCont={`${styles.recipesCont_btnsCont}`}
+                classNameBtn={`${styles.recipesCont_btnsCont_btn}`}
+                buttonsQtty={recipes?.pages || 0}
             />
 
 

@@ -1,6 +1,5 @@
 import Image from "next/image"
 import styles from "./multipleProducts.module.css"
-// import { RecipeSteps } from "@/app/Components/recipeSteps/recipeSteps"
 import { fetchData } from "@/app/utils/fetchData/fetchData"
 import { sponsorsUrl } from "@/app/data/consts"
 import { SponsorApi } from "@/app/data/types"
@@ -10,7 +9,6 @@ import Link from "next/link"
 export async function MultipleProducts() {
 
     const multipleRecipes = await fetchData<SponsorApi[]>({URL: sponsorsUrl})
-
 
     return (
         <section id="popular">

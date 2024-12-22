@@ -1,4 +1,5 @@
 "use client"
+
 import { PaginationBtnsProps } from "@/app/data/types"
 import { createUrl } from "@/app/utils/createUrl/createUrl"
 import Link from "next/link"

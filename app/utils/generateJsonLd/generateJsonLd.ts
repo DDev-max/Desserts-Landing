@@ -1,22 +1,14 @@
 import { ItemList, WithContext, Recipe, ListItem, FAQPage, Question, Answer, HowToStep } from "schema-dts"
-import { fetchData } from "../fetchData/fetchData";
 import { baseUrl } from "@/app/data/consts";
-import { FaqAPI, PageCatgry } from "@/app/data/types";
+import { GenerateJsonLdProps } from "@/app/data/types";
 
 
-interface GenerateJsonLdProps {
-    from: string
-    type: "faq" | "recipeList"
-}
+export function generateJsonLd({ type, from }: GenerateJsonLdProps) {
 
-export async function generateJsonLd({ type, from }: GenerateJsonLdProps) {
-
-    if (type === "recipeList") {
-
-        const recipesCatgry = await fetchData<PageCatgry>({URL: from});
-
+    if (type === "recipeList" &&  "data" in from) {
+        
         const recipes: Recipe[] = []
-        recipesCatgry.data.forEach((elmnt) => {
+        from.data.forEach((elmnt) => {
 
             const steps = elmnt.recipe.match(/[^.]+[.]/g)
 
@@ -83,20 +75,16 @@ export async function generateJsonLd({ type, from }: GenerateJsonLdProps) {
             itemListElement: itemsList
         }
 
-
         
 
         return JSON.stringify(fullJson)
     }
 
-
-
-    if (type === "faq") {
-        const faqData = await fetchData<FaqAPI[]>({URL:from});
-
+    if (type === "faq" && Array.isArray(from) && from.every(elmnt=> "question" in elmnt)) {
         const questionAnswer: Question[] = []
 
-        faqData.forEach((elmnt)=>{
+
+        from.forEach((elmnt)=>{
 
             const answer: Answer = {
                 "@type": "Answer",
@@ -126,6 +114,7 @@ export async function generateJsonLd({ type, from }: GenerateJsonLdProps) {
 
     }
 
+    
     return ""
 
 }

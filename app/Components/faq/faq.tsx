@@ -1,13 +1,8 @@
-import { faqUrl } from "@/app/data/consts"
-import { FaqAPI } from "@/app/data/types"
-import { fetchData } from "@/app/utils/fetchData/fetchData"
+import { FaqProps } from "@/app/data/types"
 import styles from "./faq.module.css"
 
-export async function Faq() {
 
-
-    //NO AÑADIR ESTADOS PARA VER COMO CHUCHA LE HAGO UN TESTEO SIMPLE
-    const data = await fetchData<FaqAPI[]>(({URL: faqUrl}))
+export async function Faq({data}:FaqProps) {
 
     return (
         <section className={styles.faqSctn}>

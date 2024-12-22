@@ -6,10 +6,10 @@ export function EmailSVG({className}: SVGProps) {
     return (
         <svg
         viewBox="0 0 24 24"
-        data-name="Flat Line"
         xmlns="http://www.w3.org/2000/svg"
-        className="icon flat-line"
+        className={className}
       >
+        <title>Email</title>
         <g strokeWidth={0} />
         <g strokeLinecap="round" strokeLinejoin="round" />
         <path

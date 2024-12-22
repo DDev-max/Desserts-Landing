@@ -6,13 +6,13 @@ import { MultipleProducts } from "./Components/multipleProducts/multipleProducts
 import { Categories } from "./Components/categories/categories";
 import { FullRecipe } from "./Components/fullRecipe/fullRecipe";
 import { PageProps } from "@/.next/types/app/layout";
-import { generateJsonLd } from "./utils/generaJsonLd/generateJsonLd";
+import { generateJsonLd } from "./utils/generateJsonLd/generateJsonLd";
 import { Faq } from "./Components/faq/faq";
-import { faqUrl } from "./data/consts";
 import { Suspense } from "react";
 import { FaqSkeleton } from "./Components/faq/faqSkeleton";
 import { FullRecipeSkeleton } from "./Components/fullRecipe/fullRecipeSkeleton";
 import { MultipleProductsSkeleton } from "./Components/multipleProducts/multipleProductsSkeleton";
+import { getFaqData, getRecipeData } from "./utils/mappedFetch";
 
 export default async function Page(props: PageProps) {
 
@@ -20,11 +20,13 @@ export default async function Page(props: PageProps) {
     const category = searchParams?.category || 'cookies';
     const currentPage = searchParams?.page || "1";
 
+    const recipeUrl = `http://localhost:3001/${category}?_page=${currentPage}&_per_page=2`
 
+    const faqData = await getFaqData()
+    const recipesData = await getRecipeData(recipeUrl)
 
-    const recipesJsonLd = await generateJsonLd({ from: `http://localhost:3001/${category}?_page=${currentPage}&_per_page=2`, type: "recipeList" })
-
-    const faqJsonLd = await generateJsonLd({ from: faqUrl, type: "faq" })
+    const recipesJsonLd = generateJsonLd({ from: recipesData, type: "recipeList" })
+    const faqJsonLd = generateJsonLd({ from: faqData, type: "faq" })
 
 
     return (
@@ -50,7 +52,7 @@ export default async function Page(props: PageProps) {
                         <Categories currentCategory={category} />
 
                         <Suspense fallback={<FullRecipeSkeleton />}>
-                            <FullRecipe category={category} page={currentPage} />
+                            <FullRecipe recipes={recipesData} category={category} page={currentPage} />
                         </Suspense>
 
 
@@ -64,9 +66,8 @@ export default async function Page(props: PageProps) {
                     </Suspense>
 
                     <Suspense fallback={<FaqSkeleton />}>
-                        <Faq />
+                        <Faq data={faqData}/>
                     </Suspense>
-
 
 
                 </div>

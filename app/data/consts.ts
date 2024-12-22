@@ -5,4 +5,3 @@ export const faqUrl = "http://localhost:3001/faq"
 
 export const emptyStarColorCode = "#000000"
 export const starColorCode = "#fe9900"
-// export const recipesUrl = "http://localhost:3001/recipes"

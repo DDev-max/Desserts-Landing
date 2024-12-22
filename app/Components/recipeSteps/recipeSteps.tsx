@@ -1,8 +1,4 @@
-export interface RecipeStepsProps{
-    recipeParagraph: string
-    olClassName?: string
-    liClassName?: string
-}
+import { RecipeStepsProps } from "@/app/data/types"
 
 export function RecipeSteps({recipeParagraph,liClassName,olClassName}: RecipeStepsProps) {
     

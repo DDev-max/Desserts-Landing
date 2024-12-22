@@ -6,6 +6,7 @@ export function PhoneSVG() {
     viewBox="0 0 1024 1024"
     className="icon"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden
 
   >
     <g strokeWidth={0} />

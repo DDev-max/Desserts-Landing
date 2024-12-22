@@ -2,10 +2,6 @@ import { ServerNotLaunched } from "./ErrorServerNotLaunched";
 import { fetchData } from "./fetchData";
 
 
-afterEach(() => {
-    jest.clearAllMocks();
-  })
-
 const consoleErrorMock = jest.spyOn(console, "error").mockImplementation(() => {})
 
 
@@ -25,7 +21,7 @@ it("returns data", async ()=>{
     )
     ) as jest.Mock;
 
-    const data = await fetchData("")
+    const data = await fetchData({URL:""})
 
     expect(data).toEqual(mockedFetch)
 
@@ -39,7 +35,7 @@ describe("fetch errors", ()=>{
             Promise.reject(new Error('fetch failed'))
         )) as jest.Mock;
 
-        await expect(fetchData("")).rejects.toThrow(ServerNotLaunched);
+        await expect(fetchData({URL:""})).rejects.toThrow(ServerNotLaunched);
 
     })
 
@@ -53,7 +49,7 @@ describe("fetch errors", ()=>{
         )
         ) as jest.Mock;
 
-        await expect(fetchData("")).rejects.toThrow("Fetch error")
+        await expect(fetchData({URL: ""})).rejects.toThrow("Fetch error")
 
 
 
@@ -70,7 +66,7 @@ describe("fetch errors", ()=>{
         )
         ) as jest.Mock;
 
-        await expect(fetchData("")).rejects.toThrow("Fetch error: 404, Not Found");
+        await expect(fetchData({URL:""})).rejects.toThrow("Fetch error: 404, Not Found");
 
 
         expect(consoleErrorMock).toHaveBeenCalledWith("Fetch error: Error")

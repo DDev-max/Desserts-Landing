@@ -13,16 +13,12 @@ export function StarsSVG({ className, qtty }: StarsSVGProps) {
   const emptyStarsArray: string[] =Array(5).fill("")
 
   const [color, setColor] = useState(emptyStarsArray)
-
   const isRated = useRef(false)
-
-
-
 
 
   return (
 
-    <div style={{ display: "flex", gap: ".5rem"}} onMouseLeave={()=>{resetColors({isRated,setColor})}}>
+    <div role="img" aria-label={`Rating: ${qtty} of 5.`} style={{ display: "flex", gap: ".5rem"}} onMouseLeave={()=>{resetColors({isRated,setColor})}}>
 
       {emptyStarsArray.map((_, idx) => (
         <svg key={idx}

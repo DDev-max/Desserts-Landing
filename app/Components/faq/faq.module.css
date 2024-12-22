@@ -31,7 +31,6 @@
     padding: .6rem;
     border: .2rem solid var(--globalLightPink);
     border-radius: 2rem;
-    /* width: min(100%, 70rem); */
     width: 100%;
 }
 
@@ -49,11 +48,9 @@
     padding: .6rem;
     font-size: var(--longerSubttlesFntSize);
     cursor: pointer;
-    /* background-color: var(--globalLightPink); */
 }
 
 .faqSctn_questionCont_p{
-    /* background-color: var(--globalDarkPink); */
     border-radius: 2rem;
     padding: 1rem;
     color: var(--darkTxtColor);

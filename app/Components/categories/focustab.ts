@@ -1,16 +1,8 @@
-import { Dispatch, MutableRefObject, SetStateAction } from "react"
-
-export interface FocustabProps{
-    e:  React.KeyboardEvent<HTMLDivElement>
-    setSelectedBtn: Dispatch<SetStateAction<number>>
-    tabsBtnsRef: MutableRefObject<HTMLAnchorElement[]>
-}
-
-//REVISAR POR QUE NO SIRVE EN PANTALLA PEQUEÑA?
+import { FocustabProps } from "@/app/data/types"
 
 export function focusTab({e, setSelectedBtn, tabsBtnsRef}:FocustabProps) {
         
-    setSelectedBtn((prev)=>{
+    setSelectedBtn((prev: number)=>{
         let selectionIdx = prev
 
         if (e.key === "ArrowRight") {

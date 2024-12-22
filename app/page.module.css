@@ -1,5 +1,5 @@
 .welcomeCont{
-    background-color:#fef1de; /*fef1de*/
+    background-color:#fef1de; 
     display: flex;
     height: 19rem;
 
@@ -27,31 +27,18 @@
     font-weight: bold;
     color: #4d1b12;
     line-height: 5rem;
-    /* position: absolute;
-    top: 20%; */
-    
 }
 
 
 .fullCateogriesCont{
     margin: 0 auto;
-    /* width: clamp(20rem, 100% ,76rem); */
 }
 
 
 
-/* @media (width > 1050px) {
-    .welcomeCont_img{
-        object-position: 0;
-    }
-
-    .welcomeCont_txt{
-        margin-left: clamp(1rem,7vw,6rem);
-    }
-} */
 
 .mainPadding{
-    width: clamp(15rem,100%,88rem); /*82 REM*/
+    width: clamp(15rem,100%,88rem);
     margin: 0 auto;
 }
 

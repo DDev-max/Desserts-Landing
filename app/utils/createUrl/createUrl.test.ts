@@ -3,12 +3,6 @@ import { createUrl } from "./createUrl";
 import { useRouter } from 'next/navigation';
 
 
-afterEach(() => {
-  jest.clearAllMocks();
-})
-
-
-
 describe("returns url",()=>{
 
     test("returns link with hash",()=>{

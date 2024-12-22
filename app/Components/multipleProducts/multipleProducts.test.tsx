@@ -1,36 +1,31 @@
-import { render, screen,  } from '@testing-library/react'
+import { render, screen, } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import userEvent from '@testing-library/user-event'
 import { MultipleProducts } from './multipleProducts'
-import { fetchData } from '../../utils/fetchData/fetchData'
+import { fetchData } from '@/app/utils/fetchData/fetchData'
 
-jest.mock('../../utils/fetchData/fetchData')
 
-it.skip("shows recipe when clicking on title", async ()=>{
-    const recipeMock = [
-        {
-        "id": "2",
-        "dish": "Cheesecake",
-        "recipe": "Preheat the oven to 175°C (350°F). Crush 200g of graham crackers and mix with 1/4 cup of melted butter. Press the mixture into a springform pan to form the crust. In a bowl, beat 3 packages of cream cheese with 3/4 cup of sugar until smooth. Add 3 large eggs, one at a time, and mix in 1 teaspoon of vanilla extract. Pour the batter over the crust and bake for 50-60 minutes, or until the center is slightly jiggly. Cool completely, then refrigerate for at least 4 hours. Serve with fruit topping if desired.",
-        "minutesOfPreparation": 90,
-        "stars": 4.8,
-        "image": "https://img.freepik.com/premium-photo/homemade-cheesecake-with-raspberries-blueberries_1339-38051.jpg?w=360",
-        "category": "Baked Desserts"
-      }
-    ];
+jest.mock('@/app/utils/fetchData/fetchData')
 
-    (fetchData as jest.Mock).mockReturnValueOnce(recipeMock)
-    const user = userEvent.setup()
+it("should render sponsored links",async () => {
+  const mockFetch = [
+    {
+      id: "1",
+      dish: "Tiramisu",
+      image: "https://img.freepik.com/free-photo/plate-with-tiramisu_23-2147772017.jpg?t=st=1732303160~exp=1732306760~hmac=ab723574d051f0e3f9a57ef87ba8a1e0779c2f245dee9b0bed47302511d3714d&w=360",
+      url: "https://tastesbetterfromscratch.com/easy-tiramisu/"
+    }
+  ];
 
-    render(<MultipleProducts/>)
+  (fetchData as jest.Mock).mockReturnValue(mockFetch)
 
-    const recipeTitle =  await screen.findByRole("button")
-    expect(recipeTitle).toHaveAttribute("aria-expanded", "false")
+  render(await MultipleProducts())
 
-    await user.click(recipeTitle)
+  const recipeName = await screen.findByText(mockFetch[0].dish)
+  const image = await screen.findByRole("img")
+  const link = await screen.findByRole("link")
 
-    expect(recipeTitle).toHaveAttribute("aria-expanded", "true")
-    expect(fetchData).toHaveBeenCalledTimes(1)
-
+  expect(recipeName).toBeInTheDocument()
+  expect(image).toBeInTheDocument()
+  expect(link).toHaveAttribute("href", mockFetch[0].url)
 
 })

@@ -12,6 +12,7 @@ export interface AllCategories {
 export interface FullRecipeProps{
     category: string
     page: string
+    recipes: PageCatgry
 }
 
 
@@ -52,13 +53,6 @@ export interface PageCatgry {
     data: RecipeElmnt[]
   }
 
-// export enum Categories {
-//     Cookies = "Cookies",
-//     Fried = "fried",
-//     Fruits = "fruits",
-//     IceCreams = "Ice Creams",
-// }
-
 export interface Popular {
     id:                   number;
     dish:                 string;
@@ -86,7 +80,6 @@ export interface FaqAPI {
 
 export interface SVGProps{
     className?: string
-    // onClick?: ()=> void
 }
 
 
@@ -98,12 +91,6 @@ export interface PaginationBtnsProps{
     selectedBtnClassName: string
 
 }
-
-export interface ToggleMenuProps{
-    e: MouseEvent
-    menuIcon: RefObject<HTMLElement>
-}
-
 
 export interface CreateUrlProps{
     paramsAndValueObj: Record<string, string | number>
@@ -125,7 +112,7 @@ export interface DefaultColorProps{
 }
 
 export interface ResetColorsProps{
-    setColor:  Dispatch<SetStateAction<any[]>>
+    setColor:Dispatch<SetStateAction<string[]>>
     isRated: MutableRefObject<boolean>
 }
 
@@ -136,11 +123,58 @@ export interface OverwriteColorProps{
 
 export interface ColorStarProps{
     idx: number
-    setColor:  Dispatch<SetStateAction<any[]>>
+    setColor:  Dispatch<SetStateAction<string[]>>
     isRated: MutableRefObject<boolean>
     color: string[]
 }
 
+export interface CategoriesProps{
+    currentCategory: string
+}
 
-//MIRAR EL EXPORT DE CALORIES
-o
+export interface FocustabProps{
+    e:  React.KeyboardEvent<HTMLDivElement>
+    setSelectedBtn: Dispatch<SetStateAction<number>>
+    tabsBtnsRef: MutableRefObject<HTMLAnchorElement[]>
+}
+
+export interface GenerateJsonLdProps {
+    from: FaqAPI[] | PageCatgry
+    type: "faq" | "recipeList"
+}
+
+
+export interface ToggleMenuProps{
+    setMenuVisible: Dispatch<SetStateAction<boolean[]>>
+    menuIdx: number
+}
+
+export interface HandleEnterLeaveProps{
+    enter: boolean
+    isMouse: MutableRefObject<boolean>
+    setMenuVisible: Dispatch<SetStateAction<boolean[]>>
+    menuVisible: boolean[]
+}
+
+
+export interface RecipeStepsProps{
+    recipeParagraph: string
+    olClassName?: string
+    liClassName?: string
+}
+
+export interface FetchDataProps{
+    URL: string
+    setIsLoading?: Dispatch<SetStateAction<boolean>>
+}
+
+
+export interface ContextCategoriesProps{
+    categories: RecipesCategoriesAPI[]
+    isLoading: boolean
+}
+
+
+export interface FaqProps{
+    data: FaqAPI[]
+}

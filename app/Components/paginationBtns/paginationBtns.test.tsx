@@ -10,4 +10,5 @@ it("renders all the buttons", ()=>{
     expect(allLinks).toHaveLength(2)
     expect(allLinks[0]).toHaveTextContent('1')
     expect(allLinks[1]).toHaveTextContent('2')
+    
 })

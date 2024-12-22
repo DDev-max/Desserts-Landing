@@ -13,15 +13,14 @@
     --layoutBgColor: #f5c9ef;
 
     --h2FontSize: 2.2rem;
-    --subTitlesFntSize: 2rem; /*recetas*/
+    --subTitlesFntSize: 2rem; 
     --longerSubttlesFntSize: 1.5rem;
     --txtContentFntSize: 1.3rem
 
 }
 
 body{
-    background-color: #fae0f7; /*fae0f7*/
-    /* overflow-x: hidden; */
+    background-color: #fae0f7; 
     color: var(--darkTxtColor);
 }
 
