@@ -11,6 +11,7 @@ import { useCategoriesCntxt } from "@/app/Context/useCategoriesCntxt";
 import { handleEnterLeave } from "./handleEnterLeave";
 import { toggleMenu } from "./toggleMenu";
 
+//NO SIRVE CLICK SUB>LI EN LECTOR DE PANTALLA ni link en tab ni en click (despues de dar un click)
 export function Header() {
 
   const pathName = usePathname()
@@ -103,7 +104,7 @@ export function Header() {
 
                   <Link
                     onKeyDown={(e) => { if (e.key == "Enter") setMenuVisible([]) }}
-                    href={createUrl({ paramsAndValueObj: { category: "cookies" }, pathName, searchParams, hash: "categories" })}
+                    href={createUrl({ paramsAndValueObj: { category: elmnt.id }, pathName, searchParams, hash: "categories" })}
                   >
                     {elmnt.name}
                   </Link>

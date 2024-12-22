@@ -4,7 +4,7 @@ export function FaqSkeleton() {
 
 
     return (
-        <div>
+        <div aria-busy>
             <div className={styles["faqSctn_h2--skeleton"]}></div>
 
             <div className={styles["faqSctn_questionCont_details--skeleton"]}></div>

@@ -4,7 +4,7 @@ export function FullRecipeSkeleton() {
 
 
     return (
-        <div className={styles["recipesCont--skeleton"]}>
+        <div aria-busy className={styles["recipesCont--skeleton"]}>
 
             <div className={styles["recipesCont_recipe--skeleton"]}/>
             <div className={styles["recipesCont_recipe--skeleton"]}/>

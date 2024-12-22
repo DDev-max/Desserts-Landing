@@ -17,10 +17,6 @@ export async function fetchData<T>({URL,setIsLoading}:FetchDataProps){
 
 
         if(setIsLoading) setIsLoading(false)
-
-
-            
-            console.log(format);
             
         return format
         
