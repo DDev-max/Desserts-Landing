@@ -1,5 +1,5 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript", "plugin:jest/recommended", "plugin:jest/style","plugin:testing-library/react"],
+  "extends": ["next/core-web-vitals", "next/typescript", "plugin:jest/recommended", "plugin:jest/style","plugin:testing-library/react", "prettier"],
   "plugins": ["jest"],
   "env": {
     "jest/globals": true
@@ -9,6 +9,17 @@
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error"
-  }
+    "jest/valid-expect": "error",
+    "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }]
+
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js", "*.test.ts", "*.test.jsx", "*.test.tsx"],
+      "rules": {
+        "semi": ["error", "always"],
+        "prettier/prettier": ["warn"]
+      }
+    }
+  ]
 }
