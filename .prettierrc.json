@@ -6,6 +6,14 @@
   "tabWidth": 2,
   "arrowParens": "avoid",
   "bracketSpacing": true,
-  "endOfLine": "lf",
-  "jsxSingleQuote": true
+  "jsxSingleQuote": true,
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": ["*.test.js", "*.test.ts", "*.test.jsx", "*.test.tsx"],
+      "options": {
+        "semi": true
+      }
+    }
+  ]
 }
