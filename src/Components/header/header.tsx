@@ -12,7 +12,6 @@ import { toggleMenu } from './toggleMenu'
 import { useCategoriesCntxt } from '@/Context/useCategoriesCntxt'
 import { createUrl } from '@/utils/createUrl/createUrl'
 
-//NO SIRVE CLICK SUB>LI EN LECTOR DE PANTALLA ni link en tab ni en click (despues de dar un click)
 export function Header() {
   const pathName = usePathname()
   const searchParams = useSearchParams()

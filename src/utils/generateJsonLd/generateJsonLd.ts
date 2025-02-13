@@ -1,5 +1,5 @@
 import { baseUrl } from '@/data/consts'
-import type { GenerateJsonLdProps } from '@/data/types'
+import type { FaqAPI, PageCatgry } from '@/data/types'
 import type {
   ItemList,
   WithContext,
@@ -10,6 +10,11 @@ import type {
   Answer,
   HowToStep,
 } from 'schema-dts'
+
+interface GenerateJsonLdProps {
+  from: FaqAPI[] | PageCatgry
+  type: 'faq' | 'recipeList'
+}
 
 export function generateJsonLd({ type, from }: GenerateJsonLdProps) {
   if (type === 'recipeList' && 'data' in from) {

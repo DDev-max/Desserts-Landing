@@ -1,9 +1,16 @@
 'use client'
 
-import type { PaginationBtnsProps } from '@/data/types'
 import { createUrl } from '@/utils/createUrl/createUrl'
 import Link from 'next/link'
 import { usePathname, useSearchParams } from 'next/navigation'
+
+interface PaginationBtnsProps {
+  buttonsQtty: number
+  currentPage: number
+  classNameBtn?: string
+  classNameCont?: string
+  selectedBtnClassName: string
+}
 
 export function PaginationBtns({
   buttonsQtty,

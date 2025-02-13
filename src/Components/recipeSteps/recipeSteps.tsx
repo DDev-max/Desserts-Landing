@@ -1,4 +1,8 @@
-import type { RecipeStepsProps } from '@/data/types'
+interface RecipeStepsProps {
+  recipeParagraph: string
+  olClassName?: string
+  liClassName?: string
+}
 
 export function RecipeSteps({ recipeParagraph, liClassName, olClassName }: RecipeStepsProps) {
   const steps = recipeParagraph.match(/[^.]+[.]/g)

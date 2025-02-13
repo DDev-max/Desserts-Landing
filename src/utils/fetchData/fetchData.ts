@@ -1,5 +1,10 @@
-import type { FetchDataProps } from '@/data/types'
+import type { Dispatch, SetStateAction } from 'react'
 import { ServerNotLaunched } from './ErrorServerNotLaunched'
+
+interface FetchDataProps {
+  URL: string
+  setIsLoading?: Dispatch<SetStateAction<boolean>>
+}
 
 export async function fetchData<T>({ URL, setIsLoading }: FetchDataProps) {
   try {

@@ -1,10 +1,16 @@
 import Image from 'next/image'
 import { StarsSVG } from '../../SVG/Stars/StarsSVG'
 import styles from './fullRecipe.module.css'
-import type { FullRecipeProps } from '../../data/types'
 import { ClockSVG } from '../../SVG/ClockSVG'
 import { RecipeSteps } from '../recipeSteps/recipeSteps'
 import { PaginationBtns } from '../paginationBtns/paginationBtns'
+import type { PageCatgry } from '@/data/types'
+
+interface FullRecipeProps {
+  category: string
+  page: string
+  recipes: PageCatgry
+}
 
 export async function FullRecipe({ category, page, recipes }: FullRecipeProps) {
   return (

@@ -1,5 +1,12 @@
-import type { HandleEnterLeaveProps } from '@/data/types'
+import type { Dispatch, MutableRefObject, SetStateAction } from 'react'
 import { toggleMenu } from './toggleMenu'
+
+interface HandleEnterLeaveProps {
+  enter: boolean
+  isMouse: MutableRefObject<boolean>
+  setMenuVisible: Dispatch<SetStateAction<boolean[]>>
+  menuVisible: boolean[]
+}
 
 export function handleEnterLeave({
   enter,

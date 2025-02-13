@@ -1,4 +1,7 @@
-import type { OverwriteColorProps } from '@/data/types'
+interface OverwriteColorProps {
+  idx: number
+  color: string[]
+}
 
 export function overwriteColor({ color, idx }: OverwriteColorProps) {
   return color[idx] ? color[idx] : ''

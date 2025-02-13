@@ -5,8 +5,12 @@ import { colorStar } from './colorStar'
 import { defaultColor } from './defaultColor'
 import { overwriteColor } from './overwriteColor'
 import { resetColors } from './resetColors'
-import type { StarsSVGProps } from '@/data/types'
 import { emptyStarColorCode } from '@/data/consts'
+
+interface StarsSVGProps {
+  qtty: number
+  className?: string
+}
 
 export function StarsSVG({ className, qtty }: StarsSVGProps) {
   const emptyStarsArray: string[] = Array(5).fill('')

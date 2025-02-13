@@ -2,9 +2,15 @@ import Image from 'next/image'
 import styles from './multipleProducts.module.css'
 import Link from 'next/link'
 import { fetchData } from '@/utils/fetchData/fetchData'
-import type { SponsorApi } from '@/data/types'
 import { sponsorsUrl } from '@/data/consts'
 import { LinkSVG } from '@/SVG/LinkSVG'
+
+interface SponsorApi {
+  id: number
+  dish: string
+  image: string
+  url: string
+}
 
 export async function MultipleProducts() {
   const multipleRecipes = await fetchData<SponsorApi[]>({ URL: sponsorsUrl })

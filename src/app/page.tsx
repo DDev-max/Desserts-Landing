@@ -1,19 +1,19 @@
 import Image from 'next/image'
-import './globals.css'
 import styles from './page.module.css'
+import './globals.css'
+
 import { generateJsonLd } from '../utils/generateJsonLd/generateJsonLd'
 import { Suspense } from 'react'
 import { getFaqData, getRecipeData } from '../utils/mappedFetch'
-
 import { FullRecipe } from '../Components/fullRecipe/fullRecipe'
-import { FullRecipeSkeleton } from '../Components/fullRecipe/fullRecipeSkeleton'
 import { SingleProduct } from '../Components/singleProduct/singleProduct'
-import { MultipleProductsSkeleton } from '../Components/multipleProducts/multipleProductsSkeleton'
 import { MultipleProducts } from '../Components/multipleProducts/multipleProducts'
-
-import { FaqSkeleton } from '../Components/faq/faqSkeleton'
 import { Faq } from '../Components/faq/faq'
 import { Categories } from '@/Components/categories/categories'
+
+import { FullRecipeSkeleton } from '../Components/fullRecipe/fullRecipeSkeleton'
+import { MultipleProductsSkeleton } from '../Components/multipleProducts/multipleProductsSkeleton'
+import { FaqSkeleton } from '../Components/faq/faqSkeleton'
 
 interface PageProps {
   searchParams: Promise<{

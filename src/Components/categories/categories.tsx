@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import styles from './categories.module.css'
-import type { CategoriesProps } from '../../data/types'
 import { useRef, useState } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
@@ -11,7 +10,7 @@ import { CategoriesSkeleton } from './categoriesSkeleton'
 import { createUrl } from '@/utils/createUrl/createUrl'
 import { focusTab } from './focustab'
 
-export function Categories({ currentCategory }: CategoriesProps) {
+export function Categories({ currentCategory }: { currentCategory: string }) {
   const searchParams = useSearchParams()
   const pathName = usePathname()
 

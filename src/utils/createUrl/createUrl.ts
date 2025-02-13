@@ -1,4 +1,13 @@
-import type { CreateUrlProps } from '@/data/types'
+import type { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime'
+import type { ReadonlyURLSearchParams } from 'next/navigation'
+
+interface CreateUrlProps {
+  paramsAndValueObj: Record<string, string | number>
+  searchParams: ReadonlyURLSearchParams
+  pathName: string
+  router?: AppRouterInstance
+  hash?: string
+}
 
 export function createUrl({
   paramsAndValueObj,

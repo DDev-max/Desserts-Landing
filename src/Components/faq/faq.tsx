@@ -1,7 +1,7 @@
-import type { FaqProps } from '@/data/types'
+import type { FaqAPI } from '@/data/types'
 import styles from './faq.module.css'
 
-export async function Faq({ data }: FaqProps) {
+export async function Faq({ data }: { data: FaqAPI[] }) {
   return (
     <section className={styles.faqSctn}>
       <h2 className={styles.faqSctn_h2}>Everything You Need to Know About Our Desserts</h2>
