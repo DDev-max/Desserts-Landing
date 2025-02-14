@@ -53,5 +53,10 @@
 @media (width <550px) {
   .welcomeCont_txt {
     line-height: 4rem;
+    margin: auto auto 5rem auto;
+  }
+
+  .welcomeCont_img {
+    display: none;
   }
 }

@@ -58,3 +58,20 @@
   padding: 0.5rem;
   color: var(--lightTxtColor);
 }
+
+@media (width < 500px) {
+  .categoriesSctn_btn--selected {
+    background-color: transparent;
+  }
+
+  .categoriesSctn_btn--selected p {
+    color: var(--globalDarkPink);
+    font-weight: bold;
+    background-color: var(--lightTxtColor);
+  }
+
+  .categoriesSctn_categoriesCont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
