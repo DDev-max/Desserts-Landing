@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import { Header } from './header';
-import type { ContextCategoriesProps, RecipesCategoriesAPI } from '@/data/types';
+import type { RecipesCategoriesAPI } from '@/data/types';
 import { useCategoriesCntxt } from '@/Context/useCategoriesCntxt';
 
 const user = userEvent.setup();
@@ -15,12 +15,12 @@ const categoriesMock: RecipesCategoriesAPI[] = [
       'https://images.unsplash.com/photo-1597249536924-b226b1a1259d?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
 ];
-const mockContext: ContextCategoriesProps = {
+const mockContext = {
   categories: categoriesMock,
   isLoading: false,
 };
 jest.mock('@/Context/useCategoriesCntxt');
-(useCategoriesCntxt as jest.Mock).mockReturnValue(mockContext);
+(useCategoriesCntxt as jest.MockedFunction<typeof useCategoriesCntxt>).mockReturnValue(mockContext);
 
 it('shows navigation menu when icon is clicked', async () => {
   render(<Header />);

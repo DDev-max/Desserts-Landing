@@ -102,7 +102,7 @@ it('should create a JsonLd question', () => {
 
 it('should return an empty string if props are wrong', () => {
   const badObj = {};
-
+  // @ts-expect-error (for testing purposes)
   const jsonLd = generateJsonLd({ from: badObj, type: 'badType' });
 
   expect(jsonLd).toBe('');

@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom';
 import { useContext } from 'react';
 import { useCategoriesCntxt } from './useCategoriesCntxt';
-import type { ContextCategoriesProps } from '../data/types';
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
@@ -17,7 +16,7 @@ it('should throw an error if context is undefined', () => {
 });
 
 it('should return context', () => {
-  const mockedContext: ContextCategoriesProps = {
+  const mockedContext = {
     categories: [
       {
         id: '1',
@@ -29,7 +28,7 @@ it('should return context', () => {
     isLoading: false,
   };
 
-  (useContext as jest.Mock).mockReturnValue(mockedContext);
+  (useContext as jest.MockedFunction<typeof useContext>).mockReturnValue(mockedContext);
 
   const context = useCategoriesCntxt();
 

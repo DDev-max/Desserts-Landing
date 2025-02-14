@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { createUrl } from './createUrl';
+import type { ReadonlyURLSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
 describe('returns url', () => {
@@ -10,7 +11,7 @@ describe('returns url', () => {
     };
 
     const pathName = '/';
-    const searchParams = new URLSearchParams();
+    const searchParams = new URLSearchParams() as ReadonlyURLSearchParams;
 
     const newUrl = createUrl({ paramsAndValueObj, pathName, searchParams, hash: 'aboutUs' });
 
@@ -24,7 +25,7 @@ describe('returns url', () => {
     };
 
     const pathName = '/example';
-    const searchParams = new URLSearchParams();
+    const searchParams = new URLSearchParams() as ReadonlyURLSearchParams;
 
     const newUrl = createUrl({ paramsAndValueObj, pathName, searchParams });
 
@@ -40,7 +41,7 @@ describe('url changes', () => {
     };
 
     const pathName = '/';
-    const searchParams = new URLSearchParams();
+    const searchParams = new URLSearchParams() as ReadonlyURLSearchParams;
     const router = useRouter();
 
     createUrl({ paramsAndValueObj, pathName, searchParams, router });
@@ -55,7 +56,7 @@ describe('url changes', () => {
     };
 
     const pathName = '/';
-    const searchParams = new URLSearchParams();
+    const searchParams = new URLSearchParams() as ReadonlyURLSearchParams;
     const router = useRouter();
 
     createUrl({ paramsAndValueObj, pathName, searchParams });
