@@ -13,6 +13,8 @@ export function SingleProduct() {
           width={450}
           height={300}
           alt='Vanilla cupcakes with colorful sprinkles.'
+          placeholder='blur'
+          blurDataURL='/imagePlaceholder.png'
         />
 
         <div className={`${styles.section_recipe_info}`}>

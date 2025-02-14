@@ -25,7 +25,15 @@ export async function FullRecipe({ category, page, recipes }: FullRecipeProps) {
       {recipes?.data.map(elmnt => {
         return (
           <article className={`${styles.recipesCont_recipe}`} id={elmnt.id} key={elmnt.id}>
-            <Image className={`${styles.recipesCont_recipe_img}`} alt={elmnt.dish} src={elmnt.image} width={200} height={200} />
+            <Image
+              className={`${styles.recipesCont_recipe_img}`}
+              alt={elmnt.dish}
+              src={elmnt.image}
+              width={200}
+              height={200}
+              placeholder='blur'
+              blurDataURL='/imagePlaceholder.png'
+            />
 
             <div className={`${styles.recipesCont_recipe_aditionalInfo}`}>
               <StarsSVG className={`${styles.recipesCont_recipe_aditionalInfo_starsCont_star}`} qtty={elmnt.stars} />
