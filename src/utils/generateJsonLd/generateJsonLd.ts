@@ -1,15 +1,6 @@
 import { baseUrl } from '@/data/consts'
 import type { FaqAPI, PageCatgry } from '@/data/types'
-import type {
-  ItemList,
-  WithContext,
-  Recipe,
-  ListItem,
-  FAQPage,
-  Question,
-  Answer,
-  HowToStep,
-} from 'schema-dts'
+import type { ItemList, WithContext, Recipe, ListItem, FAQPage, Question, Answer, HowToStep } from 'schema-dts'
 
 interface GenerateJsonLdProps {
   from: FaqAPI[] | PageCatgry

@@ -12,13 +12,7 @@ interface PaginationBtnsProps {
   selectedBtnClassName: string
 }
 
-export function PaginationBtns({
-  buttonsQtty,
-  classNameBtn,
-  classNameCont,
-  currentPage,
-  selectedBtnClassName,
-}: PaginationBtnsProps) {
+export function PaginationBtns({ buttonsQtty, classNameBtn, classNameCont, currentPage, selectedBtnClassName }: PaginationBtnsProps) {
   const pathName = usePathname()
   const searchParams = useSearchParams()
 

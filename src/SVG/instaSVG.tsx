@@ -1,12 +1,6 @@
 export function InstaSVG() {
   return (
-    <svg
-      aria-hidden
-      xmlns='http://www.w3.org/2000/svg'
-      xmlnsXlink='http://www.w3.org/1999/xlink'
-      aria-label='Instagram'
-      viewBox='0 0 512 512'
-    >
+    <svg aria-hidden xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' aria-label='Instagram' viewBox='0 0 512 512'>
       <g strokeWidth={0} />
       <g strokeLinecap='round' strokeLinejoin='round' />
       <rect width={512} height={512} rx='15%' id='b' />

@@ -17,13 +17,14 @@ import { FaqSkeleton } from '../Components/faq/faqSkeleton'
 
 interface PageProps {
   searchParams: Promise<{
-    category: 'cookies' | 'iceCreams' | 'fried' | 'fruits'
-    page: string
+    category?: 'cookies' | 'iceCreams' | 'fried' | 'fruits'
+    page?: string
   }>
 }
 
 export default async function Page({ searchParams }: PageProps) {
   const params = await searchParams
+
   const category = params?.category || 'cookies'
   const currentPage = params?.page || '1'
 
@@ -44,13 +45,7 @@ export default async function Page({ searchParams }: PageProps) {
         <div className={`${styles.welcomeCont}`}>
           <h1 className={`${styles.welcomeCont_txt}`}>Welcome to your happy place!</h1>
 
-          <Image
-            className={`${styles.welcomeCont_img}`}
-            width={450}
-            height={350}
-            src={'/welcomeImg.png'}
-            alt=''
-          />
+          <Image className={`${styles.welcomeCont_img}`} width={450} height={350} src={'/welcomeImg.png'} alt='' />
         </div>
 
         <div className={`${styles.mainPadding}`}>

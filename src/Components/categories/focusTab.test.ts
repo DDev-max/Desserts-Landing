@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { focusTab } from './focustab';
 
 const tabsBtnsRef = {
-  current: [{ focus: jest.fn() }, { focus: jest.fn() }],
+  current: [{ focus: jest.fn() }, { focus: jest.fn() }] as unknown as HTMLAnchorElement[],
 };
 
 const firstTab = 0;

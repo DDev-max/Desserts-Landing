@@ -8,12 +8,7 @@ interface HandleEnterLeaveProps {
   menuVisible: boolean[]
 }
 
-export function handleEnterLeave({
-  enter,
-  isMouse,
-  setMenuVisible,
-  menuVisible,
-}: HandleEnterLeaveProps) {
+export function handleEnterLeave({ enter, isMouse, setMenuVisible, menuVisible }: HandleEnterLeaveProps) {
   if (enter) {
     isMouse.current = true
     toggleMenu({ menuIdx: 1, setMenuVisible })

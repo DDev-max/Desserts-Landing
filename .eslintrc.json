@@ -1,12 +1,5 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "next/typescript",
-    "plugin:jest/recommended",
-    "plugin:jest/style",
-    "plugin:testing-library/react",
-    "prettier"
-  ],
+  "extends": ["next/core-web-vitals", "next/typescript", "plugin:jest/recommended", "plugin:jest/style", "plugin:testing-library/react", "prettier"],
   "plugins": ["jest", "prettier"],
   "env": {
     "jest/globals": true

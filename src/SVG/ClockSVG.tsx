@@ -2,13 +2,7 @@ import type { SVGProps } from '@/data/types'
 
 export function ClockSVG({ className }: SVGProps) {
   return (
-    <svg
-      className={className}
-      aria-hidden
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 470 470'
-      xmlSpace='preserve'
-    >
+    <svg className={className} aria-hidden xmlns='http://www.w3.org/2000/svg' viewBox='0 0 470 470' xmlSpace='preserve'>
       <path
         style={{
           fill: '#fff',

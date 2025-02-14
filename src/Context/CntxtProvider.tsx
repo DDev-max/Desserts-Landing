@@ -19,9 +19,5 @@ export function CntxtProvider({ children }: { children: React.ReactNode }) {
     getFetchData()
   }, [])
 
-  return (
-    <CategoriesCntxt.Provider value={{ categories, isLoading }}>
-      {children}
-    </CategoriesCntxt.Provider>
-  )
+  return <CategoriesCntxt.Provider value={{ categories, isLoading }}>{children}</CategoriesCntxt.Provider>
 }

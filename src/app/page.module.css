@@ -3,10 +3,8 @@
   display: flex;
   height: 19rem;
 
-  --mask: radial-gradient(56.6px at 50% calc(100% - 78px), #000 99%, #0000 101%) calc(50% - 60px)
-      0/120px 100%,
-    radial-gradient(56.6px at 50% calc(100% + 48px), #0000 99%, #000 101%) 50% calc(100% - 30px) /
-      120px 100% repeat-x;
+  --mask: radial-gradient(56.6px at 50% calc(100% - 78px), #000 99%, #0000 101%) calc(50% - 60px) 0/120px 100%,
+    radial-gradient(56.6px at 50% calc(100% + 48px), #0000 99%, #000 101%) 50% calc(100% - 30px) / 120px 100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
 }

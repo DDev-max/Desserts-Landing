@@ -15,8 +15,7 @@ it('should render full recipe from fetch', async () => {
       {
         id: 'choco-cookies',
         dish: 'Chocolate Chip Cookies',
-        description:
-          'Classic chocolate chip cookies with a soft and chewy texture, packed with semi-sweet chocolate chips for a perfect treat.',
+        description: 'Classic chocolate chip cookies with a soft and chewy texture, packed with semi-sweet chocolate chips for a perfect treat.',
         recipe: 'Preheat the oven to 175°C (350°F). Mix it.',
         minutesOfPreparation: 25,
         cookingTimeMinutes: 10,

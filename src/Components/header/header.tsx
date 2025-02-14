@@ -41,10 +41,7 @@ export function Header() {
   const { categories } = context
 
   return (
-    <header
-      ref={headerRef}
-      className={`${styles.header} ${menuVisible.some(el => el === true) ? styles['header--fixed'] : ''}`}
-    >
+    <header ref={headerRef} className={`${styles.header} ${menuVisible.some(el => el === true) ? styles['header--fixed'] : ''}`}>
       <Link title='Go to main page' className={`${styles.header_logo_link}`} href={'/'}>
         <Image width={90} height={65} src='/pageLogo.png' alt='' />
       </Link>
@@ -57,11 +54,7 @@ export function Header() {
         aria-controls='navMenu'
         onClick={() => toggleMenu({ menuIdx: 0, setMenuVisible })}
       >
-        {menuVisible[0] ? (
-          <span className={`${styles.header_closedMenu}`}></span>
-        ) : (
-          <MenuSVG className={`${styles.header_menuSVG}`} />
-        )}
+        {menuVisible[0] ? <span className={`${styles.header_closedMenu}`}></span> : <MenuSVG className={`${styles.header_menuSVG}`} />}
       </button>
 
       <span
@@ -69,10 +62,7 @@ export function Header() {
         className={`${styles.header_navBg} ${menuVisible[0] ? styles['header_navBg--visible'] : ''}`}
       ></span>
 
-      <nav
-        id='navMenu'
-        className={`${styles.header_nav} ${menuVisible[0] ? styles['header_nav--visible'] : ''}`}
-      >
+      <nav id='navMenu' className={`${styles.header_nav} ${menuVisible[0] ? styles['header_nav--visible'] : ''}`}>
         <ul className={styles.header_nav_menu}>
           <li className={styles.header_nav_menu_item}>
             <Link href='#popular'>Popular</Link>

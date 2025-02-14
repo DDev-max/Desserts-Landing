@@ -17,7 +17,7 @@ export async function getFaqData() {
 export async function getRecipeData(URL: string) {
   const recipesData = await fetchData<PageCatgry>({ URL })
 
-  const mappedRecipes = {
+  const mappedRecipes: PageCatgry = {
     first: recipesData.first,
     prev: recipesData.prev,
     next: recipesData.next,

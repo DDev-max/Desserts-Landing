@@ -9,13 +9,7 @@ interface CreateUrlProps {
   hash?: string
 }
 
-export function createUrl({
-  paramsAndValueObj,
-  pathName,
-  router,
-  searchParams,
-  hash,
-}: CreateUrlProps) {
+export function createUrl({ paramsAndValueObj, pathName, router, searchParams, hash }: CreateUrlProps) {
   const params = new URLSearchParams(searchParams)
 
   Object.entries(paramsAndValueObj).forEach(([param, value]) => {
