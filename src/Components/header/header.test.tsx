@@ -5,14 +5,11 @@ import { Header } from './header';
 import type { RecipesCategoriesAPI } from '@/data/types';
 import { useCategoriesCntxt } from '@/Context/useCategoriesCntxt';
 
-const user = userEvent.setup();
-
 const categoriesMock: RecipesCategoriesAPI[] = [
   {
     name: 'Ice Creams',
     id: 'iceCreams',
-    imgLink:
-      'https://images.unsplash.com/photo-1597249536924-b226b1a1259d?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    imgLink: 'https://img.com',
   },
 ];
 const mockContext = {
@@ -23,6 +20,8 @@ jest.mock('@/Context/useCategoriesCntxt');
 (useCategoriesCntxt as jest.MockedFunction<typeof useCategoriesCntxt>).mockReturnValue(mockContext);
 
 it('shows navigation menu when icon is clicked', async () => {
+  const user = userEvent.setup();
+
   render(<Header />);
   const menuIcon = screen.getByLabelText('Navigation menu');
 
@@ -36,13 +35,25 @@ it('shows navigation menu when icon is clicked', async () => {
 });
 
 it('shows submenu when clicking on submenu', async () => {
+  const user = userEvent.setup();
+
   render(<Header />);
 
   const subMenu = screen.getByRole('link', { expanded: false });
-
-  expect(subMenu).toHaveAttribute('aria-expanded', 'false');
-
   await user.click(subMenu);
 
   expect(subMenu).toHaveAttribute('aria-expanded', 'true');
+});
+
+it('hides menu when pressing Esc', async () => {
+  const user = userEvent.setup();
+
+  render(<Header />);
+
+  const subMenu = screen.getByRole('link', { expanded: false });
+  await user.click(subMenu);
+  expect(subMenu).toHaveAttribute('aria-expanded', 'true');
+
+  await user.keyboard('[Escape]');
+  expect(subMenu).toHaveAttribute('aria-expanded', 'false');
 });

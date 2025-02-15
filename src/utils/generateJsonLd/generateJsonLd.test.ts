@@ -24,7 +24,7 @@ it('should create a JsonLd recipe', () => {
         recipeYield: '5 to 10 cookies',
         keywords: 'chocolate chip cookies',
         reviewCount: 12,
-        image: 'https://plus.unsplash.com',
+        image: 'https://img.com',
         category: 'Cookies',
         calories: '250 per serving',
         cuisine: 'American',

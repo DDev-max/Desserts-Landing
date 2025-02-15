@@ -25,7 +25,7 @@ export function Header() {
   useEffect(() => {
     function hideAllMenus(e: KeyboardEvent) {
       if (e.key === 'Escape' && menuVisible.some(elmnt => elmnt === true)) {
-        setMenuVisible([])
+        setMenuVisible([false, false])
       }
     }
 

@@ -15,7 +15,7 @@ it('should render full recipe from fetch', async () => {
       {
         id: 'choco-cookies',
         dish: 'Chocolate Chip Cookies',
-        description: 'Classic chocolate chip cookies with a soft and chewy texture, packed with semi-sweet chocolate chips for a perfect treat.',
+        description: 'Classic chocolate chip cookies.',
         recipe: 'Preheat the oven to 175°C (350°F). Mix it.',
         minutesOfPreparation: 25,
         cookingTimeMinutes: 10,
@@ -23,8 +23,7 @@ it('should render full recipe from fetch', async () => {
         recipeYield: '5 to 10 cookies',
         keywords: 'chocolate chip cookies, easy cookie recipe, homemade cookies, baking recipes',
         reviewCount: 12,
-        image:
-          'https://plus.unsplash.com/premium_photo-1670895802114-dc3bc13b5963?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        image: 'https://img.com',
         category: 'Cookies',
         calories: '250 per serving',
         cuisine: 'American',

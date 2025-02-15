@@ -1,7 +1,7 @@
 import { faqUrl } from '../data/consts'
 import type { FaqAPI, PageCatgry } from '../data/types'
 import { fetchData } from './fetchData/fetchData'
-
+//in case the api changes
 export async function getFaqData() {
   const faqData = await fetchData<FaqAPI[]>({ URL: faqUrl })
 

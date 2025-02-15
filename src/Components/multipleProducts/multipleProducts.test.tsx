@@ -10,9 +10,8 @@ it('should render sponsored links', async () => {
     {
       id: '1',
       dish: 'Tiramisu',
-      image:
-        'https://img.freepik.com/free-photo/plate-with-tiramisu_23-2147772017.jpg?t=st=1732303160~exp=1732306760~hmac=ab723574d051f0e3f9a57ef87ba8a1e0779c2f245dee9b0bed47302511d3714d&w=360',
-      url: 'https://tastesbetterfromscratch.com/easy-tiramisu/',
+      image: 'https://img.com',
+      url: 'https://sponsor.com',
     },
   ];
 
