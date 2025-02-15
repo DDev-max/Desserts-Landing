@@ -105,7 +105,6 @@ export function Header() {
                   <Link
                     onKeyDown={e => {
                       if (e.key == 'Enter') setMenuVisible([])
-                      console.log('enterao')
                     }}
                     href={createUrl({
                       paramsAndValueObj: { category: elmnt.id },
