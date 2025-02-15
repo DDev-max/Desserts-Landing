@@ -1,3 +1,5 @@
+export type recipeNames = 'cookies' | 'iceCreams' | 'fried' | 'fruits'
+
 interface RecipeElmnt {
   id: string
   dish: string
@@ -11,16 +13,14 @@ interface RecipeElmnt {
   reviewCount: number
   image: string
   category: Categories
-  calories: string
-  cuisine: string
-  ingredients: string[]
+  calories?: string
+  cuisine?: string
+  ingredients?: string[]
 }
 
 export interface PageCatgry {
-  first: number
   prev: null | number
-  next: number
-  last: number
+  next: null | number
   pages: number
   items: number
   data: RecipeElmnt[]

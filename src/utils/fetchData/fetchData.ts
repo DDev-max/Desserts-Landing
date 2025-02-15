@@ -1,5 +1,4 @@
 import type { Dispatch, SetStateAction } from 'react'
-import { ServerNotLaunched } from './ErrorServerNotLaunched'
 
 interface FetchDataProps {
   URL: string
@@ -21,14 +20,7 @@ export async function fetchData<T>({ URL, setIsLoading }: FetchDataProps) {
     return format
   } catch (error) {
     if (error instanceof Error) {
-      if (/fetch failed/i.test(error.message)) {
-        throw new ServerNotLaunched('Json server is not launched')
-      } else {
-        console.error(`Fetch error: ${error.name}`)
-        throw error
-      }
-    } else {
-      console.error('Unexpected error')
+      console.error(`Fetch error: ${error.name}`)
       throw error
     }
   }

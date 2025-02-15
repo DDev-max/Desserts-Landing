@@ -1,4 +1,3 @@
-import { ServerNotLaunched } from './ErrorServerNotLaunched';
 import { fetchData } from './fetchData';
 
 const consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -25,12 +24,6 @@ it('returns data', async () => {
 });
 
 describe('fetch errors', () => {
-  it('throws error ServerNotLaunched', async () => {
-    global.fetch = jest.fn(() => Promise.reject(new Error('fetch failed'))) as jest.Mock;
-
-    await expect(fetchData({ URL: '' })).rejects.toThrow(ServerNotLaunched);
-  });
-
   it('throws error when response is not ok', async () => {
     global.fetch = jest.fn(() =>
       Promise.resolve({

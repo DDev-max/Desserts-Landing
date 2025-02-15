@@ -14,11 +14,12 @@ import { Categories } from '@/Components/categories/categories'
 import { FullRecipeSkeleton } from '../Components/fullRecipe/fullRecipeSkeleton'
 import { MultipleProductsSkeleton } from '../Components/multipleProducts/multipleProductsSkeleton'
 import { FaqSkeleton } from '../Components/faq/faqSkeleton'
-import { serverBaseUrl } from '@/data/consts'
+import type { recipeNames } from '@/data/types'
+import { apiBaseUrl } from '@/data/consts'
 
 interface PageProps {
   searchParams: Promise<{
-    category?: 'cookies' | 'iceCreams' | 'fried' | 'fruits'
+    category?: recipeNames
     page?: string
   }>
 }
@@ -28,8 +29,7 @@ export default async function Page({ searchParams }: PageProps) {
 
   const category = params?.category || 'cookies'
   const currentPage = params?.page || '1'
-
-  const recipeUrl = `${serverBaseUrl}/${category}?_page=${currentPage}&_per_page=2`
+  const recipeUrl = `${apiBaseUrl}/recipes/${category}?page=${currentPage}&per_page=2`
 
   const faqData = await getFaqData()
   const recipesData = await getRecipeData(recipeUrl)

@@ -73,6 +73,8 @@ export function generateJsonLd({ type, from }: GenerateJsonLdProps) {
       itemListElement: itemsList,
     }
 
+    console.log(fullJson)
+
     return JSON.stringify(fullJson)
   }
 
