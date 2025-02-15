@@ -55,5 +55,18 @@ it('hides menu when pressing Esc', async () => {
   expect(subMenu).toHaveAttribute('aria-expanded', 'true');
 
   await user.keyboard('[Escape]');
-  expect(subMenu).toHaveAttribute('aria-expanded', 'false');
+  expect(subMenu.getAttribute('aria-expanded')).toBeFalsy();
+});
+
+it('hides submenu after pressing Enter', async () => {
+  const user = userEvent.setup();
+
+  render(<Header />);
+
+  const subMenu = screen.getByRole('link', { expanded: false });
+  await user.click(subMenu);
+  await user.keyboard('[Tab]'); // select first submenu item
+  await user.keyboard('[Enter]');
+
+  expect(subMenu.getAttribute('aria-expanded')).toBeFalsy();
 });

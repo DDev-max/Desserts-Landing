@@ -25,7 +25,7 @@ export function Header() {
   useEffect(() => {
     function hideAllMenus(e: KeyboardEvent) {
       if (e.key === 'Escape' && menuVisible.some(elmnt => elmnt === true)) {
-        setMenuVisible([false, false])
+        setMenuVisible([])
       }
     }
 
@@ -105,6 +105,7 @@ export function Header() {
                   <Link
                     onKeyDown={e => {
                       if (e.key == 'Enter') setMenuVisible([])
+                      console.log('enterao')
                     }}
                     href={createUrl({
                       paramsAndValueObj: { category: elmnt.id },
