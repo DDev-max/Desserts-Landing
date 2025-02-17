@@ -15,18 +15,18 @@ export async function GET(request: NextRequest, { params }: GetRecipeProps) {
   const currentPage = Number(searchParams.get('page')) || 1
   const perPage = Number(searchParams.get('per_page')) || recipes[name].length
 
-  const pages = Math.ceil(recipes[name].length / perPage)
-  const paginatedRecipe: PageCatgry = {
-    prev: currentPage - 1 > 0 ? currentPage : null,
-    next: currentPage >= pages ? null : currentPage + 1,
-    pages,
-    items: recipes[name].length,
-    data: recipes[name].slice(perPage * (currentPage - 1), perPage * (currentPage - 1) + perPage),
-  }
-
   if (name in recipes) {
+    const pages = Math.ceil(recipes[name].length / perPage)
+    const paginatedRecipe: PageCatgry = {
+      prev: currentPage - 1 > 0 ? currentPage : null,
+      next: currentPage >= pages ? null : currentPage + 1,
+      pages,
+      items: recipes[name].length,
+      data: recipes[name].slice(perPage * (currentPage - 1), perPage * (currentPage - 1) + perPage),
+    }
+
     return NextResponse.json(paginatedRecipe)
   } else {
-    return NextResponse.json('Invalid recipe name')
+    return NextResponse.json('Error. Invalid recipe name')
   }
 }
