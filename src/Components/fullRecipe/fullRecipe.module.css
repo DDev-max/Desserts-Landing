@@ -75,7 +75,7 @@
   margin: 1rem auto;
 }
 
-.recipesCont_recipe_aditionalInfo {
+.recipesCont_recipe_additionalInfo {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -83,16 +83,16 @@
   font-size: var(--txtContentFntSize);
 }
 
-.recipesCont_recipe_aditionalInfo_clock {
+.recipesCont_recipe_additionalInfo_clock {
   width: 7rem;
 }
 
-.recipesCont_recipe_aditionalInfo_starsCont {
+.recipesCont_recipe_additionalInfo_starsCont {
   display: flex;
   gap: 0.5rem;
 }
 
-.recipesCont_recipe_aditionalInfo_starsCont_star {
+.recipesCont_recipe_additionalInfo_starsCont_star {
   width: 2rem;
 }
 
@@ -122,7 +122,7 @@
     padding: 1rem;
   }
 
-  .recipesCont_recipe_aditionalInfo {
+  .recipesCont_recipe_additionalInfo {
     order: 3;
     justify-content: center;
     gap: 2rem;

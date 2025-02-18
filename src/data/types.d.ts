@@ -12,7 +12,7 @@ interface RecipeElmnt {
   keywords: string
   reviewCount: number
   image: string
-  category: Categories
+  category: string
   calories?: string
   cuisine?: string
   ingredients?: string[]

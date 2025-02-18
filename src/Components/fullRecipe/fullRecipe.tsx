@@ -19,8 +19,8 @@ export async function FullRecipe({ category, page, recipes }: FullRecipeProps) {
       aria-labelledby={`${category}ID`}
       id={`${category}Tab`}
       className={`${styles.recipesCont} 
-            ${category == 'cookies' ? styles['recipesCont--rightBrdr'] : ''}
-            ${category == 'fruits' ? styles['recipesCont--leftBrdr'] : ''}`}
+            ${category.toLowerCase() == recipes.data[0].category.toLowerCase() ? styles['recipesCont--rightBrdr'] : ''}
+            ${category.toLowerCase() == recipes.data[recipes.data.length - 1].category.toLowerCase() ? styles['recipesCont--leftBrdr'] : ''}`}
     >
       {recipes?.data.map(elmnt => {
         return (
@@ -35,10 +35,10 @@ export async function FullRecipe({ category, page, recipes }: FullRecipeProps) {
               blurDataURL='/imagePlaceholder.png'
             />
 
-            <div className={`${styles.recipesCont_recipe_aditionalInfo}`}>
-              <StarsSVG className={`${styles.recipesCont_recipe_aditionalInfo_starsCont_star}`} qtty={elmnt.stars} />
+            <div className={`${styles.recipesCont_recipe_additionalInfo}`}>
+              <StarsSVG className={`${styles.recipesCont_recipe_additionalInfo_starsCont_star}`} qtty={elmnt.stars} />
 
-              <ClockSVG className={`${styles.recipesCont_recipe_aditionalInfo_clock}`} />
+              <ClockSVG className={`${styles.recipesCont_recipe_additionalInfo_clock}`} />
 
               <p>{`${elmnt.minutesOfPreparation} min`}</p>
             </div>
