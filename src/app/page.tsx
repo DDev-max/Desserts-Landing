@@ -50,7 +50,7 @@ export default async function Page({ searchParams }: PageProps) {
         </div>
 
         <div className={`${styles.mainPadding}`}>
-          <div className={`${styles.fullCateogriesCont}`}>
+          <div className={`${styles.fullCategoriesCont}`}>
             <Categories currentCategory={category} />
 
             <Suspense fallback={<FullRecipeSkeleton />}>

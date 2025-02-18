@@ -4,28 +4,32 @@
 This website was designed based on the needs of a bakery store. It has a simple interface, bright colors and good SEO.
 
 🔗[View Live Site](github.com)  
-🔗[View JQuery version](github.com)
+🔗[View JQuery version](https://github.com/DDev-max/Desserts-Landing-Jquery)
 
-✨Features
+Features
 --------
 
-✔️ **Responsive Design** – Works on all screen sizes  
+✔️ **Responsive design** – Works on all screen sizes  
 ✔️ **Semantic HTML** – Well-structured for readability and SEO  
-✔️ **Accessibility for sreen readers**  
+✔️ **BEM** – CSS methodology  
+✔️ **Accessibility for screen readers**  
 ✔️ **JSON-LD (SEO Optimized)** – Enhances search engine visibility  
 ✔️ **Easy to use**  
 ✔️ **Clean Code** – Modular, formatted, and easy to extend  
 ✔️ **API Integration**– Using Next.js Route Handlers
 
 
+##  **Test this page**  
+
+Want to see how this page performs in search engines? Copy the link from this page and paste it here: 🔗[Rich Results Test](https://search.google.com/test/rich-results?hl=en)  
 
 
 
 
-## 🛠 **Tech Stack**  
+##  **Tech Stack**  
 * **Next.js** – Modern React Framework  
 * **TypeScript** – Strongly typed JavaScript  
-* **Jest & Testing Library** – Unit tesing  
+* **Jest & Testing Library** – Unit testing  
 * **CSS Modules** – Scoped styles for maintainability  
 
 
@@ -34,7 +38,7 @@ This website was designed based on the needs of a bakery store. It has a simple 
 
 
 
-## ⚙️ **Installation & Setup**  
+##  **Installation & Setup**  
 
 1️⃣ Clone this repository:  
 ```bash

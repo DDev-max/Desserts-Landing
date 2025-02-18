@@ -11,7 +11,7 @@ export function Footer() {
     <footer id='aboutUs' className={`${styles.footer}`}>
       <div className={`${styles.footer_infoCont}`}>
         <section className={`${styles.footer_infoCont_sectn}`}>
-          <h2>Adress</h2>
+          <h2>Address</h2>
           <address className={`${styles.footer_infoCont_sectn_division}`}>
             <LocationSVG />
             Av. Las Delicias #123, Colonia Primavera, Ciudad Dulce, CP 45678,
