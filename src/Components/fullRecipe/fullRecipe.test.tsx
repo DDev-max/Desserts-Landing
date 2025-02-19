@@ -5,10 +5,8 @@ import type { PageCatgry } from '@/data/types';
 
 it('should render full recipe from fetch', async () => {
   const recipeMock: PageCatgry = {
-    first: 1,
     prev: null,
     next: 2,
-    last: 5,
     pages: 5,
     items: 5,
     data: [

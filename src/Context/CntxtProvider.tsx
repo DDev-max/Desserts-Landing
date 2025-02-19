@@ -13,7 +13,7 @@ export function CntxtProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     async function getFetchData() {
       const data = await fetchData<RecipesCategoriesAPI[]>({ URL: categoriesUrl, setIsLoading })
-      setCategories(data)
+      if (data) setCategories(data)
     }
 
     getFetchData()

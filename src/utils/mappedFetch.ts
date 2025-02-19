@@ -5,7 +5,7 @@ import { fetchData } from './fetchData/fetchData'
 export async function getFaqData() {
   const faqData = await fetchData<FaqAPI[]>({ URL: faqUrl })
 
-  const mappedFaq = faqData.map(elmt => ({
+  const mappedFaq = faqData?.map(elmt => ({
     id: elmt.id,
     answer: elmt.answer,
     question: elmt.question,
@@ -16,6 +16,7 @@ export async function getFaqData() {
 
 export async function getRecipeData(URL: string) {
   const recipesData = await fetchData<PageCatgry>({ URL })
+  if (!recipesData) return
 
   const mappedRecipes: PageCatgry = {
     prev: recipesData.prev,

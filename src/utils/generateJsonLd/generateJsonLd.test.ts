@@ -6,10 +6,8 @@ import type { FaqAPI, PageCatgry } from '@/data/types';
 
 it('should create a JsonLd recipe', () => {
   const recipeList: PageCatgry = {
-    first: 1,
     prev: null,
     next: 2,
-    last: 5,
     pages: 5,
     items: 5,
     data: [
