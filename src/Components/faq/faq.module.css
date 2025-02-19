@@ -25,14 +25,14 @@
   gap: 0.4rem;
 }
 
-.faqSctn_questionCont_details {
+.faqSctn_details {
   padding: 0.6rem;
   border: 0.2rem solid var(--globalLightPink);
   border-radius: 2rem;
   width: 100%;
 }
 
-.faqSctn_questionCont_details--skeleton {
+.faqSctn_details--skeleton {
   width: min(100%, 80rem);
   height: 6.5rem;
   margin: 1rem auto;
@@ -41,13 +41,13 @@
   composes: skeletonAnimation from global;
 }
 
-.faqSctn_questionCont_summ {
+.faqSctn_summ {
   padding: 0.6rem;
   font-size: var(--longerSubttlesFntSize);
   cursor: pointer;
 }
 
-.faqSctn_questionCont_p {
+.faqSctn_p {
   border-radius: 2rem;
   padding: 1rem;
   color: var(--darkTxtColor);

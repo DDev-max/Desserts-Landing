@@ -1,4 +1,4 @@
-.footer {
+.pageFooter {
   border-top: 0.3rem solid var(--layoutDarkPink1);
   background-color: var(--layoutBgColor);
   margin-top: 4rem;
@@ -10,23 +10,23 @@
   color: var(--darkTxtColor);
 }
 
-.footer svg {
+.pageFooter svg {
   width: 1.5rem;
   float: left;
 }
 
-.footer_infoCont {
+.pageFooter_infoCont {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-.footer_infoCont_sectn {
+.pageFooter_sectn {
   width: 14rem;
 }
 
-.footer_infoCont_sectn h2 {
+.pageFooter_sectn h2 {
   font-size: var(--subTitlesFntSize);
   text-align: center;
   background-color: var(--layoutLightPink);
@@ -35,11 +35,11 @@
   margin: 1rem 0 1.5rem 0;
 }
 
-.footer_infoCont_sectn_division {
+.pageFooter_division {
   display: block;
 }
 
-.footer_infoCont_sectn_division a {
+.pageFooter_division a {
   display: flex;
   word-break: break-word;
   margin: 2rem;

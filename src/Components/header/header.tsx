@@ -41,38 +41,38 @@ export function Header() {
   const { categories } = context
 
   return (
-    <header ref={headerRef} className={`${styles.header} ${menuVisible.some(el => el === true) ? styles['header--fixed'] : ''}`}>
-      <Link title='Go to main page' className={`${styles.header_logo_link}`} href={'/'}>
+    <header ref={headerRef} className={`${styles.pageHeader} ${menuVisible.some(el => el === true) ? styles['header--fixed'] : ''}`}>
+      <Link title='Go to main page' className={`${styles.pageHeader_logoLink}`} href={'/'}>
         <Image width={90} height={65} src='/pageLogo.png' alt='' />
       </Link>
 
       <button
-        className={styles.header_menuBtn}
+        className={styles.pageHeader_menuBtn}
         ref={btnMenuRef}
         aria-label='Navigation menu'
         aria-expanded={menuVisible[0]}
         aria-controls='navMenu'
         onClick={() => toggleMenu({ menuIdx: 0, setMenuVisible })}
       >
-        {menuVisible[0] ? <span className={`${styles.header_closedMenu}`}></span> : <MenuSVG className={`${styles.header_menuSVG}`} />}
+        {menuVisible[0] ? <span className={`${styles.pageHeader_closedMenu}`}></span> : <MenuSVG className={`${styles.pageHeader_menuSVG}`} />}
       </button>
 
       <span
         onClick={() => toggleMenu({ menuIdx: 0, setMenuVisible })}
-        className={`${styles.header_navBg} ${menuVisible[0] ? styles['header_navBg--visible'] : ''}`}
+        className={`${styles.pageHeader_navBg} ${menuVisible[0] ? styles['header_navBg--visible'] : ''}`}
       ></span>
 
-      <nav id='navMenu' className={`${styles.header_nav} ${menuVisible[0] ? styles['header_nav--visible'] : ''}`}>
-        <ul className={styles.header_nav_menu}>
-          <li className={styles.header_nav_menu_item}>
+      <nav id='navMenu' className={`${styles.pageHeader_nav} ${menuVisible[0] ? styles['header_nav--visible'] : ''}`}>
+        <ul className={styles.pageHeader_menu}>
+          <li className={styles.pageHeader_item}>
             <Link href='#popular'>Popular</Link>
           </li>
 
-          <li className={styles.header_nav_menu_item}>
+          <li className={styles.pageHeader_item}>
             <Link href='#new'>New</Link>
           </li>
 
-          <li className={styles.header_nav_menu_item}>
+          <li className={styles.pageHeader_item}>
             <Link href='#aboutUs'>About Us</Link>
           </li>
 
@@ -83,7 +83,7 @@ export function Header() {
             onMouseLeave={() => {
               handleEnterLeave({ enter: false, isMouse, menuVisible, setMenuVisible })
             }}
-            className={`${styles.header_nav_menu_item} ${menuVisible[1] ? styles['header_nav_menu_item--extended'] : ''}`}
+            className={`${styles.pageHeader_item} ${menuVisible[1] ? styles['header_item--extended'] : ''}`}
           >
             <Link
               onClick={() => {
@@ -96,10 +96,7 @@ export function Header() {
               Types ▼
             </Link>
 
-            <ul
-              id='subMenu1'
-              className={`${styles.header_nav_menu_item_subMenu} ${menuVisible[1] ? styles['header_nav_menu_item_subMenu--visible'] : ''}`}
-            >
+            <ul id='subMenu1' className={`${styles.pageHeader_subMenu} ${menuVisible[1] ? styles['header_subMenu--visible'] : ''}`}>
               {categories?.map(elmnt => (
                 <li key={elmnt.id}>
                   <Link

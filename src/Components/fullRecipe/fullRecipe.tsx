@@ -26,7 +26,7 @@ export async function FullRecipe({ category, page, recipes }: FullRecipeProps) {
         return (
           <article className={`${styles.recipesCont_recipe}`} id={elmnt.id} key={elmnt.id}>
             <Image
-              className={`${styles.recipesCont_recipe_img}`}
+              className={`${styles.recipesCont_img}`}
               alt={elmnt.dish}
               src={elmnt.image}
               width={200}
@@ -35,15 +35,15 @@ export async function FullRecipe({ category, page, recipes }: FullRecipeProps) {
               blurDataURL='/imagePlaceholder.png'
             />
 
-            <div className={`${styles.recipesCont_recipe_additionalInfo}`}>
-              <StarsSVG className={`${styles.recipesCont_recipe_additionalInfo_starsCont_star}`} qtty={elmnt.stars} />
+            <div className={`${styles.recipesCont_additionalInfo}`}>
+              <StarsSVG className={`${styles.recipesCont_star}`} qtty={elmnt.stars} />
 
-              <ClockSVG className={`${styles.recipesCont_recipe_additionalInfo_clock}`} />
+              <ClockSVG className={`${styles.recipesCont_clock}`} />
 
               <p>{`${elmnt.minutesOfPreparation} min`}</p>
             </div>
 
-            <div className={`${styles.recipesCont_recipe_info}`}>
+            <div className={`${styles.recipesCont_info}`}>
               <h3>{elmnt.dish}</h3>
               <RecipeSteps recipeParagraph={elmnt.recipe} />
             </div>
@@ -53,9 +53,9 @@ export async function FullRecipe({ category, page, recipes }: FullRecipeProps) {
 
       <PaginationBtns
         currentPage={Number(page)}
-        selectedBtnClassName={`${styles['recipesCont_btnsCont_btn--selected']}`}
+        selectedBtnClassName={`${styles['recipesCont_btn--selected']}`}
         classNameCont={`${styles.recipesCont_btnsCont}`}
-        classNameBtn={`${styles.recipesCont_btnsCont_btn}`}
+        classNameBtn={`${styles.recipesCont_btn}`}
         buttonsQtty={recipes?.pages || 0}
       />
     </div>

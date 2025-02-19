@@ -3,12 +3,12 @@ import styles from './singleProduct.module.css'
 
 export function SingleProduct() {
   return (
-    <section id='new' className={`${styles.section}`}>
-      <h2 className={`${styles.section_h2}`}>Fresh and New!</h2>
+    <section id='new' className={`${styles.singleProduct}`}>
+      <h2 className={`${styles.singleProduct_h2}`}>Fresh and New!</h2>
 
-      <div className={`${styles.section_recipe}`}>
+      <div className={`${styles.singleProduct_recipe}`}>
         <Image
-          className={`${styles.section_recipe_img}`}
+          className={`${styles.singleProduct_img}`}
           src={'/magdalenas.png'}
           width={450}
           height={300}
@@ -17,10 +17,10 @@ export function SingleProduct() {
           blurDataURL='/imagePlaceholder.png'
         />
 
-        <div className={`${styles.section_recipe_info}`}>
-          <h3 className={`${styles.section_recipe_info_title}`}>Vanilla Cupcakes</h3>
+        <div className={`${styles.singleProduct_info}`}>
+          <h3 className={`${styles.singleProduct_title}`}>Vanilla Cupcakes</h3>
 
-          <ol className={`${styles.section_recipe_info_steps}`}>
+          <ol className={`${styles.singleProduct_steps}`}>
             <li>Preheat oven to 350°F (175°C); line a cupcake tray with 12 liners.</li>
 
             <li>Whisk flour, baking powder, and salt in a bowl.</li>

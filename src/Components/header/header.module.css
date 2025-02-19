@@ -1,4 +1,4 @@
-.header {
+.pageHeader {
   background-color: var(--layoutBgColor);
   border-bottom: 0.3rem solid var(--layoutDarkPink1);
   font-size: 1.6rem;
@@ -15,43 +15,43 @@
   padding: 0 1rem;
 }
 
-.header--fixed {
+.pageHeader--fixed {
   position: fixed;
 }
 
-.header_logo_link {
+.pageHeader_logoLink {
   display: inline-block;
 }
 
-.header_menuBtn {
+.pageHeader_menuBtn {
   display: none;
 }
 
-.header_menuSVG {
+.pageHeader_menuSVG {
   display: none;
   width: 3rem;
   color: var(--layoutDarkPink3);
 }
 
-.header_nav * {
+.pageHeader_nav * {
   list-style: none;
   text-decoration: none;
   color: var(--darkTxtColor);
   text-align: center;
 }
 
-.header_nav {
+.pageHeader_nav {
   display: flex;
   align-items: center;
   top: 12.1%;
 }
 
-.header_nav_menu {
+.pageHeader_menu {
   display: flex;
   gap: 1rem;
 }
 
-.header_nav a {
+.pageHeader_nav a {
   background: var(--layoutLightPink);
   width: 100%;
   display: block;
@@ -60,51 +60,51 @@
   border-radius: 3rem;
 }
 
-.header_nav_menu_item:hover a,
-.header_nav_menu_item--extended a,
-.header_nav_menu_item a:focus {
+.pageHeader_item:hover a,
+.pageHeader_item--extended a,
+.pageHeader_item a:focus {
   background-color: var(--layoutDarkPink1);
 }
 
-.header_nav_menu_item {
+.pageHeader_item {
   position: relative;
 }
 
-.header_nav_menu_item--extended a {
+.pageHeader_item--extended a {
   border-radius: 2rem;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.header_nav_menu_item_subMenu {
+.pageHeader_subMenu {
   position: absolute;
   display: none;
 }
 
-.header_nav_menu_item_subMenu a {
+.pageHeader_subMenu a {
   font-size: 85%;
   padding: 0.5rem 0.7rem;
 }
 
-.header_nav_menu_item_subMenu--visible > li:hover a,
-.header_nav_menu_item_subMenu--visible a:focus {
+.pageHeader_subMenu--visible > li:hover a,
+.pageHeader_subMenu--visible a:focus {
   background-color: var(--layoutDarkPink2);
 }
 
-.header_nav_menu_item_subMenu--visible {
+.pageHeader_subMenu--visible {
   display: block;
 }
 
-.header_nav_menu_item_subMenu--visible a {
+.pageHeader_subMenu--visible a {
   border-radius: 0;
 }
 
-.header_nav_menu_item_subMenu--visible > li:last-of-type a {
+.pageHeader_subMenu--visible > li:last-of-type a {
   border-bottom-right-radius: 2rem;
   border-bottom-left-radius: 2rem;
 }
 
-.header_navBg {
+.pageHeader_navBg {
   position: fixed;
   background-color: #180044a1;
   top: 10.7%;
@@ -114,11 +114,11 @@
   transition: all 0.5s;
 }
 
-.header_navBg--visible {
+.pageHeader_navBg--visible {
   left: 0;
 }
 
-.header_closedMenu {
+.pageHeader_closedMenu {
   width: 3rem;
   height: 3rem;
   display: block;
@@ -126,21 +126,21 @@
   rotate: 45deg;
 }
 
-.header_closedMenu::after,
-.header_closedMenu::before {
+.pageHeader_closedMenu::after,
+.pageHeader_closedMenu::before {
   content: '';
   position: absolute;
   background-color: var(--layoutDarkPink3);
 }
 
-.header_closedMenu::after {
+.pageHeader_closedMenu::after {
   left: 50%;
   width: 13%;
   height: 100%;
   transform: translateX(-50%);
 }
 
-.header_closedMenu::before {
+.pageHeader_closedMenu::before {
   top: 50%;
   transform: translate(-50%, -50%);
   height: 13%;
@@ -148,7 +148,7 @@
 }
 
 @media (width < 600px) {
-  .header_nav {
+  .pageHeader_nav {
     top: 10.7%;
     visibility: hidden;
     overflow: hidden;
@@ -162,34 +162,34 @@
     transition: all 0.5s;
   }
 
-  .header_nav--visible {
+  .pageHeader_nav--visible {
     visibility: visible;
     right: 0;
   }
 
-  .header_menuSVG,
-  .header_menuBtn {
+  .pageHeader_menuSVG,
+  .pageHeader_menuBtn {
     display: block;
   }
 
-  .header_nav_menu {
+  .pageHeader_menu {
     flex-direction: column;
     width: 100%;
     gap: 0;
     margin-bottom: auto;
   }
 
-  .header_nav_menu a {
+  .pageHeader_menu a {
     border-radius: 0;
     background: transparent;
     border-bottom: 0.1rem solid;
   }
 
-  .header_nav_menu_item_subMenu {
+  .pageHeader_subMenu {
     width: 100%;
   }
 
-  .header_nav_menu_item_subMenu > li:last-of-type a {
+  .pageHeader_subMenu > li:last-of-type a {
     border-radius: 0;
   }
 }

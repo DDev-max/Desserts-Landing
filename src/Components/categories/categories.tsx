@@ -57,9 +57,9 @@ export function Categories({ currentCategory }: { currentCategory: string }) {
                 searchParams,
               })}
             >
-              <Image className={styles.categoriesSctn_btn_img} width={200} height={200} src={elmnt.imgLink} alt={`${elmnt.name} category`} />
+              <Image className={styles.categoriesSctn_img} width={200} height={200} src={elmnt.imgLink} alt={`${elmnt.name} category`} />
 
-              <p className={styles.categoriesSctn_btn_title}>{elmnt.name}</p>
+              <p className={styles.categoriesSctn_title}>{elmnt.name}</p>
             </Link>
           ))}
         </div>

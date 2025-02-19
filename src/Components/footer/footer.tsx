@@ -8,19 +8,19 @@ import { Twitter } from '../../SVG/Twitter'
 
 export function Footer() {
   return (
-    <footer id='aboutUs' className={`${styles.footer}`}>
-      <div className={`${styles.footer_infoCont}`}>
-        <section className={`${styles.footer_infoCont_sectn}`}>
+    <footer id='aboutUs' className={`${styles.pageFooter}`}>
+      <div className={`${styles.pageFooter_infoCont}`}>
+        <section className={`${styles.pageFooter_sectn}`}>
           <h2>Address</h2>
-          <address className={`${styles.footer_infoCont_sectn_division}`}>
+          <address className={`${styles.pageFooter_division}`}>
             <LocationSVG />
             Av. Las Delicias #123, Colonia Primavera, Ciudad Dulce, CP 45678,
           </address>
         </section>
 
-        <section className={`${styles.footer_infoCont_sectn}`}>
+        <section className={`${styles.pageFooter_sectn}`}>
           <h2>Contact Us</h2>
-          <address className={`${styles.footer_infoCont_sectn_division}`}>
+          <address className={`${styles.pageFooter_division}`}>
             <div>
               <EmailSVG />
 
@@ -35,10 +35,10 @@ export function Footer() {
           </address>
         </section>
 
-        <section className={`${styles.footer_infoCont_sectn}`}>
+        <section className={`${styles.pageFooter_sectn}`}>
           <h2>Socials</h2>
 
-          <div className={`${styles.footer_infoCont_sectn_division}`}>
+          <div className={`${styles.pageFooter_division}`}>
             <div>
               <InstaSVG />
               <Link href={'https://www.instagram.com/cristiano/'}>Instagram</Link>

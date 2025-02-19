@@ -28,7 +28,7 @@
   background-color: var(--globalDarkPink);
 }
 
-.categoriesSctn_btn_img--skeleton {
+.categoriesSctn_img--skeleton {
   background-color: var(--globalDarkPink);
   height: clamp(7.5rem, 20vw, 10rem);
   width: clamp(7.5rem, 20vw, 10rem);
@@ -36,7 +36,7 @@
   composes: skeletonAnimation from global;
 }
 
-.categoriesSctn_btn_title--skeleton {
+.categoriesSctn_title--skeleton {
   width: 100%;
   border-radius: 2rem;
   height: 3rem;
@@ -45,14 +45,14 @@
   composes: skeletonAnimation from global;
 }
 
-.categoriesSctn_btn_img {
+.categoriesSctn_img {
   border-radius: 50%;
   width: clamp(4rem, 20vw, 10rem);
   height: clamp(4rem, 20vw, 10rem);
   object-fit: cover;
 }
 
-.categoriesSctn_btn_title {
+.categoriesSctn_title {
   background-color: var(--globalDarkestPink);
   border-radius: 1rem;
   padding: 0.5rem;

@@ -1,23 +1,23 @@
-.section_h2 {
+.sponsorSect_h2 {
   font-size: var(--h2FontSize);
   text-align: center;
   margin: 2rem;
 }
 
-.section_grid {
+.sponsorSect_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   color: var(--lightTxtColor);
 }
 
-.section_grid_elmnt {
+.sponsorSect_elmnt {
   background-color: var(--globalDarkPink);
   opacity: 1;
   text-decoration: none;
 }
 
-.section_h2--skeleton {
+.sponsorSect_h2--skeleton {
   background-color: var(--globalLightPink);
   border-radius: 2rem;
   height: 5rem;
@@ -26,24 +26,24 @@
   composes: skeletonAnimation from global;
 }
 
-.section_grid_elmnt--skeleton {
+.sponsorSect_elmnt--skeleton {
   height: 15.5rem;
   background-color: var(--globalLightPink);
   composes: skeletonAnimation from global;
 }
 
-.section_grid_elmnt_img {
+.sponsorSect_img {
   width: 100%;
   height: 11rem;
   object-fit: cover;
 }
 
-.section_grid_elmnt_recipeCont {
+.sponsorSect_recipeCont {
   font-size: var(--txtContentFntSize);
   position: relative;
 }
 
-.section_grid_elmnt_recipeCont_title {
+.sponsorSect_title {
   text-align: center;
   font-size: 1.5rem;
   font-family: inherit;
@@ -57,7 +57,7 @@
   justify-content: center;
 }
 
-.section_grid_elmnt_recipeCont_title_linkSVG {
+.sponsorSect_linkSVG {
   width: 2rem;
   margin-left: 1rem;
 }

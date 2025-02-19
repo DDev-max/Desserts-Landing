@@ -7,12 +7,12 @@ import { Suspense } from 'react'
 import { getFaqData, getRecipeData } from '../utils/mappedFetch'
 import { FullRecipe } from '../Components/fullRecipe/fullRecipe'
 import { SingleProduct } from '../Components/singleProduct/singleProduct'
-import { MultipleProducts } from '../Components/multipleProducts/multipleProducts'
+import { SponsorRecipes } from '../Components/sponsorRecipes/sponsorRecipes'
 import { Faq } from '../Components/faq/faq'
 import { Categories } from '@/Components/categories/categories'
 
 import { FullRecipeSkeleton } from '../Components/fullRecipe/fullRecipeSkeleton'
-import { MultipleProductsSkeleton } from '../Components/multipleProducts/multipleProductsSkeleton'
+import { SponsorRecipesSkeleton } from '../Components/sponsorRecipes/sponsorRecipesSkeleton'
 import { FaqSkeleton } from '../Components/faq/faqSkeleton'
 import type { recipeNames } from '@/data/types'
 import { apiBaseUrl } from '@/data/consts'
@@ -61,8 +61,8 @@ export default async function Page({ searchParams }: PageProps) {
 
           <SingleProduct />
 
-          <Suspense fallback={<MultipleProductsSkeleton />}>
-            <MultipleProducts />
+          <Suspense fallback={<SponsorRecipesSkeleton />}>
+            <SponsorRecipes />
           </Suspense>
 
           <Suspense fallback={<FaqSkeleton />}>

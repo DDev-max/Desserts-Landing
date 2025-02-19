@@ -8,9 +8,9 @@ export async function Faq({ data }: { data: FaqAPI[] }) {
 
       <div className={styles.faqSctn_questionCont}>
         {data.map(elmt => (
-          <details className={styles.faqSctn_questionCont_details} name='question' key={elmt.id}>
-            <summary className={styles.faqSctn_questionCont_summ}>{elmt.question}</summary>
-            <p className={styles.faqSctn_questionCont_p}> {elmt.answer}</p>
+          <details className={styles.faqSctn_details} name='question' key={elmt.id}>
+            <summary className={styles.faqSctn_summ}>{elmt.question}</summary>
+            <p className={styles.faqSctn_p}> {elmt.answer}</p>
           </details>
         ))}
       </div>

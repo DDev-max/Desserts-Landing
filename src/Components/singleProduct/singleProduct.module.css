@@ -1,14 +1,14 @@
-.section {
+.singleProduct {
   margin: 5rem 0;
 }
 
-.section_h2 {
+.singleProduct_h2 {
   text-align: center;
   margin: 1rem;
   font-size: var(--h2FontSize);
 }
 
-.section_recipe {
+.singleProduct_recipe {
   color: var(--lightTxtColor);
   display: flex;
   flex-wrap: wrap;
@@ -16,12 +16,12 @@
   position: relative;
 }
 
-.section_recipe_img {
+.singleProduct_img {
   width: 100%;
   height: auto;
 }
 
-.section_recipe_info {
+.singleProduct_info {
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -29,7 +29,7 @@
   background-color: var(--globalDarkPink);
 }
 
-.section_recipe_info_title {
+.singleProduct_title {
   font-size: var(--subTitlesFntSize);
   color: var(--lightTxtColor);
   margin: 0.5rem auto;
@@ -38,7 +38,7 @@
   border-radius: 1.5rem;
 }
 
-.section_recipe_info_steps {
+.singleProduct_steps {
   background-color: var(--globalLightPink);
   color: var(--darkTxtColor);
   padding: 2rem;
@@ -46,19 +46,19 @@
 }
 
 @media (width >= 700px) {
-  .section_recipe_img {
+  .singleProduct_img {
     width: 40vw;
     object-fit: cover;
   }
 
-  .section_recipe {
+  .singleProduct_recipe {
     background: transparent;
     flex-wrap: nowrap;
   }
 }
 
 @media (width >= 1140px) {
-  .section_recipe_info {
+  .singleProduct_info {
     position: absolute;
     right: 2rem;
     top: 50%;
@@ -66,20 +66,20 @@
     padding: 1rem;
   }
 
-  .section_recipe_img {
+  .singleProduct_img {
     width: clamp(25rem, 50vw, 45rem);
   }
 
-  .section_recipe {
+  .singleProduct_recipe {
     background-color: transparent;
     padding: 0 2rem;
   }
 
-  .section_recipe_info_title {
+  .singleProduct_title {
     margin: 0 auto 1rem auto;
   }
 
-  .section_h2 {
+  .singleProduct_h2 {
     margin: 2.5rem 1rem 2rem 1rem;
   }
 }
