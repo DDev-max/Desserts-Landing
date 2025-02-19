@@ -11,14 +11,10 @@ This website was designed based on the needs of a bakery store. It has a simple 
 ✔️ **Semantic HTML** – Well-structured for readability and SEO  
 ✔️ **BEM** – CSS methodology  
 ✔️ **Accessibility for screen readers**  
-✔️ **JSON-LD (SEO Optimized)** – Enhances search engine visibility  
+✔️ **JSON-LD (SEO Optimized)** – Enhances search engine visibility.🔗[Try rich results](https://search.google.com/test/rich-results?hl=en)  
 ✔️ **Easy to use**  
 ✔️ **Clean Code** – Modular, formatted, and easy to extend  
 ✔️ **API Integration**– Using Next.js Route Handlers
-
-## **Test this page**
-
-Want to see how this page performs in search engines? Copy the link from this page and paste it here: 🔗[Rich Results Test](https://search.google.com/test/rich-results?hl=en)
 
 ## **Tech Stack**
 
