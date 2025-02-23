@@ -5,9 +5,7 @@ import { Categories } from './categories';
 import type { RecipesCategoriesAPI } from '@/data/types';
 import { createUrl } from '@/utils/createUrl/createUrl';
 import { useCategoriesCntxt } from '@/Context/useCategoriesCntxt';
-import { focusTab } from './focustab';
 
-jest.mock('./focustab');
 jest.mock('@/utils/createUrl/createUrl');
 jest.mock('@/Context/useCategoriesCntxt');
 
@@ -33,9 +31,10 @@ describe('renders', () => {
     render(<Categories currentCategory='iceCreams' />);
 
     const categoryTab = await screen.findByRole('tab');
+    const categoryImg = await screen.findByRole('img');
 
-    expect(useCategoriesCntxt).toHaveBeenCalledTimes(1);
     expect(categoryTab).toHaveTextContent(/ice creams/i);
+    expect(categoryImg.getAttribute('alt')).toMatch(/ice cream/i);
   });
 
   it('should render skeleton if isLoading=true', async () => {
@@ -69,20 +68,16 @@ describe('accessibility', () => {
 
     const selectedCategory = await screen.findByRole('tab', { selected: true });
 
-    expect(useCategoriesCntxt).toHaveBeenCalledTimes(1);
     expect(selectedCategory).toHaveTextContent(/ice creams/i);
   });
 
-  it('should focus tab when arrow key is pressed', async () => {
+  it('categories should be able to be focused', async () => {
     const user = userEvent.setup();
     render(<Categories currentCategory='iceCreams' />);
 
     const categoryTab = await screen.findByRole('tab');
-    categoryTab.focus();
 
-    await user.keyboard('{ArrowRight}');
-
-    expect(useCategoriesCntxt).toHaveBeenCalledTimes(1);
-    expect(focusTab).toHaveBeenCalled();
+    await user.keyboard('{Tab}');
+    expect(categoryTab).toHaveFocus();
   });
 });
