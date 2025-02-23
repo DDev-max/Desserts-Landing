@@ -3,6 +3,7 @@ import { fontFamilyTxt } from '../data/fonts'
 import { CntxtProvider } from '../Context/CntxtProvider'
 import { Header } from '../Components/header/header'
 import { Footer } from '../Components/footer/footer'
+import { Suspense } from 'react'
 
 export const metadata = {
   title: 'Sweet Bliss',
@@ -17,7 +18,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Link href='#mainContent'>Skip to main content</Link>
 
         <CntxtProvider>
-          <Header />
+          <Suspense>
+            <Header />
+          </Suspense>
           {children}
         </CntxtProvider>
 

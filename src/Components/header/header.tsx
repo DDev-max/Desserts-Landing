@@ -43,7 +43,7 @@ export function Header() {
   return (
     <header ref={headerRef} className={`${styles.pageHeader} ${menuVisible.some(el => el === true) ? styles['header--fixed'] : ''}`}>
       <Link title='Go to main page' className={`${styles.pageHeader_logoLink}`} href={'/'}>
-        <Image width={90} height={65} src='/pageLogo.png' alt='' />
+        <Image width={90} height={65} src='/pageLogo.png' alt='' priority />
       </Link>
 
       <button

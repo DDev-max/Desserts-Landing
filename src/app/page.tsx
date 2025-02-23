@@ -47,7 +47,7 @@ export default async function Page({ searchParams }: PageProps) {
         <div className={`${styles.welcomeCont}`}>
           <h1 className={`${styles.welcomeCont_txt}`}>Welcome to your happy place!</h1>
 
-          <Image className={`${styles.welcomeCont_img}`} width={450} height={350} src={'/welcomeImg.png'} alt='' />
+          <Image priority className={`${styles.welcomeCont_img}`} width={450} height={350} src={'/welcomeImg.png'} alt='' />
         </div>
 
         <div className={`${styles.mainPadding}`}>
