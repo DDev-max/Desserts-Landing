@@ -41,7 +41,7 @@ export function Header() {
   const { categories } = context
 
   return (
-    <header ref={headerRef} className={`${styles.pageHeader} ${menuVisible.some(el => el === true) ? styles['header--fixed'] : ''}`}>
+    <header ref={headerRef} className={`${styles.pageHeader} ${menuVisible.some(el => el === true) ? styles['pageHeader--fixed'] : ''}`}>
       <Link title='Go to main page' className={`${styles.pageHeader_logoLink}`} href={'/'}>
         <Image width={90} height={65} src='/pageLogo.png' alt='' priority />
       </Link>
@@ -59,10 +59,10 @@ export function Header() {
 
       <span
         onClick={() => toggleMenu({ menuIdx: 0, setMenuVisible })}
-        className={`${styles.pageHeader_navBg} ${menuVisible[0] ? styles['header_navBg--visible'] : ''}`}
+        className={`${styles.pageHeader_navBg} ${menuVisible[0] ? styles['pageHeader_navBg--visible'] : ''}`}
       ></span>
 
-      <nav id='navMenu' className={`${styles.pageHeader_nav} ${menuVisible[0] ? styles['header_nav--visible'] : ''}`}>
+      <nav id='navMenu' className={`${styles.pageHeader_nav} ${menuVisible[0] ? styles['pageHeader_nav--visible'] : ''}`}>
         <ul className={styles.pageHeader_menu}>
           <li className={styles.pageHeader_item}>
             <Link href='#popular'>Popular</Link>
@@ -83,7 +83,7 @@ export function Header() {
             onMouseLeave={() => {
               handleEnterLeave({ enter: false, isMouse, menuVisible, setMenuVisible })
             }}
-            className={`${styles.pageHeader_item} ${menuVisible[1] ? styles['header_item--extended'] : ''}`}
+            className={`${styles.pageHeader_item} ${menuVisible[1] ? styles['pageHeader_item--extended'] : ''}`}
           >
             <Link
               onClick={() => {
@@ -96,7 +96,7 @@ export function Header() {
               Types ▼
             </Link>
 
-            <ul id='subMenu1' className={`${styles.pageHeader_subMenu} ${menuVisible[1] ? styles['header_subMenu--visible'] : ''}`}>
+            <ul id='subMenu1' className={`${styles.pageHeader_subMenu} ${menuVisible[1] ? styles['pageHeader_subMenu--visible'] : ''}`}>
               {categories?.map(elmnt => (
                 <li key={elmnt.id}>
                   <Link
