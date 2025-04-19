@@ -2,8 +2,8 @@
 
 This website was designed based on the needs of a bakery store. It has a simple interface, bright colors and good SEO.
 
-🔗[View Live Site](github.com)  
-🔗[View JQuery version](https://github.com/DDev-max/Desserts-Landing-Jquery)
+🔗 [View Live Site](https://desserts-landing.vercel.app/)  
+🔗 [View JQuery version](https://github.com/DDev-max/Desserts-Landing-Jquery)
 
 ## Features
 
@@ -11,9 +11,8 @@ This website was designed based on the needs of a bakery store. It has a simple 
 ✔️ **Semantic HTML** – Well-structured for readability and SEO  
 ✔️ **BEM** – CSS methodology  
 ✔️ **Accessibility for screen readers**  
-✔️ **JSON-LD (SEO Optimized)** – Enhances search engine visibility.🔗[Try rich results](https://search.google.com/test/rich-results?hl=en)  
+✔️ **JSON-LD (SEO Optimized)** – Enhances search engine visibility.🔗[Try rich results](https://search.google.com/test/rich-results?hl=en&url=https%3A%2F%2Fdesserts-landing.vercel.app%2F)  
 ✔️ **Easy to use**  
-✔️ **Clean Code** – Modular, formatted, and easy to extend  
 ✔️ **API Integration**– Using Next.js Route Handlers
 
 ## **Tech Stack**
@@ -47,4 +46,8 @@ npm install
 
 ```bash
 npm run dev
+```
+5️⃣ Create an .env file with the environment variables
+```sh
+NEXT_PUBLIC_SERVER_URL=http://localhost:3000
 ```
