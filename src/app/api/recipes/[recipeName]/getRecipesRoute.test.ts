@@ -6,7 +6,7 @@ import { GET } from './route';
 import type { PageCatgry, recipeNames } from '@/data/types';
 import { recipes } from '@/data/consts';
 
-const testRecipeName = 'cookies';
+const testRecipeName = 'cookiesCat';
 const params: Promise<{ recipeName: recipeNames }> = Promise.resolve({
   recipeName: testRecipeName,
 });

@@ -1,4 +1,4 @@
-export type recipeNames = 'cookies' | 'iceCreams' | 'fried' | 'fruits'
+export type recipeNames = 'cookiesCat' | 'iceCreams' | 'fried' | 'fruits'
 
 interface RecipeElmnt {
   id: string

@@ -9,7 +9,7 @@ export const sponsorsUrl = `${apiBaseUrl}/sponsor`
 export const faqUrl = `${apiBaseUrl}/faq`
 
 export const recipes = {
-  cookies: [
+  cookiesCat: [
     {
       id: 'choco-cookies',
       dish: 'Chocolate Chip Cookies',
