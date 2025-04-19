@@ -12,7 +12,6 @@ export function CntxtProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     async function getFetchData() {
-      console.log('CLIENTE: ', baseURL + categoriesUrl)
       const data = await fetchData<RecipesCategoriesAPI[]>({ URL: baseURL + categoriesUrl, setIsLoading })
 
       if (data) setCategories(data)

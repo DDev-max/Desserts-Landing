@@ -5,8 +5,6 @@ import { fetchData } from './fetchData/fetchData'
 export async function getFaqData() {
   const faqData = await fetchData<FaqAPI[]>({ URL: baseURL + faqUrl })
 
-  console.log('FAQ: ', baseURL + faqUrl)
-
   const mappedFaq = faqData?.map(elmt => ({
     id: elmt.id,
     answer: elmt.answer,

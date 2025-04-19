@@ -27,14 +27,12 @@ interface PageProps {
 export default async function Page({ searchParams }: PageProps) {
   const params = await searchParams
 
-  const category = params?.category || 'cookies'
+  const category = params?.category || 'cookiesCat'
   const currentPage = params?.page || '1'
   const recipeUrl = `${apiBaseUrl}/recipes/${category}?page=${currentPage}&per_page=2`
 
   const faqData = await getFaqData()
   const recipesData = await getRecipeData(baseURL + recipeUrl)
-  console.log('FULL RECIPE URL: ', baseURL + recipeUrl)
-  console.log('DATOS: ', recipesData)
 
   if (!faqData?.length || !recipesData?.data.length) return
 
