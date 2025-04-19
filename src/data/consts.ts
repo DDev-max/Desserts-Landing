@@ -1,8 +1,7 @@
 export const emptyStarColorCode = '#000000'
 export const starColorCode = '#fe9900'
 
-export const baseUrl = 'http://localhost:3000'
-export const apiBaseUrl = `${baseUrl}/api`
+export const apiBaseUrl = `/api`
 
 export const categoriesUrl = `${apiBaseUrl}/categories`
 export const sponsorsUrl = `${apiBaseUrl}/sponsor`
