@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { generateJsonLd } from './generateJsonLd';
 import type { Question, Recipe } from 'schema-dts';
-import { baseUrl } from '@/data/consts';
+import { baseURL } from '@/data/consts';
 import type { FaqAPI, PageCatgry } from '@/data/types';
 
 it('should create a JsonLd recipe', () => {
@@ -42,7 +42,7 @@ it('should create a JsonLd recipe', () => {
     name: recipe.dish,
     image: recipe.image,
     description: recipe.description,
-    url: `${baseUrl}/#${recipe.id}`,
+    url: `${baseURL}/#${recipe.id}`,
     author: {
       '@type': 'Organization',
       name: 'Sweet Bliss Bakery',

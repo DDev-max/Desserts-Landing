@@ -1,6 +1,7 @@
 export const emptyStarColorCode = '#000000'
 export const starColorCode = '#fe9900'
 
+export const baseURL = process.env.NEXT_PUBLIC_BASE_URL ?? ''
 export const apiBaseUrl = `/api`
 
 export const categoriesUrl = `${apiBaseUrl}/categories`

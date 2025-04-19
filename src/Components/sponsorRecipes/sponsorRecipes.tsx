@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styles from './sponsorRecipes.module.css'
 import Link from 'next/link'
 import { fetchData } from '@/utils/fetchData/fetchData'
-import { sponsorsUrl } from '@/data/consts'
+import { baseURL, sponsorsUrl } from '@/data/consts'
 import { LinkSVG } from '@/SVG/LinkSVG'
 
 interface SponsorApi {
@@ -13,7 +13,7 @@ interface SponsorApi {
 }
 
 export async function SponsorRecipes() {
-  const multipleRecipes = await fetchData<SponsorApi[]>({ URL: sponsorsUrl })
+  const multipleRecipes = await fetchData<SponsorApi[]>({ URL: baseURL + sponsorsUrl })
 
   return (
     <section id='popular'>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { categoriesUrl } from '../data/consts'
+import { baseURL, categoriesUrl } from '../data/consts'
 import type { RecipesCategoriesAPI } from '../data/types'
 import { fetchData } from '../utils/fetchData/fetchData'
 import { CategoriesCntxt } from './contextCategories'
@@ -12,7 +12,9 @@ export function CntxtProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     async function getFetchData() {
-      const data = await fetchData<RecipesCategoriesAPI[]>({ URL: categoriesUrl, setIsLoading })
+      console.log('CLIENTE: ', baseURL + categoriesUrl)
+      const data = await fetchData<RecipesCategoriesAPI[]>({ URL: baseURL + categoriesUrl, setIsLoading })
+
       if (data) setCategories(data)
     }
 

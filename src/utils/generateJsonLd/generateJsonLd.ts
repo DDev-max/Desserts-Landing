@@ -1,3 +1,4 @@
+import { baseURL } from '@/data/consts'
 import type { FaqAPI, PageCatgry } from '@/data/types'
 import type { ItemList, WithContext, Recipe, ListItem, FAQPage, Question, Answer, HowToStep } from 'schema-dts'
 
@@ -28,7 +29,7 @@ export function generateJsonLd({ type, from }: GenerateJsonLdProps) {
         name: elmnt.dish,
         image: elmnt.image,
         description: elmnt.description,
-        url: `/#${elmnt.id}`,
+        url: `${baseURL}/#${elmnt.id}`,
         author: {
           '@type': 'Organization',
           name: 'Sweet Bliss Bakery',
