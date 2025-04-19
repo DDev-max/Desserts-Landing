@@ -33,7 +33,10 @@ export default async function Page({ searchParams }: PageProps) {
 
   const faqData = await getFaqData()
   const recipesData = await getRecipeData(baseURL + recipeUrl)
-  if (!faqData || !recipesData) return
+  console.log('FULL RECIPE URL: ', baseURL + recipeUrl)
+  console.log('DATOS: ', recipesData)
+
+  if (!faqData?.length || !recipesData?.data.length) return
 
   const recipesJsonLd = generateJsonLd({ from: recipesData, type: 'recipeList' })
   const faqJsonLd = generateJsonLd({ from: faqData, type: 'faq' })

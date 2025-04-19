@@ -8,7 +8,7 @@ interface GetFaqProps {
   }>
 }
 
-export async function GET(request: NextRequest, { params }: GetFaqProps) {
+export async function GET(_request: NextRequest, { params }: GetFaqProps) {
   const id = (await params).id
   const sponsorId = sponsor.find(el => el.id == id)
 
