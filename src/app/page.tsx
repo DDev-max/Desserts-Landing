@@ -15,7 +15,7 @@ import { FullRecipeSkeleton } from '../Components/fullRecipe/fullRecipeSkeleton'
 import { SponsorRecipesSkeleton } from '../Components/sponsorRecipes/sponsorRecipesSkeleton'
 import { FaqSkeleton } from '../Components/faq/faqSkeleton'
 import type { recipeNames } from '@/data/types'
-import { apiBaseUrl, baseURL } from '@/data/consts'
+import { apiBaseUrl, SERVER_URL } from '@/data/consts'
 
 interface PageProps {
   searchParams: Promise<{
@@ -32,7 +32,7 @@ export default async function Page({ searchParams }: PageProps) {
   const recipeUrl = `${apiBaseUrl}/recipes/${category}?page=${currentPage}&per_page=2`
 
   const faqData = await getFaqData()
-  const recipesData = await getRecipeData(baseURL + recipeUrl)
+  const recipesData = await getRecipeData(SERVER_URL + recipeUrl)
 
   if (!faqData?.length || !recipesData?.data.length) return
 

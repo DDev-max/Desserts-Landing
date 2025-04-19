@@ -19,7 +19,7 @@ export async function FullRecipe({ category, page, recipes }: FullRecipeProps) {
       aria-labelledby={`${category}ID`}
       id={`${category}Tab`}
       className={`${styles.recipesCont} 
-            ${category.toLowerCase() === 'cookiesCat' ? styles['recipesCont--rightBrdr'] : ''}
+            ${category.toLowerCase() === 'cookiesCat'.toLowerCase() ? styles['recipesCont--rightBrdr'] : ''}
             ${category.toLowerCase() === 'fruits' ? styles['recipesCont--leftBrdr'] : ''}`}
     >
       {recipes?.data.map(elmnt => {

@@ -1,4 +1,4 @@
-import { baseURL } from '@/data/consts'
+import { PAGE_URL, SERVER_URL } from '@/data/consts'
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
@@ -9,12 +9,14 @@ export function middleware(req: NextRequest) {
     return new NextResponse('Not Allowed. Only GET methods allowed', { status: 405 })
   }
 
-  if (origin && origin !== baseURL) {
+  const res = NextResponse.next()
+  const allowedOrigins = [SERVER_URL, PAGE_URL]
+  if (origin && !allowedOrigins.includes(origin)) {
     return new NextResponse('Not allowed by server', { status: 403 })
+  } else if (origin) {
+    res.headers.set('Access-Control-Allow-Origin', origin)
   }
 
-  const res = NextResponse.next()
-  res.headers.set('Access-Control-Allow-Origin', baseURL)
   res.headers.set('Vary', 'Origin')
   return res
 }
