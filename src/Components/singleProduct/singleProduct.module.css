@@ -30,7 +30,7 @@
 }
 
 .singleProduct_title {
-  font-size: var(--subTitlesFntSize);
+  font-size: var(--h3FontSize);
   color: var(--lightTxtColor);
   margin: 0.5rem auto;
   background-color: var(--globalDarkestPink);

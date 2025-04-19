@@ -1,8 +1,8 @@
-import type { SVGProps } from '@/data/types'
+import type { SVGProps } from 'react'
 
-export function MenuSVG({ className }: SVGProps) {
+export function MenuSVG(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg className={className} viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg' fill='currentColor'>
+    <svg {...props} viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg' fill='currentColor'>
       <g strokeWidth='0'></g>
       <g strokeLinecap='round' strokeLinejoin='round'></g>
       <g>

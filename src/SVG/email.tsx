@@ -1,8 +1,8 @@
-import type { SVGProps } from '@/data/types'
+import type { SVGProps } from 'react'
 
-export function EmailSVG({ className }: SVGProps) {
+export function EmailSVG(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' className={className}>
+    <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' {...props}>
       <title>Email</title>
       <g strokeWidth={0} />
       <g strokeLinecap='round' strokeLinejoin='round' />

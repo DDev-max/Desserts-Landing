@@ -37,7 +37,3 @@ export interface FaqAPI {
   question: string
   answer: string
 }
-
-export interface SVGProps {
-  className?: string
-}

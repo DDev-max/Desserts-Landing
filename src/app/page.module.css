@@ -50,6 +50,12 @@
   }
 }
 
+@media (width < 1000px) {
+  .mainPadding{
+    width: 90%;
+  }
+}
+
 @media (width <550px) {
   .welcomeCont_txt {
     line-height: 4rem;

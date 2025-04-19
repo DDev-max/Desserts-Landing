@@ -12,10 +12,10 @@
   --layoutLightPink: #ffe5fc;
   --layoutBgColor: #f5c9ef;
 
-  --h2FontSize: 2.2rem;
-  --subTitlesFntSize: 2rem;
+  --h2FontSize: clamp(2rem, 5vw, 2.2rem);
+  --h3FontSize: clamp(1.5rem, 5vw, 2rem);
   --longerSubttlesFntSize: 1.5rem;
-  --txtContentFntSize: 1.3rem;
+  --txtContentFntSize: clamp(1rem, 2vw, 1.3rem);
 }
 
 body {

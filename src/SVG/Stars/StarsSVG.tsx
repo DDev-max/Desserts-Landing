@@ -9,10 +9,11 @@ import { emptyStarColorCode } from '@/data/consts'
 
 interface StarsSVGProps {
   qtty: number
-  className?: string
+  svgClass?: string
+  containerClass?: string
 }
 
-export function StarsSVG({ className, qtty }: StarsSVGProps) {
+export function StarsSVG({ svgClass, qtty, containerClass }: StarsSVGProps) {
   const emptyStarsArray: string[] = Array(5).fill('')
 
   const [color, setColor] = useState(emptyStarsArray)
@@ -20,6 +21,7 @@ export function StarsSVG({ className, qtty }: StarsSVGProps) {
 
   return (
     <div
+      className={containerClass}
       role='img'
       aria-label={`Rating: ${qtty} of 5.`}
       style={{ display: 'flex', gap: '.5rem' }}
@@ -40,7 +42,7 @@ export function StarsSVG({ className, qtty }: StarsSVGProps) {
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 512.003 512.003'
           xmlSpace='preserve'
-          className={className}
+          className={svgClass}
         >
           <path
             fill={defaultColor({ idx, qtty })}

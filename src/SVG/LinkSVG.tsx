@@ -1,10 +1,10 @@
-import type { SVGProps } from '@/data/types'
+import type { SVGProps } from 'react'
 
-export function LinkSVG({ className }: SVGProps) {
+export function LinkSVG(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       aria-hidden
-      className={className}
+      {...props}
       fill='currentColor'
       version='1.1'
       xmlns='http://www.w3.org/2000/svg'

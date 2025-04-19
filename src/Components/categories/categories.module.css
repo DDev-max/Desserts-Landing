@@ -65,7 +65,7 @@
   }
 
   .categoriesSctn_btn--selected p {
-    color: var(--globalDarkPink);
+    color: var(--globalDarkestPink);
     font-weight: bold;
     background-color: var(--lightTxtColor);
   }
@@ -73,5 +73,6 @@
   .categoriesSctn_categoriesCont {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2rem;
   }
 }

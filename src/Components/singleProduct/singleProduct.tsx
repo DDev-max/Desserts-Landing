@@ -9,12 +9,12 @@ export function SingleProduct() {
       <div className={`${styles.singleProduct_recipe}`}>
         <Image
           className={`${styles.singleProduct_img}`}
-          src={'/magdalenas.png'}
+          src={'/magdalenas.webp'}
           width={450}
           height={300}
           alt='Vanilla cupcakes with colorful sprinkles.'
           placeholder='blur'
-          blurDataURL='/imagePlaceholder.png'
+          blurDataURL='/imagePlaceholder.webp'
         />
 
         <div className={`${styles.singleProduct_info}`}>

@@ -19,8 +19,8 @@ export async function FullRecipe({ category, page, recipes }: FullRecipeProps) {
       aria-labelledby={`${category}ID`}
       id={`${category}Tab`}
       className={`${styles.recipesCont} 
-            ${category.toLowerCase() == recipes.data[0].category.toLowerCase() ? styles['recipesCont--rightBrdr'] : ''}
-            ${category.toLowerCase() == recipes.data[recipes.data.length - 1].category.toLowerCase() ? styles['recipesCont--leftBrdr'] : ''}`}
+            ${category.toLowerCase() === 'cookies' ? styles['recipesCont--rightBrdr'] : ''}
+            ${category.toLowerCase() === 'fruits' ? styles['recipesCont--leftBrdr'] : ''}`}
     >
       {recipes?.data.map(elmnt => {
         return (
@@ -32,11 +32,11 @@ export async function FullRecipe({ category, page, recipes }: FullRecipeProps) {
               width={200}
               height={200}
               placeholder='blur'
-              blurDataURL='/imagePlaceholder.png'
+              blurDataURL='/imagePlaceholder.webp'
             />
 
             <div className={`${styles.recipesCont_additionalInfo}`}>
-              <StarsSVG className={`${styles.recipesCont_star}`} qtty={elmnt.stars} />
+              <StarsSVG containerClass={styles.recipesCont_starsContainer} svgClass={`${styles.recipesCont_star}`} qtty={elmnt.stars} />
 
               <ClockSVG className={`${styles.recipesCont_clock}`} />
 

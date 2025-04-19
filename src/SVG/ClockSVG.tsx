@@ -1,8 +1,8 @@
-import type { SVGProps } from '@/data/types'
+import type { SVGProps } from 'react'
 
-export function ClockSVG({ className }: SVGProps) {
+export function ClockSVG(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg className={className} aria-hidden xmlns='http://www.w3.org/2000/svg' viewBox='0 0 470 470' xmlSpace='preserve'>
+    <svg {...props} aria-hidden xmlns='http://www.w3.org/2000/svg' viewBox='0 0 470 470' xmlSpace='preserve'>
       <path
         style={{
           fill: '#fff',

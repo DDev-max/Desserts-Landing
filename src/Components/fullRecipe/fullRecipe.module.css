@@ -64,9 +64,15 @@
   flex-direction: column;
 }
 
+.recipesCont_info ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
 .recipesCont_info h3 {
   text-align: center;
-  font-size: var(--subTitlesFntSize);
+  font-size: var(--h3FontSize);
   margin: 1.5rem 0;
   background-color: var(--globalDarkestPink);
   color: var(--lightTxtColor);
@@ -85,6 +91,21 @@
 
 .recipesCont_clock {
   width: 7rem;
+}
+
+@media (width < 500px) {
+  .recipesCont_clock {
+    display: none;
+  }
+
+  .recipesCont {
+    border-radius: 2rem;
+  }
+}
+
+.recipesCont_starsContainer {
+  width: clamp(10rem, 15vw, 12rem);
+  margin: 1rem 0;
 }
 
 .recipesCont_additionalInfo_starsCont {
