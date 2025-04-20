@@ -105,9 +105,10 @@
 }
 
 .pageHeader_navBg {
+  display: none;
   position: fixed;
   background-color: #180044a1;
-  top: 10.7%;
+  top: 4.55rem;
   bottom: 0;
   right: 0;
   left: 100%;
@@ -149,7 +150,7 @@
 
 @media (width < 600px) {
   .pageHeader_nav {
-    top: 10.7%;
+    top: 4.55rem;
     visibility: hidden;
     overflow: hidden;
     position: fixed;
@@ -168,7 +169,8 @@
   }
 
   .pageHeader_menuSVG,
-  .pageHeader_menuBtn {
+  .pageHeader_menuBtn,
+  .pageHeader_navBg {
     display: block;
   }
 
